@@ -52,7 +52,7 @@ You can setup Auto Scaling using [Command Line Tools, Java, Ruby etc](http://aws
 
 ### Auto deployable applications
 
-If your application never changes or don't change frequently, you can create an image with your application, but in general it isn't true, they usually change frequently.
+If your application never changes or don't change frequently, you can create an image with your application, but in general it isn't true, applications usually change frequently.
 
 Although it isn't obligatory to be auto deployable, I strongly recommend to turn your application able to be deployed by scripts without manual intervention.
 
@@ -60,7 +60,7 @@ For auto deployable applications in the Auto Scaling launch configuration you ca
 
 You can also setup your infrastructure in the user data, you can use [Puppet](http://puppetlabs.com), [Chef](http://www.opscode.com/chef) or [Amazon Cloud Formation](http://aws.amazon.com/cloudformation).
 
-The best scenario for me is an image only with *nix system, a script for infrastructure automation and a script for the deployment automation. You can also mix the infrastructure and deployment automation.
+You can also mix the infrastructure and deployment automation, but it usually takes longer to create new instances.
 
 ## Some advices
 
