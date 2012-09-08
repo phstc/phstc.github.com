@@ -24,9 +24,7 @@ Utilizei a seguinte estrutura ```src/resources/app-config.properties```.
 
 ## Configurando o app-config.xml
 
-    <bean id="propertiesPlacholder" 
-    class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" 
-    lazy-init="false">
+    <bean id="propertiesPlacholder" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" lazy-init="false">
     	<property name="location" value="classpath:/resources/app-config.properties" />
     </bean>
     <bean>
@@ -60,9 +58,7 @@ Exemplo de configuração do app-config.xml.
 
 Caso sua aplicação utilize múltiplos properties, basta adicioná-los na declaração do bean PropertyPlaceholderConfigurer.
 
-    <bean id="propertiesPlacholder" 
-    class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" 
-    lazy-init="false">
+    <bean id="propertiesPlacholder" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" lazy-init="false">
     	<property name="locations">
     		<list>
     			<value>classpath:/resources/app-config-db.properties</value>

@@ -155,7 +155,7 @@ ul.posts {
   /* standard */
 
   #post pre {
-    border: 1px solid #ddd;
+		border: 1px solid #ddd;
     background-color: #eef;
     padding: 0 .4em;
 		margin: 15px 0 15px 0;
@@ -171,6 +171,7 @@ ul.posts {
     background-color: #eef;
     font-size: 85%;
     padding: 0 .2em;
+    word-break: break-word
   }
 
     #post pre code {
@@ -195,4 +196,15 @@ ul.posts {
 
   #related h2 {
     margin-bottom: 1em;
+  }
+
+  #post blockquote {
+    padding-left: 1em;
+    font-style: italic;
+    border-left: 1em solid rgba(21, 25, 25, 0.8);
+  }
+
+  #post blockquotep {
+    margin-left: 0;
+    margin-right: 0;
   }
