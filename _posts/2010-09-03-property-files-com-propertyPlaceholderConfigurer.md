@@ -24,7 +24,9 @@ Utilizei a seguinte estrutura ```src/resources/app-config.properties```.
 
 ## Configurando o app-config.xml
 
-    <bean id="propertiesPlacholder" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" lazy-init="false">
+    <bean id="propertiesPlacholder" 
+    class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" 
+    lazy-init="false">
     	<property name="location" value="classpath:/resources/app-config.properties" />
     </bean>
     <bean>
@@ -38,23 +40,29 @@ Utilizei a seguinte estrutura ```src/resources/app-config.properties```.
     	<property name="password" value="${db.password}" />
     </bean>
 
-Lembrando que o `app-config.xml` é o nome do arquivo de configuração do Spring, que podem ser vários e com nomes diferentes dependendo da aplicação.
+
+O app-config.xml é o nome do arquivo de configuração do Spring, que pode mudar de acordo com o seu ambiente.
+
+Exemplo de configuração do app-config.xml.
 
     <servlet>
     	<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
     	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     	<init-param>
     		<param-name>contextConfigLocation</param-name>
-    		<param-value>/WEB-INF/spring/*.xml</param-value>
+    		<param-value>/WEB-INF/spring/app-config.xml</param-value>
     	</init-param>
     	<load-on-startup>1</load-on-startup>
     </servlet>
 
+
 ## Utilizando múltiplos properties
 
-Caso sua aplicação utilize múltiplos properties, basta fazer o seguinte ajuste na declaração do bean PropertyPlaceholderConfigurer.
+Caso sua aplicação utilize múltiplos properties, basta adicioná-los na declaração do bean PropertyPlaceholderConfigurer.
 
-    <bean id="propertiesPlacholder" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" lazy-init="false">
+    <bean id="propertiesPlacholder" 
+    class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" 
+    lazy-init="false">
     	<property name="locations">
     		<list>
     			<value>classpath:/resources/app-config-db.properties</value>
@@ -62,10 +70,6 @@ Caso sua aplicação utilize múltiplos properties, basta fazer o seguinte ajust
     		</list>
     	</property>
     </bean>
-
-## Outra forma de como usar
-
-    <context:property-placeholder location="classpath:/resources/app-config-db.properties" />
 
 ## Principais referências
 
