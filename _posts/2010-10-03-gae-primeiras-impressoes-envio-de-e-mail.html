@@ -1,0 +1,105 @@
+--- 
+layout: post
+title: "GAE - Primeiras impress\xC3\xB5es - Envio de e-mail"
+tags: 
+- GAE
+status: publish
+type: post
+published: true
+meta: 
+  _edit_last: "1"
+  _syntaxhighlighter_encoded: "1"
+  _oembed_b81065d9fbe98ab252d4e37866b41b3c: "{{unknown}}"
+  dsq_thread_id: "175155519"
+---
+<strong>GAE + Java</strong>
+
+Esse post foi baseado em um e-mail que eu enviei para uma lista de e-mail que faço parte, graças a esse e-mail que eu me motivei para criar esse blog, mas só agora depois de vários posts que resolvi publica-lo
+
+Meus primeiros instantes com o <a href="http://code.google.com/appengine/">GAE</a> foram emocionantes, eu estava ali com um <a href="http://en.wikipedia.org/wiki/Platform_as_a_service">PaaS</a> na mão, com o poder de aumentar recursos da minha plataforma com apenas alguns cliques e um cartão de crédito :D
+
+Lembrando que ao adicionar recursos na plataforma do GAE, vc adiciona um pagar até...
+
+<a rel="attachment wp-att-505" href="http://pablocantero.com/blog/2010/10/03/gae-primeiras-impressoes-envio-de-e-mail/screen-shot-2010-10-03-at-10-41-00-pm/"><img class="alignnone size-full wp-image-505" title="Screen shot 2010-10-03 at 10.41.00 PM" src="http://pablocantero.com/blog/wp-content/uploads/2010/10/Screen-shot-2010-10-03-at-10.41.00-PM.png" alt="" width="557" height="158" /></a>
+Se você adicionar 10 dólares de CPU hour, não quer dizer que vai pagar 10 dólares, e sim, que pagará até no máximo 10 dólares, somente se o recurso for consumido. Sendo que as quotas são renovadas diariamente. Fantástico, né?!
+
+<strong>Google Plugin for Eclipse</strong>
+
+Para os primeiros passos com o GAE, o <a href="http://code.google.com/eclipse/">Google Plugin for Eclipse</a> é altamente recomendado, ele é uma forma rápida e fácil de criar projetos, testar localmente e fazer deploys em produção
+
+<strong>Meu primeiro projeto</strong>
+
+Depois de uma serie de projetos de <span style="text-decoration: line-through;">brincadeirinha</span> prova de conceito, Hello World, <a href="http://pt.wikipedia.org/wiki/CRUD">CRUD</a> Básico etc. Achei um amigo que tinha uma necessidade de enviar Clipping Diário de Notícias, que consistia em um cadastro de de contatos e envio de e-mail diário com um pdf em anexo (<em>upload via <a href="http://code.google.com/appengine/docs/java/blobstore/overview.html">BlobStore</a></em>)
+
+<strong>Péssima idéia</strong>
+
+O GAE não é recomendado para sistemas de envio de e-mail em massa devido algumas restrições da plataforma, como quantidade de e-mail por minuto, tamanho de anexo no e-mails etc. Mas só fui descobrir após experimentar
+
+<strong>Restrição do Sender
+</strong>
+
+O GAE tem algumas restrições para o remetente do e-mail, que precisa ser um e-mail de um dos administradores da aplicação ou o usuário corrente logado. Se você tentar enviar um e-mail pelo GAE com um remetente do tipo contato@suaempresa.com.br, noreply@suaempresa.com.br, clipping@suaempresa.com.br etc. Esses e-mails deverão ser os mesmos usados pelo usuário corrente logado ou estarem cadastrados como administradores da aplicação. Em nenhuma das situação é comum ter um contato@suaempresa.com.br, como usuário logado ou admintrador, né?!
+
+Descrição do sender na Low-level API para envio de e-mail<a href="http://code.google.com/appengine/docs/java/javadoc/com/google/appengine/api/mail/MailService.Message.html#setSender%28java.lang.String%29" target="_blank">
+http://code.google.com/appengine/docs/java/javadoc/com/google/appengine/api/mail/MailService.Message.html#setSender%28java.lang.String%29</a>
+<blockquote><strong>Sender</strong>
+must correspond to the valid email address of one of  the admins for this application, or to the email address of the  currently logged-in user. Sender is really the From: field of the  email.</blockquote>
+Na hora que li isso, pensei: vou usar a API do Java Mail apontando para o meu servidor SMTP, assim tenho total controle sobre o envio de e-mail
+<div><a href="http://code.google.com/appengine/docs/java/mail/usingjavamail.html" target="_blank">http://code.google.com/appengine/docs/java/mail/usingjavamail.html</a></div>
+<blockquote>
+<div><strong>An app cannot use the JavaMail interface to connect to other mail  services for sending or receiving email messages.  SMTP configuration  added to the Transport or Session is ignored. </strong></div></blockquote>
+Para mandar e-mail pelo GAE você só pode usar o serviço de envio de e-mail do GAE. Isso não impede de enviar e-mail usado outros serviços por outros meios Web Services, REST, requisição http etc,  e esses outros meios delegarem para outros serviços de envio de e-mail
+
+Lembrando que se cadastrar contato@suaempresa.com.br como adminstrador, esse e-mail terá privilégios de acessar a administração do GAE e inclusive adicionar recursos ($$$) na plataforma
+
+<strong>Restrição de envio de e-mails por minuto</strong>
+
+Na conta free do GAE, vc tem uma restrição de 1 e-mail (<em>leia-se um destinatário</em>) por minuto, quando  vc ativa a versão paga, muda para 5200, tudo aumenta, processamento etc,  mas sem custo, o custo só acontece depois que vc excede o que ganhou a  mais, só por habilitar a opção paga
+
+<strong>Acoplamento com GAE</strong>
+
+É quase inevitável não acoplar seu  sistema com o GAE, devido uma serie <a href="http://groups.google.com/group/google-appengine-java/web/will-it-play-in-app-engine?pli=1">Not supported APIs do GAE</a>, e a facilidade para usar alguns recursos do GAE usando bibliotecas do Google.  Migrar uma aplicação do GAE para outro container ou application server, muito provavelmente será uma tarefa árdua
+
+<strong>Ambiente de desenvolvimento vs Produção</strong>
+
+Talvez isso já esteja melhor, mas quando eu testei com Google Plugin for Eclipse, funcionar em desenvolvimento não garante que funcionará em produção. Mais de uma vez, testei em desenvolvimento, estava funcionando, quando eu fazia o deploy em produção não funcionava
+
+<strong>Datastore Indexes</strong>
+
+Um coisa bem legal é o <a href="http://code.google.com/appengine/docs/java/config/indexconfig.html">Datastore Index</a> que pode ser configurada para ser gerada automaticamente em desenvolvimento. Habilitando a opção datastore-indexes autoGenerate="true" no datastore-indexes.xml
+
+[xml]
+&lt;datastore-indexes autoGenerate=&quot;true&quot;&gt;
+[/xml]
+
+Conforme vc for usando suas entidades no seu ambiente de desenvolvimento, ele vai automaticamente criando indexes para suas entidades com base na utilização. Muito bom!
+<div>O lado ruim e que as vezes o GAE fica horas para gerar os indexes em  produção, e só após a geração desses indexes as entidades ficam disponíveis</div>
+<div><a rel="attachment wp-att-507" href="http://pablocantero.com/blog/2010/10/03/gae-primeiras-impressoes-envio-de-e-mail/screen-shot-2010-10-03-at-11-09-30-pm/"><img class="alignnone size-full wp-image-507" title="Screen shot 2010-10-03 at 11.09.30 PM" src="http://pablocantero.com/blog/wp-content/uploads/2010/10/Screen-shot-2010-10-03-at-11.09.30-PM.png" alt="" width="553" height="124" /></a></div>
+<div>
+
+<strong>BigTable</strong>
+
+Com o  <a href="http://pt.wikipedia.org/wiki/BigTable">BigTable</a> estou usando <a href="http://code.google.com/appengine/docs/java/gettingstarted/usingdatastore.html">JDO</a> (<em>achei que os tutorias do GAE incentivam mais para usar JDO que JPA</em>). Devido o modelo não relacional do BigTable, perdi um pouco das facilidades do ORM
+
+MailModel tem uma lista ContactModel
+
+Como ContactModel não é filho de MailModel (<em>owned relationship</em>), para fazer esse relacionamento tive que fazer
+
+[java]
+List&lt;Long&gt; contactsId;
+[/java]
+
+</div>
+ContactModel é uma unowned, ele tem uma PrimaryKey Long e não uma Key (<em>com.google.appengine.api.datastore.Key</em>). Para mais detalhes <a href="http://code.google.com/appengine/docs/java/datastore/dataclasses.html">http://code.google.com/appengine/docs/java/datastore/dataclasses.html</a>
+
+Portanto no meu Service, após fazer o load de qualquer MailModel,  tenho que carregar os ContactModel manualmente com base nos contactsId (<em>tchau lazy load, olá eager load</em>?!)
+
+<strong>Conclusões</strong>
+
+Apesar de eu talvez ter enfatizado um lado restritivo do GAE, ainda é uma ótima plataforma, claro, com algumas restrições. Tem que levar em consideração o que você quer desenvolver, para um sistema de envio de e-mail não é bom, mas para outras coisas, pode ser
+
+No post <a href="http://pablocantero.com/blog/2010/08/20/gae-eclipse-maven/">GAE + Eclipse + Maven</a>, demonstro como usar o GAE diretamente com Maven que pode ser mais produtivo posteriormente que com somente o Google Plugin for Eclipse
+
+<strong>Spring + GAE</strong>
+
+Para usar o Spring MVC com o GAE tem algumas restrições de bibliotecas, baixar o archetype do Spring MVC não funcionará diretamente. Criei um projeto <a href="http://github.com/phstc/spring-gae">http://github.com/phstc/spring-gae</a> no github, com uma aplicação com Maven + Google Plugin for Eclipse + Spring MVC 3 pronta para uso! :D

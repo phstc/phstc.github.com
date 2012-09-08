@@ -1,0 +1,153 @@
+--- 
+layout: post
+title: Spring MVC 3 + MongoDB - Parte 1
+tags: 
+- Java
+- MongoDB
+- Spring MVC
+status: publish
+type: post
+published: true
+meta: 
+  _edit_last: "1"
+  _syntaxhighlighter_encoded: "1"
+  _wp_old_slug: ""
+  dsq_thread_id: "175229564"
+---
+Aproveitando o momento que está em alta o <a href="http://pt.wikipedia.org/wiki/NoSQL">NoSQL</a>, resolvi criar esse artigo para testar na prática a utilização de um banco de dados não relacional
+
+A idéia desse artigo é fazer um projeto do ZERO com Spring MVC 3 + <a href="http://www.mongodb.org/">MongoDB</a>
+
+A primeira que ouvi falar do movimento NoSQL foi através do <a href="http://couchdb.apache.org/">CouchDB</a>, mas na época eu fiz pouco caso
+
+Só por curiosidade, a primeira edição do <a href="http://en.wikipedia.org/wiki/NoSQL">http://en.wikipedia.org/wiki/NoSQL</a> foi em 13/Agosto/2009, é algo bem recente
+
+Este post ficará dividido em duas parte
+
+<strong>Parte 1) Criação de um projeto com Spring MVC 3
+</strong>
+
+<strong>Parte 2) <a href="http://pablocantero.com/blog/2010/09/03/spring-mvc-3-mongodb-parte-2/">Configuração do MongoDB</a></strong>
+
+Para criar o projeto com Spring MVC vou utilizar o SpringSource Tool Suite (<em>versão 2.3.2.RELEASE</em>), citado no post <a href="http://pablocantero.com/blog/2010/08/27/springsource-tools-suite-e-nao-e-que-e-bom/">SpringSource Tools Suite – E não é que é bom</a>
+
+O SpringSource Tools Suite facilita todo o processo de criação de uma arquitetura inicial com Spring MVC
+
+<a rel="attachment wp-att-368" href="http://pablocantero.com/blog/2010/09/03/spring-mvc-3-mongodb-parte-1/screen-shot-2010-09-03-at-1-45-33-am/"><img class="alignnone size-full wp-image-368" title="Screen shot 2010-09-03 at 1.45.33 AM" src="http://pablocantero.com/blog/wp-content/uploads/2010/09/Screen-shot-2010-09-03-at-1.45.33-AM.png" alt="" width="612" height="309" /></a>
+
+<strong>Criação do Projeto</strong>
+
+Para criar um novo projeto File -&gt; New -&gt; Other ...
+
+<a rel="attachment wp-att-367" href="http://pablocantero.com/blog/2010/09/03/spring-mvc-3-mongodb-parte-1/screen-shot-2010-09-03-at-1-47-01-am/"><img class="alignnone size-full wp-image-367" title="Screen shot 2010-09-03 at 1.47.01 AM" src="http://pablocantero.com/blog/wp-content/uploads/2010/09/Screen-shot-2010-09-03-at-1.47.01-AM.png" alt="" width="612" height="330" /></a>
+
+Selecione o Wizard SpringSource Tool Suite -&gt; Spring Template Project
+
+<a rel="attachment wp-att-366" href="http://pablocantero.com/blog/2010/09/03/spring-mvc-3-mongodb-parte-1/screen-shot-2010-09-03-at-1-47-12-am/"><img class="alignnone size-full wp-image-366" title="Screen shot 2010-09-03 at 1.47.12 AM" src="http://pablocantero.com/blog/wp-content/uploads/2010/09/Screen-shot-2010-09-03-at-1.47.12-AM.png" alt="" width="531" height="503" /></a>
+
+Selecione o template Spring MVC Project
+
+<a rel="attachment wp-att-365" href="http://pablocantero.com/blog/2010/09/03/spring-mvc-3-mongodb-parte-1/screen-shot-2010-09-03-at-1-47-22-am/"><img class="alignnone size-full wp-image-365" title="Screen shot 2010-09-03 at 1.47.22 AM" src="http://pablocantero.com/blog/wp-content/uploads/2010/09/Screen-shot-2010-09-03-at-1.47.22-AM.png" alt="" width="525" height="508" /></a>
+
+Configurações básicas do projeto
+
+<a rel="attachment wp-att-364" href="http://pablocantero.com/blog/2010/09/03/spring-mvc-3-mongodb-parte-1/screen-shot-2010-09-03-at-1-47-56-am/"><img class="alignnone size-full wp-image-364" title="Screen shot 2010-09-03 at 1.47.56 AM" src="http://pablocantero.com/blog/wp-content/uploads/2010/09/Screen-shot-2010-09-03-at-1.47.56-AM.png" alt="" width="573" height="505" /></a>
+
+Voilà - Projecto criado
+
+<a rel="attachment wp-att-363" href="http://pablocantero.com/blog/2010/09/03/spring-mvc-3-mongodb-parte-1/screen-shot-2010-09-03-at-1-48-14-am/"><img class="alignnone size-full wp-image-363" title="Screen shot 2010-09-03 at 1.48.14 AM" src="http://pablocantero.com/blog/wp-content/uploads/2010/09/Screen-shot-2010-09-03-at-1.48.14-AM.png" alt="" width="308" height="236" /></a>
+
+Junto com o SpringSource Tools Suite vem o SpringSource Cloud Foundry v1.0 (<em>para o <a href="http://www.cloudfoundry.com/">cloudfoundry</a></em>) e <a href="http://www.springsource.com/products/tcserver">SpringSource tc Server</a> v6.0 (<em>tomcat customizado</em>),
+a parte eu instalei o <a href="http://tomcat.apache.org/download-60.cgi">Tomcat 6</a>
+
+Para adicionar sua aplicação no Tomcat basta botão direito sobre o Tomcat
+
+Add and Remove... -&gt; Selecionar o projeto (<em>spring-mongodb</em>) -&gt; Add -&gt; Finish
+
+<a rel="attachment wp-att-371" href="http://pablocantero.com/blog/2010/09/03/spring-mvc-3-mongodb-parte-1/screen-shot-2010-09-03-at-11-40-56-am/"><img class="alignnone size-full wp-image-371" title="Screen shot 2010-09-03 at 11.40.56 AM" src="http://pablocantero.com/blog/wp-content/uploads/2010/09/Screen-shot-2010-09-03-at-11.40.56-AM.png" alt="" width="430" height="160" /></a>
+
+Após iniciar o Tomcat (<em>botão direito sobre o Tomcat -&gt; Start</em>)  e acessar <a href="http://localhost:8080/spring-mongodb">http://localhost:8080/spring-mongodb</a> no navegador
+
+Voilà (2)
+
+<a rel="attachment wp-att-372" href="http://pablocantero.com/blog/2010/09/03/spring-mvc-3-mongodb-parte-1/screen-shot-2010-09-03-at-11-50-02-am/"><img class="alignnone size-full wp-image-372" title="Screen shot 2010-09-03 at 11.50.02 AM" src="http://pablocantero.com/blog/wp-content/uploads/2010/09/Screen-shot-2010-09-03-at-11.50.02-AM.png" alt="" width="614" height="159" /></a>
+
+<strong>BUG</strong>
+<blockquote>org.springframework.web.servlet.PageNotFound - No mapping found for HTTP request with URI [/spring-mongodb/app/styles/site.css] in DispatcherServlet with name 'Spring MVC Dispatcher Servlet'</blockquote>
+O Spring MVC Project vem por padrão com 3 pastas: images, scripts e styles
+
+<a rel="attachment wp-att-373" href="http://pablocantero.com/blog/2010/09/03/spring-mvc-3-mongodb-parte-1/screen-shot-2010-09-03-at-11-54-54-am/"><img class="alignnone size-full wp-image-373" title="Screen shot 2010-09-03 at 11.54.54 AM" src="http://pablocantero.com/blog/wp-content/uploads/2010/09/Screen-shot-2010-09-03-at-11.54.54-AM.png" alt="" width="299" height="277" /></a>
+
+Só que se você tentar inserir um recursos dessas pastas, como o include css abaixo
+
+<strong>welcome.jsp
+</strong>
+
+[html]
+&lt;%@ taglib uri=&quot;http://java.sun.com/jsp/jstl/core&quot; prefix=&quot;c&quot; %&gt;
+&lt;%@ page session=&quot;false&quot; %&gt;
+&lt;html&gt;
+&lt;head&gt;
+ &lt;title&gt;Welcome&lt;/title&gt;
+ &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/spring-mongodb/styles/site.css&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;
+ Congratulations! You're running Spring!
+&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+[/html]
+
+Retornará o org.springframework.web.servlet.PageNotFound, pois o Spring tentará resolver o site.css como uma url de Controller/Action
+
+Para resolver isso basta alterar o urlrewrite.xml
+
+[xml]
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!DOCTYPE urlrewrite PUBLIC &quot;-//tuckey.org//DTD UrlRewrite 3.0//EN&quot; &quot;http://tuckey.org/res/dtds/urlrewrite3.0.dtd&quot;&gt;
+&lt;urlrewrite default-match-type=&quot;wildcard&quot;&gt;
+ &lt;rule&gt;
+ &lt;from&gt;/&lt;/from&gt;
+ &lt;to&gt;/app/welcome&lt;/to&gt;
+ &lt;/rule&gt;
+ &lt;rule&gt;
+ &lt;from&gt;/scripts/**&lt;/from&gt;
+ &lt;to&gt;/scripts/$1&lt;/to&gt;
+ &lt;/rule&gt;
+ &lt;rule&gt;
+ &lt;from&gt;/styles/**&lt;/from&gt;
+ &lt;to&gt;/styles/$1&lt;/to&gt;
+ &lt;/rule&gt;
+ &lt;rule&gt;
+ &lt;from&gt;/images/**&lt;/from&gt;
+ &lt;to&gt;/images/$1&lt;/to&gt;
+ &lt;/rule&gt;
+ &lt;rule&gt;
+ &lt;from&gt;/**&lt;/from&gt;
+ &lt;to&gt;/app/$1&lt;/to&gt;
+ &lt;/rule&gt;
+ &lt;outbound-rule&gt;
+ &lt;from&gt;/app/**&lt;/from&gt;
+ &lt;to&gt;/$1&lt;/to&gt;
+ &lt;/outbound-rule&gt;
+&lt;/urlrewrite&gt;
+[/xml]
+
+Essa foi a solução que eu postei no <a href="http://stackoverflow.com/questions/1510781/no-mapping-found-for-http-request-with-uri-in-a-spring-mvc-app/3614086#3614086">stackoverflow</a> e <a href="http://forum.springsource.org/showthread.php?p=316989#post316989">forum.springsource</a>
+
+Habilitando o uso de REST no Spring MVC 3
+
+web.xml
+
+[xml]
+&lt;filter&gt;
+ &lt;filter-name&gt;httpMethodFilter&lt;/filter-name&gt;
+ &lt;filter-class&gt;org.springframework.web.filter.HiddenHttpMethodFilter&lt;/filter-class&gt;
+ &lt;/filter&gt;
+
+ &lt;filter-mapping&gt;
+ &lt;filter-name&gt;httpMethodFilter&lt;/filter-name&gt;
+ &lt;servlet-name&gt;Spring MVC Dispatcher Servlet&lt;/servlet-name&gt;
+ &lt;/filter-mapping&gt;
+[/xml] 
