@@ -38,7 +38,7 @@ No InfoQ tem mais detalhes sobre essas atualizações.
 
 ## Trilha TV Digital
 
-Na trilha de TV Digital assisti apenas à apresentação "Interatividade na TV Digital - Ginga e Plataformas de Desenvolvimento".  Sinceramente, fiquei chateado, pois vi que ainda existe um abismo para desenvolvedores autônomos. NCL, Lua, Ginga etc funcionam para emissoras de TV, porém para fazer um programa em casa e publicar ainda é um processo bem complicado. Acredito que a luz no fim do  túnel só ocorrerá com sistemas operacionais para TV, como o Google TV,  que certamente terá um Apps Marketplace.
+Na trilha de TV Digital assisti apenas à apresentação "Interatividade na TV Digital - Ginga e Plataformas de Desenvolvimento".  Sinceramente, fiquei chateado, pois vi que ainda existe um abismo para desenvolvedores autônomos. NCL, Lua, Ginga etc, funcionam para emissoras de TV, porém para fazer um programa em casa e publicar ainda é um processo bem complicado. Acredito que a luz no fim do  túnel só ocorrerá com sistemas operacionais para TV, como o Google TV,  que certamente terá um Apps Marketplace.
 
 ## Trilha Arduino
 
