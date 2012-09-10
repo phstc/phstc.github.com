@@ -66,7 +66,7 @@ You can also mix the infrastructure and deployment automation, but it usually ta
 
 ### Don't name your instances
 
-> You should change your instances as you change your underwears. [Lucas Teixeira](https://twitter.com/lucastex)
+> You should change your instances as you change your underwear. [Lucas Teixeira](https://twitter.com/lucastex)
 
 I know that is cool to name your instances with hipster names, but avoid it. It only leads you to create non-automated systems and applications. Don't be attached to your instances, it is a Cloud Smell.
 
