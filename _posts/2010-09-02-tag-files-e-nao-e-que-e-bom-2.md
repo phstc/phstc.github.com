@@ -1,33 +1,24 @@
 --- 
 layout: post
-title: "Tag Files - E n\xC3\xA3o \xC3\xA9 que \xC3\xA9 bom"
-tags: 
-- Java
-- JSP
-- JSTL
-- tag files
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  _wp_old_slug: tag-files-e-nao-e-que-bom-2
-  _syntaxhighlighter_encoded: "1"
-  dsq_thread_id: "175638280"
+title: "Tag Files - E não é que é bom"
+tags: [Java, JSP, JSTL, Tag Files]
 ---
+{% include JB/setup %}
+
+
 Tag Files são uma forma rápida de encapsular conteúdos em páginas JSP. Elas são muito "mais fáceis" de implementar que uma tag library, mesmo que seja uma [javax.servlet.jsp.tagext.SimpleTagSupport](http://download-llnw.oracle.com/javaee/1.4/api/javax/servlet/jsp/tagext/SimpleTagSupport.html).
 
 Como disse um [grande amigo meu](http://blogs.abril.com.br/java-cabeca):
 
 > Tag File é um JSP com mais poderes
 
-Vou utilizar um exemplo real, que eu precisava exibir a data de sincronização de um sistema legado com o web services, inicialmente eu estava exibindo a data da última sincronização, sempre que sincronizava eu atribuía um new Date para o atributo lastSync. O problema é o timezone do servidor era diferente do que o do cliente. Para resolver o problema optei para exibir a diferença em minutos, horas e dias da última sincronização.
+Vou utilizar um exemplo real, que eu precisava exibir a data de sincronização de um sistema legado com um web services, inicialmente eu estava exibindo a data da última sincronização, sempre que sincronizava eu atribuía um `new Date` para no atributo lastSync. O problema é o timezone do servidor era diferente do que o do cliente. Para resolver o problema optei para exibir a diferença em minutos, horas e dias da última sincronização.
 
-##Tag File DateDiff
+## Tag File DateDiff
 
 Para armazenar as Tag Files eu criei o seguinte diretório WEB-INF/tags/, sendo que qualquer arquivo .tag, que for salvo nesse diretório será uma nova Tag File.
 
-##WEB-INF/tags/dateDiff.tag
+## WEB-INF/tags/dateDiff.tag
 
     <%@ tag import="java.util.Date" body-content="empty"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -56,7 +47,7 @@ Para armazenar as Tag Files eu criei o seguinte diretório WEB-INF/tags/, sendo 
 
 (discussões a parte sobre utilizar scriptlets ou não)
 
-##Para utilizar a Tag File dateDiff.tag
+## Para utilizar a Tag File dateDiff.tag
 
 Todos os .tag salvos em WEB-INF/tags podem ser acessados como métodos após a inclusão da diretiva taglib.
 
@@ -92,6 +83,7 @@ Todos os .tag salvos em WEB-INF/tags podem ser acessados como métodos após a i
     <td>${itemInventoryRet.quantityOnSalesOrder}</td>
     <td>${itemInventoryRet.quantityOnOrder}</td>
     <td>
+    <!-- Nossa Tag File em ação -->
     <h:dateDiff date1="${itemInventoryRet.lastQuickBooksSync}"/>
     </td>
     </tr>
@@ -99,8 +91,4 @@ Todos os .tag salvos em WEB-INF/tags podem ser acessados como métodos após a i
     </tbody>
     </table>
     ...
-
-##Resultado
-
-![](/images/posts/Screen-shot-2010-09-02-at-1.48.02-AM.png)
 
