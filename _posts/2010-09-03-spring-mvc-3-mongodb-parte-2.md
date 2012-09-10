@@ -1,19 +1,11 @@
 --- 
 layout: post
-title: "Spring MVC 3 + MongoDB \xE2\x80\x93 Parte 2"
-tags: 
-- Java
-- MongoDB
-- Spring MVC
-status: publish
-type: post
-published: true
-meta: 
-  _syntaxhighlighter_encoded: "1"
-  _edit_last: "1"
-  _wp_old_slug: ""
-  dsq_thread_id: "175230714"
+title: "Spring MVC 3 + MongoDB - Parte 2"
+tags: [Java, MongoDB, Spring MVC]
+published: false
 ---
+{% include JB/setup %}
+
 Em continuação ao [Spring MVC 3  + MongoDB - Parte 1](http://pablocantero.com/blog/2010/09/03/spring-mvc-3-mongodb-parte-1), vou me basear na utilização do DbFactoryBean do post [Plain Simple MongoDB Spring Integration](http://java.dzone.com/articles/plain-simple-mongodb-spring), com algumas observações adicionais.
 
 ##Baixando o MongoDB
