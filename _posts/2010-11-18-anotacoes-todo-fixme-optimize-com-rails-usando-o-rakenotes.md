@@ -1,33 +1,25 @@
 --- 
 layout: post
-title: "Anota\xC3\xA7\xC3\xB5es TODO, FIXME, OPTIMIZE com Rails usando o rake:notes"
-tags: 
-- Rails
-- Rake
-status: publish
-type: post
-published: true
-meta: 
-  dsq_thread_id: "175154403"
-  _syntaxhighlighter_encoded: "1"
-  _edit_last: "1"
-  _wp_old_slug: anotacoes-todo-fixme-e-optimize-com-rails-usando-o-rakenotes
+title: "Anotações TODO, FIXME, OPTIMIZE com Rails usando o rake:notes"
+tags: [Rails, Rake]
 ---
+{% include JB/setup %}
+
 Comentários do tipo TODO são bastante úteis para deixar pontos de atenção no seu código.
 
     # TODO Inserir validação caso o input seja nulo.
     def some_method(input)
     end
 
-Algumas IDEs como Eclipse e Netbeans possuem uma view de Tasks, que  exibe este tipo comentários.
+Algumas IDEs como Eclipse e Netbeans possuem uma view "Tasks", que exibe estes comentários.
 
-Com Rails a visualização dessas tasks também pode ser feita por linha de comando usando rake:notes.
+Com Rails a visualização dessas comentários pode ser feita por linha de comando usando `rake:notes`.
 
-<!--more-->
-
-##TODO, FIXME, OPTIMIZE
+## TODO, FIXME, OPTIMIZE
 
 Rails além de comentário do tipo TODO, possui o FIXME e OPTIMIZE.
+
+Para visualizar os comentários:
 
     # Exibe listagem com todos os comentários TODO, FIXME e OPTIMIZE.
     rake notes
@@ -38,10 +30,10 @@ Rails além de comentário do tipo TODO, possui o FIXME e OPTIMIZE.
     # Filtra por comentários OPTIMIZE.
     rake notes:optimize
 
-##Exemplo
+## Exemplo real
 
     # app/models/article.rb
-    class Article &lt; ActiveRecord::Base
+    class Article < ActiveRecord::Base
     
      # TODO add named_scopes
      def some_method1
@@ -65,20 +57,20 @@ Rails além de comentário do tipo TODO, possui o FIXME e OPTIMIZE.
       * [9] [FIXME] method A is broken
       * [14] [OPTIMIZE] improve the code
 
-[4], [9] e [14] são as linhas onde estão os respectivos comentários.
+Os valores 4, 9 e 14 são as linhas onde estão os respectivos comentários.
 
-##CUSTOM
+## CUSTOM
 
-Existe uma opção muito interessante que é o rake notes:custom, que permite filtrar por comentários específicos.
+Existe uma opção muito interessante que é o `rake notes:custom`, que permite filtrar por comentários específicos.
 
     # Filtra por comentários COLL
     rake notes:custom ANNOTATION=COOL
 
-##Qual usar?
+## Qual usar?
 
-Eu particularmente acho confuso ter várias opções para esse tipo de comentário. Acho que TODO é bem genérico e atende muito bem como lembrete. Lembretes que devem ser vistos em algum momento, como nas folgas dos projetos e não serem usados apenas para aliviar a consciência. :P
+Eu particularmente acho confuso ter várias tipos de anotações. Acho que TODO é bem genérico e atende muito bem como lembrete. Lembretes que devem ser vistos em algum momento, como nas folgas dos projetos e não serem usados apenas para aliviar a consciência.
 
-##Principais referências
+## Principais referências
 
 * [rubyquicktips.tumblr.com/post/385665023/fixme-todo-and-optimize-code-comments](http://rubyquicktips.tumblr.com/post/385665023/fixme-todo-and-optimize-code-comments)
 * [blog.rubyyot.com/2009/05/gtd-on-rails-with-annotations/](http://blog.rubyyot.com/2009/05/gtd-on-rails-with-annotations)
