@@ -1,30 +1,19 @@
 --- 
 layout: post
 title: New Gem with Bundler - Sample Rakefile
-tags: 
-- Bundler
-- English posts
-- Gem
-- Rakefile
-- Ruby
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  _syntaxhighlighter_encoded: "1"
-  dsq_thread_id: "201665436"
+tags: [Bundler, English posts, Gem, Rakefile, Ruby]
 ---
+{% include JB/setup %}
+
 This post is an extension of the Ryan Bates post [New Gem with Bundler](http://railscasts.com/episodes/245-new-gem-with-bundler).
 
 The idea of this post is only to demonstrate a very useful Rakefile to deploy and publish a gem.
-<!--more-->
 
-If you want a step by step guide about the New Gem with Bundler, check out the Ryan Bates [Railscasts](http://railscasts.com/episodes/245-new-gem-with-bundler) or [ASCIIcasts](http://asciicasts.com/episodes/245-new-gem-with-bundler) about it.
+If you want a step by step guide about the New Gem with Bundler, I recommend to check out the Ryan Bates [Railscasts](http://railscasts.com/episodes/245-new-gem-with-bundler) or [ASCIIcasts](http://asciicasts.com/episodes/245-new-gem-with-bundler). :)
 
-The Rakefile demonstrated in this post is based on [MongoMapper Rakefile](https://github.com/jnunemaker/mongomapper/blob/master/Rakefile). I used this Rakefile when I created [mongomapper_id2](https://github.com/phstc/mongomapper_id2), It’s a MongoMapper's plugin to add auto incremented id to your MongoMapper's documents.
+The Rakefile demonstrated in this post is based on [MongoMapper Rakefile](https://github.com/jnunemaker/mongomapper/blob/master/Rakefile). I used this Rakefile when I created [mongomapper_id2](https://github.com/phstc/mongomapper_id2), It's a MongoMapper's plugin to add an auto incremented id to your MongoMapper's documents.
 
-##Let’s go, show me the code
+## Let’s go, show me the code
 
 Change the references of mongomapper_id2 to your gem's name.
 
@@ -69,7 +58,7 @@ Change the references of mongomapper_id2 to your gem's name.
       sh "gem push mongomapper_id2-#{MongomapperId2::VERSION}.gem"
     end
 
-The purpose of the available tasks in this Rakefile are intuitive.
+The purpose of the available tasks in this Rakefile are quite descriptive.
 
     rake test # to test
     rake build # to build
@@ -78,9 +67,9 @@ The purpose of the available tasks in this Rakefile are intuitive.
 
 ##rake release
 
-For me, the most interesting task, is the rake release. This task creates a tag on GitHub with the version of your gem, push the locally committed files to the master on GitHub and publishes your gem on [RubyGems.org](http://rubygems.org). Remember, commit your changes, before run this task.
+For me, the most interesting task is the `rake release`. This task creates a tag on GitHub with the version of your gem, push the locally committed files to the master on GitHub and publishes your gem on [RubyGems.org](http://rubygems.org). Remember, commit your changes, before run this task.
 
-##Usage
+## Usage
 
 Create your gem, run your tests.
 
@@ -97,7 +86,7 @@ Test your gem.
     require 'my-gem-name'
     # code to execute your gem
 
-If everything is right, publish your gem.
+If everything goes right… Publish your gem.
 
     git commit -a -m 'My commit'
     rake release
