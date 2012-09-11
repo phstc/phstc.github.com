@@ -1,30 +1,18 @@
 --- 
 layout: post
-title: "Guia r\xC3\xA1pido de configura\xC3\xA7\xC3\xA3o do Capistrano com o GitHub"
-tags: 
-- Capistrano
-- deployment
-- Git
-- GitHub
-- Rails
-status: publish
-type: post
-published: true
-meta: 
-  _wp_old_slug: capistrano-e-github-quicksetup
-  _edit_last: "1"
-  _syntaxhighlighter_encoded: "1"
-  dsq_thread_id: "176475813"
+title: "Guia rápido de configuração do Capistrano com o GitHub"
+tags: [Capistrano, Deployment, Git, GitHub, Rails]
 ---
+{% include JB/setup %}
+
 Esse é um guia rápido de configuração do [Capistrano](http://www.capify.org/) com o [GitHub](http://github.com).
 
-Os passos desses post foram utilizados no projeto [click-anywhere-to-leave-a-message.com](http://click-anywhere-to-leave-a-message.com), disponível para download no [GitHub](http://github.com/phstc/click-anywhere-to-leave-a-message.com).
+<del>Os passos desses post foram utilizados no projeto [click-anywhere-to-leave-a-message.com](http://click-anywhere-to-leave-a-message.com), disponível para download no [GitHub](http://github.com/phstc/click-anywhere-to-leave-a-message.com).</del>
 
-##Criando um repositório no GitHub
 
 Após logado no GitHub, no seu [dashboard](https://github.com) aparecerá seus repositórios e um botão para criar um novo repositório.
 
-![](/images/posts/Screen-shot-2010-07-22-at-3.47.04-PM.png)
+![GitHub - Your Repositories - New Repository](/assets/images/posts/github-your-repositories-new-repository.png)
 
 Após criado o repositório, o GitHub mostrará as instruções para o seu primeiro commit.
 
@@ -38,7 +26,7 @@ Após criado o repositório, o GitHub mostrará as instruções para o seu prime
 
 ## .gitignore
 
-Para não compartilhar alguns arquivos no repositório, como usuário/senha do banco de dados, logs e arquivos temporários, basta criar um arquivo .gitignore na raiz do projeto.
+Para não compartilhar alguns arquivos no repositório, como credenciais do banco de dados, logs, arquivos temporários etc, basta criar um arquivo `.gitignore` na raiz do projeto.
 
     cat .gitignore
     .DS_Store
@@ -54,15 +42,15 @@ Para não compartilhar alguns arquivos no repositório, como usuário/senha do b
     mkmf.log
     db/schema.rb
 
-##Instalando e adicionando o Capistrano ao seu projeto
+## Instalando e adicionando o Capistrano
 
     cd click-anywhere-to-leave-a-message.com
     gem install capistrano
     capify .
 
-##Configurando o deploy.rb
+## Configurando o deploy.rb
 
-Após adicionar o Capistrano ao seu projeto, basta configurar o arquivo deploy.rb.
+Após adicionar o Capistrano, bastará configurar o arquivo `deploy.rb`.
 
     set :application, 'sua aplicacao'
     set :user, 'seu usuario ssh'
@@ -89,24 +77,20 @@ Após adicionar o Capistrano ao seu projeto, basta configurar o arquivo deploy.r
     set :use_sudo, false
     set :deploy_to, "/home/#{user}/rails_apps/#{application}"
 
-##Adicionado a public key no GitHub
+## Adicionado sua public key no GitHub
 
-Se aparecerem problemas como Permission denied (publickey).
+Se aparecerem problemas como `Permission denied (publickey)`.
 
     servers: ["click-anywhere-to-leave-a-message.com"]
      [click-anywhere-to-leave-a-message.com] executing command
      ** [click-anywhere-to-leave-a-message.com :: out] Permission denied (publickey).
      ** [click-anywhere-to-leave-a-message.com :: out] fatal: The remote end hung up unexpectedly
 
-Quer dizer que você tem que adicionar uma public_key do seu servidor e computador local no GitHub. Para isso, o GitHub disponibiliza tutoriais para [linux](http://help.github.com/linux-key-setup/), [mac](http://help.github.com/mac-key-setup/) e [windows](http://help.github.com/msysgit-key-setup/).
+Você deverá seguir o tutorial do próprio GitHub: [linux](http://help.github.com/linux-key-setup/), [mac](http://help.github.com/mac-key-setup/) e [windows](http://help.github.com/msysgit-key-setup/) para configurar sua chave pública.
 
-Após gerada a public_key, basta acessar [ssh_bucket](https://github.com/account#ssh_bucket) para incluí-la.
+## Fazendo o deploy com o Capistrano
 
-![](/images/posts/Screen-shot-2010-07-22-at-8.42.59-PM.png)
-
-##Fazendo o deploy com o Capistrano
-
-Para fazer o deploy basta executar a instrução cap deploy.
+Para fazer o deploy basta executar a instrução `cap deploy`.
 
     cd click-anywhere-to-leave-a-message.com
     cap deploy
@@ -115,7 +99,7 @@ Se não aparecer nenhum erro (será???), seu Capistrano estará funcionando perf
 
     current/script/process/reaper: No such file or directory
 
-Para corrigir eu tive que adicionar as tasks de start, stop e restart no deploy.rb.
+Para corrigi-lo eu tive que adicionar as tasks de start, stop e restart no deploy.rb.
 
     namespace :deploy do
      task :start, :roles => :app do
@@ -129,9 +113,9 @@ Para corrigir eu tive que adicionar as tasks de start, stop e restart no deploy.
      end
     end
 
-##Criando link simbólico para arquivos não compartilhados no repositório
+## Criando link simbólico para arquivos não compartilhados no repositório
 
-Meu database.yml e outros arquivos estão somente no servidor e não no repositório, portanto sempre após o deploy com o Capistrano, eu crio um link simbólico para esses arquivos.
+Meu database.yml e outros arquivos estão somente no servidor e não no repositório, portanto sempre após o deploy com o Capistrano eu crio um link simbólico para esses arquivos.
 
     after "deploy:finalize_update", "deploy:symlink2"
     #...
@@ -143,14 +127,14 @@ Meu database.yml e outros arquivos estão somente no servidor e não no reposit�
      end
     end
 
-##Diretório log
+## Diretório log
 
-O Capistrano cria automáticamente um link simbólico para o diretório de log do projeto apontando para /home/#{user}/rails_apps/#{application}/shared/log. Como ele não cria automáticamente o diretório só o link simbólico, precisamos cria-lo manualmente.
+O Capistrano cria automáticamente um link simbólico para o diretório de log do projeto apontando para `/home/#{user}/rails_apps/#{application}/shared/log`. Como ele não cria automáticamente o diretório só o link simbólico, precisamos cria-lo manualmente.
 
     mkdir /home/#{user}/rails_apps/#{application}/shared/
     mkdir /home/#{user}/rails_apps/#{application}/shared/log
 
-##Principais referências
+## Principais referências
 
 * [Capistrano site oficial](http://www.capify.org)
 * [Capistrano com GIT, Tutorial Básico](http://blog.areacriacoes.com.br/2008/6/25/capistrano-com-git-tutorial-b-sico)
