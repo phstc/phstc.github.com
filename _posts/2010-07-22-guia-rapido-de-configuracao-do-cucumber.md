@@ -1,30 +1,19 @@
 --- 
 layout: post
-title: "Guia r\xC3\xA1pido de configura\xC3\xA7\xC3\xA3o do Cucumber"
-tags: 
-- BDD
-- Cucumber
-- Rails
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  _syntaxhighlighter_encoded: "1"
-  _wp_old_slug: cucumber-quicksetup
-  dsq_thread_id: "177981018"
+title: "Guia rápido de configuração do Cucumber"
+tags: [BDD, Cucumber, Rails]
 ---
 {% include JB/setup %}
 
-Este post é um guia rápido de configuração do [Cucumber](http://cukes.info/). 
-
-Os passos desses post foram utilizados no projeto [click-anywhere-to-leave-a-message.com](http://click-anywhere-to-leave-a-message.com), disponível para download no [GitHub](http://github.com/phstc/click-anywhere-to-leave-a-message.com).
+<del>Os passos desses post foram utilizados no projeto [click-anywhere-to-leave-a-message.com](http://click-anywhere-to-leave-a-message.com), disponível para download no [GitHub](http://github.com/phstc/click-anywhere-to-leave-a-message.com).</del>
  
-Cucumber é um framework de [Behavior Driven Development](http://en.wikipedia.org/wiki/Behavior_Driven_Development) (BDD), que permite a criação de testes de forma mais legível, usando uma linguagem mais natural chamada [Gherkin](https://github.com/aslakhellesoy/cucumber/wiki/Gherkin).
- 
-A instalação do Cucumber deve ser seguido pela url oficial do projeto [Cucumber Ruby on Rails](http://wiki.github.com/aslakhellesoy/cucumber/ruby-on-rails).
+[Cucumber](http://cukes.info/) é um framework de [Behavior Driven Development](http://en.wikipedia.org/wiki/Behavior_Driven_Development) (BDD), que permite a criação de testes automatizados por comportamento usando uma linguagem mais natural chamada [Gherkin](https://github.com/aslakhellesoy/cucumber/wiki/Gherkin).
 
-##Adicionando o Cucumber no projeto Rails
+> Cucumber lets software development teams describe how software should behave in plain text. The text is written in a business-readable domain-specific language and serves as documentation, automated tests and development-aid - all rolled into one format.
+ 
+A instalação do Cucumber deve ser seguida pela url oficial do projeto [Cucumber Ruby on Rails](http://wiki.github.com/aslakhellesoy/cucumber/ruby-on-rails).
+
+## Adicionando o Cucumber em um projeto Rails
 
 Para começar vamos criar um projeto [Rails](http://rubyonrails.org) e adicionar Cucumber.
 
@@ -36,16 +25,14 @@ Para testar se o Cucumber foi instalado corretamente.
 
     rake cucumber
 
-##Descrevendo uma funcionalidade
+## Descrevendo uma funcionalidade
 
-Após adicionar o Cucumber no projeto Rails ele criará automáticamente o diretório features na raiz do projeto.
+Após adicionar o Cucumber será criado o diretório features na raiz do projeto. O Cucumber busca pelo pattern `meu-projeto/features/\\*.feature` para executar as features.
 
-A primeira feature que vou criar é **messages.feature** que vai descrever as funcionalidades do [scaffold](http://en.wikipedia.org/wiki/Scaffold_%28programming%29#Scaffolding_in_Ruby_on_Rails) de mensagens do projeto.
-
-Não encontrei nenhum [code convention](http://en.wikipedia.org/wiki/Coding_conventions) para nomes da features, até por que o Cucumber não utiliza [convention over configuration](http://en.wikipedia.org/wiki/Convention_over_configuration) pelo nome da feature para executar o teste, e sim no diretório e extensão do arquivo (meu-projeto/features/\\*.feature).
+A primeira feature será a `messages.feature`, que descreverá as funcionalidades do ["scaffold"](http://en.wikipedia.org/wiki/Scaffold_%28programming%29#Scaffolding_in_Ruby_on_Rails) de mensagens do projeto.
 
     Feature: Manage Messages
-    In order to create message
+    In order to create a new message
     As an author
     I want to create and manage messages
     
@@ -54,11 +41,11 @@ Não encontrei nenhum [code convention](http://en.wikipedia.org/wiki/Coding_conv
     When I go to the homepage
     And I should see "Olá, essa é a minha primeira mensagem" at position "0", "0"
 
-###When I go to the homepage
+### When I go to the homepage
 
-Caso você mude a definição the homepage e o teste pare de funcionar, verifique o arquivo features/support/paths.rb, pois é lá onde estão definidos os paths.
+Caso você mude o path `the homepage` e o teste pare de funcionar, verifique o arquivo `features/support/paths.rb`, pois é lá onde estão definidos os paths.
 
-Ao executar pela primera vez os testes retornará a messagem.
+Ao executar pela primeira vez os testes o Cucumber retornará:
 
     rake cucumber
     1 scenario (1 undefined)
@@ -71,13 +58,13 @@ Ao executar pela primera vez os testes retornará a messagem.
      pending # express the regexp above with the code you wish you had
     end
 
-Informando que eu tenho que criar o passo.
+Informando que eu tenho que criar o passo:
 
     Given that I have created a message "Olá, essa é a minha primeira mensagem.
 
-###Criação de passo - step_definitions
+### Criação do passo
 
-Para que o passo funcione, vc pode adicionar diretamente o passo no arquivo features/step_definitions/web_steps.rb ou criar passos por features.
+Para que o passo funcione, você pode adicioná-lo diretamente no arquivo `features/step_definitions/web_steps.rb` ou criar um novo arquivo de step definitions específico.
 
     # features/step_definitions/messages_steps.rb
     Given /^that I have created a message "([^\"]*)" at position "([^\"]*)", "([^\"]*)"$/ do |msg, top, left|
@@ -90,7 +77,7 @@ Para que o passo funcione, vc pode adicionar diretamente o passo no arquivo feat
      :status => Message::SAVED_BY_THE_USER)
     end
 
-##Principais referências
+## Principais referências
 
 * [Cucumber site oficial](http://cukes.info)
 * [rails 2 day 3: behavior-driven development](http://www.ultrasaurus.com/sarahblog/2008/12/rails-2-day-3-behavior-driven-development/#install)
