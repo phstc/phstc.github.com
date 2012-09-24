@@ -9,6 +9,7 @@ tags: [AWS, Auto Scaling, Cloud Smells]
 A Cloud hosting has two main characteristics:
 
 * Pay-as-you-go
+
 * Scale Resources up or down based on demand (Elastic Architecture)
 
 These are the features that differentiate it from a traditional hosting.
@@ -18,6 +19,7 @@ If you're in the Cloud, you should also follow these characteristics.
 To be in the Cloud:
 
 * You must pay only for the resources needed for your application without waste
+
 * Your application must be able to scale up and down on demand
 
 You can host an application in a Cloud, but it doesn't mean that your application is Cloud capable (Cloudable). In the same way that your [Code can Smell](http://en.wikipedia.org/wiki/Code_smell), your Cloud can Smell too.
@@ -43,9 +45,13 @@ Amazon AWS offers [Auto Scaling](http://aws.amazon.com/autoscaling), which allow
 Steps to use AWS Auto Scaling:
 
 1. *Create a launch configuration*. The launch configuration are parameters to launch instances, such as image (AMI), instance type, security group, key pair and user data.
+
 2. *Create an auto scaling group*. The auto scaling group defines the auto scaling conditions, minimum and maximum number of instances, available zones, default cool down and load balancer (ELB).
+
 3. *Create a scaling policy*. The scaling policy defines how the auto scaling should scale up or down, if it is by size or percent and the cool down.
+
 4. *Create an alarm metric*. The alarm metric is the metric used to decide when to increase or decrease the instances. Usually by response time. The metrics are provided by [CloudWatch](http://aws.amazon.com/cloudwatch).
+
 5. *Create an alarm request*. It is the last step to setup the Auto Scaling. The alarm request defines how to measure the metrics defined by the alarm metric, for example the time and period to evaluate the metric.
 
 You can setup Auto Scaling using [Command Line Tools, Java, Ruby etc](http://aws.amazon.com/developertools).

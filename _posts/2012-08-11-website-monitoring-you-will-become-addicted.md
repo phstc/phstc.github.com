@@ -13,7 +13,7 @@ tags:
 
 This year (2012) I attended to a [ThoughtWorks Radar](http://www.thoughtworks.com/articles/technology-radar-march-2012) presentation. The guys from TW talked about radar topics, including Health Check Pages technique, which is really interesting and motived my self to create this post.
 
-##Health Check Pages
+## Health Check Pages
 
 > We have found adding simple health check pages to applications is incredibly useful. This allows people to quickly understand the health of an individual node. We often extend them to add metrics like the number of orders placed, error rates, or similar information. Using simple embedded web servers, even non-web based services can easily expose internal information over HTTP. By using microformats, these web pages can easily be scraped by other monitoring tools to become part of holistic monitoring.
 
@@ -21,7 +21,7 @@ Since then, I started to create dashboards in my websites. They aren't admins - 
 
 These dashboards are addictive, I usually reload my browser many times per day to see the changes. Although the information is also available in the admin, it's much more attractive a page only showing the most important data.
 
-##Real User Monitoring (RUM)
+## Real User Monitoring (RUM)
 
 [RUM](http://en.wikipedia.org/wiki/Real_user_monitoring) is a technique to record user interactions, in our case, in a website.
 
@@ -39,13 +39,13 @@ These graphics are very useful. They help us:
 
 * check the traffic curves during the day.
 
-* check if our last e-mail campaing increased the traffic.
+* check if our last e-mail campaign increased the traffic.
 
 ...
 
 I strongly recommend this article [Measure Anything, Measure Everything](http://codeascraft.etsy.com/2011/02/15/measure-anything-measure-everything/).
 
-##Make it nicer
+## Make it nicer
 
 It is nice to have an URL where everybody can access these graphics. But.... it is nicer to have a big television showing these graphics in the middle of the office. 
 
@@ -53,10 +53,10 @@ We did it, we have a computer, an Apple TV and a television. The computer has Ch
 
 The Apple TV can be expensive, but it is really useful. We can switch from the computer to an iPad streaming showing the Olympics Games or a presentation etc.
 
-##Reinventing the wheel?
+## Reinventing the wheel?
 
-Maybe you are thinking... "Why not Google Analytics (Standard and Realtime), New Relic...", we do use them, but they achieve different purposes... we are talking about simple pages to list our defined metrics in real time.
+Maybe you are thinking... "Why not Google Analytics (Standard and Realtime), New Relic...", we do use them, but they achieve different purposes... we are talking about simple pages to list our specific metrics in real time.
 
-##Final thoughts
+## Final thoughts
 
 If it moves, you can track it. Be creative and you will become addicted. 

@@ -38,6 +38,7 @@ This post concerns about the baby steps that I used to refactor the code.
     }
 
 * OrderService is high coupled with OrderDAO
+
 * OrderDAO will be created all times that delete is called
 
 It is impossible to unit test it. I can’t mock the OrderDAO because it is initiated within the method.
