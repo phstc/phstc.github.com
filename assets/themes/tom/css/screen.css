@@ -34,17 +34,24 @@ p {
   margin: 1em 0;
 }
 
+#posts a, .posts a {
+  color: #A00;
+  text-decoration: none;
+}
+
 a {
-  color: #00a;
+  /* color: #00A; */
+  color: #444;
+  text-decoration: underline;
 }
 
 a:hover {
   color: black;
 }
 
-a:visited {
-  color: #a0a;
-}
+/* a:visited { */
+  /* color: #a0a; */
+/* } */
 
 table {
   font-size: inherit;
@@ -87,19 +94,24 @@ ul.posts {
 }
 
 .title {
-  color: #a00;
+  /* color: #a00; */
+  color: #444;
+  font-size: 30px;
   font-weight: bold;
-  margin-bottom: 2em;
+  /* margin-bottom: 2em; */
+  margin-bottom: 1em;
 }
 
   .site .title a {
-    color: #a00;
+    /* color: #a00; */
+    color: #444;
+    font-size: 26px;
     text-decoration: none;
   }
 
-  .site .title a:hover {
-    color: black;
-  }
+  /* .site .title a:hover { */
+    /* color: black; */
+  /* } */
 
   .site .title a.extra {
     color: #aaa;
@@ -129,7 +141,8 @@ ul.posts {
     }
 
       .site .footer .contact a {
-        color: #8085C1;
+        /* color: #8085C1; */
+        color: #444;
       }
 
     .site .footer .rss {
@@ -166,6 +179,10 @@ ul.posts {
     margin-left: 1.35em;
 		margin-top: 15px;
 		margin-bottom: 15px;
+  }
+
+  #post ul.posts {
+    margin-left: 2px;
   }
 
   #post code {
@@ -209,4 +226,9 @@ ul.posts {
   #post blockquotep {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  #post h1 {
+    font-size: 30px;
+    line-height: 40px;
   }
