@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+  <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+    <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+      <head>
+        <meta charset="utf-8">
+        <title>{{ page.title }}</title>
+        <meta name="author" content="Pablo Cantero">
+
+        <!-- http://t.co/dKP3o1e -->
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <link rel="canonical" href="http://pablocantero.com/">
+        <link href="/assets/themes/the-pug-automatic/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+        <link href="/atom.xml" rel="alternate" title="Pablo Cantero" type="application/atom+xml">
+
+
+        <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+        <link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+
+        <link href="/images/custom/favicon.ico" rel="icon">
+      </head>
+      <body  id="index">
+        <div id="main">
+          <div id="content">
+            <div>
+              {{ content }}
+
+              {% include JB/analytics %}
+            </div>
+            <aside class="sidebar">
+            &nbsp; 
+            &nbsp;  &nbsp;<header class="site-header">
+            <!-- <h1 class="site-title"><a href="/">{{ site.title }}</a></h1> -->
+            <p class="site-intro">
+            A blog by <a href="/about/">{{ site.author.name }}</a>.
+            <a href="http://feeds.feedburner.com/{{ site.author.feedburner }}">Subscribe by RSS.</a>
+            </p>
+            </header>
+
+            </aside>
+          </div>
+        </div>
+      </body>
+    </html>
