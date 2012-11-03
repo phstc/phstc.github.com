@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Home
-tagline: Just another programming blog.
 ---
 {% include JB/setup %}
 

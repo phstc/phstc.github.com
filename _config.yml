@@ -9,17 +9,17 @@ pygments: true
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
-title : Pablo Cantero
+title: Pablo Cantero
 tagline: São Paulo, Brasil
-author :
-  name : Pablo Cantero
-  email : pablo@pablocantero.com
+author:
+  name: Pablo Cantero
+  email: pablo@pablocantero.com
   email_encoded: "&#112;&#097;&#098;&#108;&#111;&#064;&#112;&#097;&#098;&#108;&#111;&#099;&#097;&#110;&#116;&#101;&#114;&#111;&#046;&#099;&#111;&#109;"
-  github : phstc
-  twitter : pablocantero
+  github: phstc
+  twitter: pablocantero
   linkedin: pablocantero
   googleplus: 103130216786674277351
-  feedburner : pablocantero
+  feedburner: pablocantero
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt
@@ -29,7 +29,7 @@ author :
 # Else if you are pushing to username.github.com, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://phstc.github.com
+production_url : http://pablocantero.com
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
