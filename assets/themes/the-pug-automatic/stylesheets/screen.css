@@ -682,7 +682,12 @@ body.sidebar-footer .toggle-sidebar { display: none }
 }
 @media only screen and (min-width: 768px) { 
 	ul,
-	ol { margin-left: 0 }
+	ol { 
+    margin-left: 1.35em; 
+  }
+  ul li  p {
+    margin-bottom: .35em; 
+  }
 }
 body>header { background: #333 }
 body>header h1 {
