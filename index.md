@@ -15,7 +15,7 @@ title: Home
 </h1>
 
 <footer>
-<time datetime="{{ post.date }}" pubdate data-updated="true">{{ post.date | date_to_string }}</time>
+<!--<time datetime="{{ post.date }}" pubdate data-updated="true">{{ post.date | date_to_string }}</time>-->
 <span class="categories">{{ post.date | date_to_string }}</span>
 </footer>
 
