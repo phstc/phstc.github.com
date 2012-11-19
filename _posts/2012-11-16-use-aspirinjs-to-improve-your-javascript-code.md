@@ -5,7 +5,7 @@ tags: [Javascript, Refactory, AspirinJS]
 ---
 {% include JB/setup %}
 
-Have you a JavaScript causing you a headache? Will you write a JavaScript that you don't want to cause you a headache? 
+Have you a JavaScript causing you a headache? Will you write a JavaScript that you don't want to cause you a headache?
 
 AspirinJS is a collection of refactories to convert monolithic JavaScript code into maintainable, modular and testable JavaScript without any framework.
 
@@ -33,7 +33,7 @@ I'm using a little jQuery in AspirinJS - little means $.ajax, $.extend, event ha
 
 ## Let's go, show me the code.
 
-The full version of AspirinJS is available on GitHub [github.com/phstc/aspirinjs/](https://github.com/phstc/aspirinjs/). Here I will show only the before and after, on GitHub you can have look in each version and its own achievement. 
+The full version of AspirinJS is available on GitHub [github.com/phstc/aspirinjs/](https://github.com/phstc/aspirinjs/). Here I will show only the before and after, on GitHub you can have look in each version and its own achievement.
 
 ### Before
 
@@ -46,7 +46,7 @@ The full version of AspirinJS is available on GitHub [github.com/phstc/aspirinjs
         <script>
           $(function(){
             $("#search-query").focus();
-    
+
             $("#search-form").submit(function(event){
               event.preventDefault();
               $("#search-results").html("Loading...");
@@ -99,14 +99,14 @@ The full version of AspirinJS is available on GitHub [github.com/phstc/aspirinjs
 **assets/javascripts/app/models/data_model.coffee**
 
     class app.models.DataModel
-    
+
       getData:  (url, data={}) ->
         $.ajax url, data
 
 **assets/javascripts/app/models/twitter_model.coffee**
 
     class app.models.TwitterModel extends app.models.DataModel
-    
+
       search: (query) ->
         url = "http://search.twitter.com/search.json?q=#{query}"
         this.getData(url, dataType: "jsonp").
@@ -118,7 +118,7 @@ The full version of AspirinJS is available on GitHub [github.com/phstc/aspirinjs
     window.app =
       models: {}
       views: {}
-    
+
     $ ->
       twitterView = new app.views.TwitterView
       twitterView.render()
@@ -126,28 +126,28 @@ The full version of AspirinJS is available on GitHub [github.com/phstc/aspirinjs
 **assets/javascripts/app/views/twitter_view.coffee**
 
     class app.views.TwitterView
-    
+
       twitterModel = new app.models.TwitterModel
-    
+
       render: ->
         $("#search-query").focus()
         $("#search-form").submit (event) =>
           event.preventDefault()
           @search()
         $(window).on("TwitterModel::search", @printSearchResults)
-    
+
       search: ->
         $("#search-results").html "Loading..."
         searchQuery = $("#search-query").val()
-    
+
         twitterModel.search searchQuery
-    
+
       printSearchResults: (event, data) ->
         resultsContainer = $ "<ul></ul>"
         for result in data.results
           resultsContainer.append "<li>#{result.text}</li>"
         $("#search-results").html resultsContainer
-    
+
     $ ->
       twitterView = new app.views.TwitterView
       twitterView.render()
@@ -157,9 +157,9 @@ The full version of AspirinJS is available on GitHub [github.com/phstc/aspirinjs
     require "//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
     require "/application.js"
     require "/models/data_model.js"
-    
+
     describe "Data model", ->
-    
+
       it "gets data from an url", ->
         data_model = new app.models.DataModel
         spyOn $, "ajax"
@@ -170,9 +170,9 @@ The full version of AspirinJS is available on GitHub [github.com/phstc/aspirinjs
 
     require "//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
     require "/application.js"
-    
+
     describe "Twitter Model", ->
-    
+
       it "searches tweets", ->
         twitter = new app.models.TwitterModel
         spyOn($, "ajax").andReturn success: ->
@@ -181,4 +181,4 @@ The full version of AspirinJS is available on GitHub [github.com/phstc/aspirinjs
 
 ## Too much code?
 
-Even if it seemed to much code for a basic example of "Tweet search", believe me, all code start simple and easy to understand, but as they are used, they grow. Modular code, following [Single Responsibility Principle](http://en.wikipedia.org/wiki/Single_responsibility_principle), will avoid a huge headache in the future.
+Even if it seemed to much code for a basic example of "Tweet search", believe me, all code start simple and easy to understand, but as they are used, they grow. Modular code following [Single Responsibility Principle](http://en.wikipedia.org/wiki/Single_responsibility_principle), will avoid a huge headache in the future.
