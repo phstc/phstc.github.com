@@ -184,4 +184,5 @@ The full version of AspirinJS is available on GitHub [github.com/phstc/aspirinjs
 Even if it seemed to much code for a basic example of "Tweet search", believe me, all code start simple and easy to understand, but as they are used, they grow. Modular code following [Single Responsibility Principle](http://en.wikipedia.org/wiki/Single_responsibility_principle), will avoid a huge headache in the future.
 
 > We spend more time understanding and editing code than writing new code. 
-> http://www.codinghorror.com/blog/2006/09/when-understanding-means-rewriting.html
+
+[When Understanding means Rewriting](http://www.codinghorror.com/blog/2006/09/when-understanding-means-rewriting.html)
