@@ -26,7 +26,7 @@ Change the references of mongomapper_id2 to your gem's name.
 
     Rake::TestTask.new(:test) do |test|
       test.libs << 'lib' << 'test'
-      test.pattern = 'test/{functional,unit}/**/test_*.rb'
+      test.pattern = 'test/{functional,unit}/**/*_test.rb'
     end
 
     namespace :test do
