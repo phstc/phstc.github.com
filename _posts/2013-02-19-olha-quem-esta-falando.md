@@ -54,7 +54,7 @@ Existem [outras opções](http://en.wikipedia.org/wiki/Twilio#Competitors) de Ca
 Concedendo poderes de comunicação (voz e SMS) para uma aplicação, podemos adicionar diversos recursos, como:
 
 * Alertas e notificações
-  * Mensagem de falta ou renovação de estoque
+  * Atualização de estoque de produtos
   * Notificação de site indisponível. Dá para "facilmente" implementar um [Pingdom](https://www.pingdom.com/) caseiro com o [Monit](http://mmonit.com/monit/) + Twilio
 * Promoções
   * Códigos de promoções por SMS
@@ -64,12 +64,12 @@ Concedendo poderes de comunicação (voz e SMS) para uma aplicação, podemos ad
 * Questionários
   * Pesquisas de satisfação que podem ser respondidas tanto por SMS quanto por voz. Dá para facilmente implementar uma [URA](http://pt.wikipedia.org/wiki/Unidade_de_resposta_aud%C3%ADvel), capturando as respostas pelos números digitados
 * Administrações de sistemas
-  * Obter diagnósticos do sistema por SMS ou voz
-  * Executar operação no sistema por comando de voz ou SMS
+  * Obter diagnósticos do sistema
+  * Executar comandos remotos
 * Automação de vendas
-  * Enviar SMS para requisitar ou consultar estoque de produtos
+  * Enviar SMS para comprar ou consultar estoque de produtos
 * Sistema de identificação de usuário
-  * Validar o usuário por SMS ou voz
+  * Validar o usuário por telefone
 * Bike Sampa
   * No [Bike Sampa](http://www.bikesampa.com.br/) seria bem interessante se ao invés de ter que instalar um aplicativo e precisar de 3G, pudéssemos cadastrar nosso celular, enviar um SMS com número do ponto e bicicleta e liberá-la, sem tráfego 3G, sem aplicativo… até o celular baratinho sem o jogo da cobrinha poderia ser usado
 * Support Roulette ;)
@@ -82,7 +82,7 @@ O Monit é um sistema para gerenciamento e monitoramento de processo, programas 
 
 Pingdom é um serviço para monitoramento de uptime, downtime e performance de websites.
 
-Um caso de uso do Pingdom padrão é usá-lo somente para notificar se o site ficou indisponível. De uma forma caseira é possível fazer isso com o Monit e Pingdom.
+Um caso de uso do Pingdom padrão é usá-lo somente para notificar se o site ficou indisponível. De uma forma caseira é possível fazer isso com o Monit + Twilio.
 
 #### Monit script
 
@@ -132,7 +132,7 @@ Número fixo no Brasil ainda não envia SMS. Para enviar um SMS Tupiniquim é ne
 
 Para enviar um SMS: a partir de 1.2¢/mensagem
 
-#### Custo número fixo
+#### Número fixo
 
 Número fixo brasileiro = 3$/mês
 
@@ -154,4 +154,6 @@ Recomendo também uma olhada no [Support Roulete](https://github.com/phstc/suppo
 
 ## Twimlets
 
-[Twimlets](https://www.twilio.com/labs/twimlets) são aplicações prontas que implementam funcionalidades básicas, como [redirecionamento de ligação](https://www.twilio.com/labs/twimlets/forward), [caixa postal](https://www.twilio.com/labs/twimlets/voicemail) etc. Se você quiser hoje mesmo ter um número fixo em São Paulo que redirecione para um celular do Acre, basta  criar uma conta no Twilio, configurar um twimlet de redirecionemto e, em menos de 10 minutos, estará tudo funcionado. 
+[Twimlets](https://www.twilio.com/labs/twimlets) são aplicações prontas que implementam funcionalidades básicas, como [redirecionamento de ligação](https://www.twilio.com/labs/twimlets/forward), [caixa postal](https://www.twilio.com/labs/twimlets/voicemail) etc. 
+
+Se você quiser hoje mesmo ter um número fixo em São Paulo que redirecione para um celular do Acre, basta  criar uma conta no Twilio, configurar um twimlet de redirecionemto e, em menos de 10 minutos, estará tudo funcionado. 
