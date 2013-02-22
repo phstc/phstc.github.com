@@ -1,0 +1,155 @@
+---
+layout: post
+title: "Look Who's Talking"
+description: ""
+category: 
+tags: [Twilio, CaaS]
+---
+{% include JB/setup %}
+
+![Look who's talking](/assets/images/posts/look-who-is-talking.jpg)
+
+# Once Upon a Time
+
+Have a seat, I will tell you a story before to talk about [Twilio](http://www.twilio.com/), I'm going to talk about my motivation to use it. It was for a support phone app, the [Support Roulette](https://github.com/phstc/support-roulette). After all, we didn't use it exactly as is, although we used part of it.
+
+
+Due the easiness to implement an app able to answer a call, record a voice message, send and receive a text, in other words, an app which talks, I got inspired to write this post and also to present a [Tech Talk](https://github.com/phstc/support-roulette/tree/master/slides) (Vim talk rs) about it.
+
+## Support Roulette
+
+We needed a phone support 24x7 in case the website becomes unavailable and other possible urgent issues.
+
+Our idea was to nominate a support developer weekly.
+
+The [MVP](http://en.wikipedia.org/wiki/Minimum_viable_product) was to buy a cheap cellphone (its battery is infinite, in other hand, it doesn't have even the [snake game](http://en.wikipedia.org/wiki/Snake_(video_game\))) and keep it with the  developer on duty. The idea was mainly to have a fixed phone number for our customer service call, in case of emergency.
+
+### Problems with the cheap cellphone
+
+Everybody has already a cellphone. Carry another is annoying. Easy, easy to forget.
+
+### Solution
+
+We decided to use a Communication as a Service (CaaS) to register a fixed phone number in Brazil, when it receives a call it redirects to the developer on duty cellphone.
+
+### Voip
+
+The standard Voip services which we evaluated, even though they allow to register a fixed phone number in Brazil and redirect the calls, they don't allow to change the redirect target number via API. We would have to access their control panel weekly and configure the new redirect target number. Common, we are developers, we want to schedule the support agenda and have an app which will notify the new developer on duty and make the redirects. 
+
+## Why Twilio?
+
+* No Contracts
+* No Minimus
+* No Up Front
+* PAY AS YOU GO
+* Simple and well documented API
+
+### Other options
+
+There are [other options](http://en.wikipedia.org/wiki/Twilio#Competitors) of CaaS, however not all of them offer fixed phone number in Brazil or simple and well documented API. Based on which we evaluated, [Plivio](http://www.plivo.com/) seemed to be the closer competitor.
+
+## Apps which talk
+
+Given communication (voice and text) powers to an app, we can add many interesting features, such as:
+
+* Alerts & Notification
+  * Product stock updates
+  * Notify when a website is unavailable. It is kind of "easy" to implement a homemade [Pingdom](https://www.pingdom.com/) with [Monit](http://mmonit.com/monit/) + Twilio
+* Promotions
+  * Send promotion codes
+  * Rewards "Send a text to … to win a ..."
+* Reminders
+* Surveys
+* System administration
+  * Retrieve system diagnostics
+  * Execute remote commands
+* Sales Automation
+  * Order or consult products
+* Bike Sampa
+  * In São Paulo we have bike stations spread in the city that we can rent a bike. To release the bike we need to open the Bike Sampa app (iOS or Android), select the station and the bike then press "rent it". It's ok, but we need an iPhone or Android, the app and 3G, would be much easier to send a text with the station and the bike instead of the app flow (iOS or Android, app and 3G).
+* Identity Verification
+  * Validate user by phone
+* Support Roulette ;)
+
+Have look at [Twilio Customer Success Stories](http://www.twilio.com/gallery/customers) for other use cases.
+
+### Homemade Pingdom with Monit + Twilio
+
+Monit is an utility for managing and monitoring process, programs etc.
+
+Pingdom is a service for monitoring uptime, downtime and performance of websites.
+
+An usual usage of Pingdom is to use it only monitor uptime, basically to notify someone if the website is down. We can achieve it in a homemade way with Monit + Twilio.
+
+#### Monit script
+
+    # /etc/monit.d/website.conf
+    
+    check process website with pidfile /var/run/website.pid
+	    start program = "/etc/init.d/website start"
+	    stop program  = "/etc/init.d/website stop"
+	    if failed host 127.0.0.1 port 3000 protocol http with timeout 30 seconds then exec "/bin/bash -c 'ruby /usr/bin/notify-site-is-down.rb'"
+
+#### Ruby script
+
+    # /usr/bin/notify-site-is-down.rb
+    require "rubygems"
+    require "twilio-ruby"
+    
+    account_sid = "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    auth_token = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+    
+    @client = Twilio::REST::Client.new account_sid, auth_token
+    
+    @client.account.SMS.messages.create(
+      from: "+5511…",
+      to: "+5511…",
+      body: "Houston we have a problem, the website is down."
+    )
+
+### Costs
+
+In the case of Support Roulette, there are two costs: one for voice, when Twilio receives a call and redirects it and another for text, to notify the new developer on duty ("Congratulations, you are the new developer on duty :trollface:").
+
+#### Voice
+
+The voice cost is in two legs, to receive and redirect (make) a call.
+
+To receive a call: 1¢/minute
+
+To make a call: 33¢/minute
+
+#### Text
+
+> SMS messaging from an American Twilio phone number to Brazil starts at 1.2¢ however this price will vary depending on the carrier you are sending SMS messages to.
+> Elaine Tsai, Twilio Support
+
+Brazilian fixed number don't send text yet. To send a text to Brazil, an american number is required. The mostly inconvenience to do it, is to reply or send a message, whom will do it, needs to do to an international number.
+
+To send a text: starts at 1.2¢/message
+
+#### Fixed number
+
+Fixed brazilian number = 3$/month
+
+Fixed american number = 1$/month
+
+## Getting started
+
+The initial steps are: [TwiMLTM: the Twilio Markup Language](http://www.twilio.com/docs/api/twiml) and
+[Twilio REST Web Service Interface](http://www.twilio.com/docs/api/rest).
+
+Example of TwiMLTM:
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <Response>
+        <Say voice="woman">Please leave a message after the tone.</Say>
+    </Response>
+
+I also recommend you to have a look at Support Roulete [source code](https://github.com/phstc/support-roulette), it is a simple [Sinatra](https://github.com/sinatra/sinatra) application, which uses the [gem twilio-ruby](https://github.com/twilio/twilio-ruby) and [builders](https://github.com/phstc/support-roulette/blob/master/views/support_roulette_call.builder) to generate TwiMLTM, it can be free hosted on Heroku.
+
+## Twimlets
+
+[Twimlets](https://www.twilio.com/labs/twimlets) are tiny web applications that implement basic communication functionality, such as: [call forward](https://www.twilio.com/labs/twimlets/forward), [voicemail](https://www.twilio.com/labs/twimlets/voicemail) etc. 
+
+If you are in New York, but you want a fix number in Rio de Janeiro, you can easily create a Twilio account, configure a twimlet for a forward call and in less than 10 minutes everything will be working as expected, awesome!
