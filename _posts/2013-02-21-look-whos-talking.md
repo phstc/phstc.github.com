@@ -84,12 +84,13 @@ An usual usage of Pingdom is to use it only to monitor uptime, basically to noti
 
 #### Monit script
 
-    # /etc/monit.d/website.conf
+    # /etc/monitrc
     
-    check process website with pidfile /var/run/website.pid
-	    start program = "/etc/init.d/website start"
-	    stop program  = "/etc/init.d/website stop"
-	    if failed host 127.0.0.1 port 3000 protocol http with timeout 30 seconds then exec "/bin/bash -c 'ruby /usr/bin/notify-site-is-down.rb'"
+    check host rexnuke with address 127.0.0.1
+      if failed port 8080
+       with timeout 15 seconds
+       then
+       exec "ruby notify-site-is-down.rb"
 
 #### Ruby script
 
@@ -102,7 +103,7 @@ An usual usage of Pingdom is to use it only to monitor uptime, basically to noti
     
     @client = Twilio::REST::Client.new account_sid, auth_token
     
-    @client.account.SMS.messages.create(
+    @client.account.sms.messages.create(
       from: "+5511…",
       to: "+5511…",
       body: "Houston we have a problem, the website is down."
@@ -131,9 +132,9 @@ To send a text: starts at 1.2¢/message
 
 #### Fixed number
 
-Fixed brazilian number = 3$/month
+Fixed brazilian number: 3$/month
 
-Fixed american number = 1$/month
+Fixed american number: 1$/month
 
 ## Getting started
 

@@ -86,12 +86,12 @@ Um caso de uso do Pingdom padrão é usá-lo somente para notificar se o site fi
 
 #### Monit script
 
-    # /etc/monit.d/website.conf
+    # /etc/monitrc
     
-    check process website with pidfile /var/run/website.pid
-	    start program = "/etc/init.d/website start"
-	    stop program  = "/etc/init.d/website stop"
-	    if failed host 127.0.0.1 port 3000 protocol http with timeout 30 seconds then exec "/bin/bash -c 'ruby /usr/bin/notify-site-is-down.rb'"
+    check host rexnuke with address 127.0.0.1
+      if failed port 8080
+       with timeout 15 seconds
+       then "ruby notify-site-is-down.rb"
 
 #### Ruby script
 
@@ -104,7 +104,7 @@ Um caso de uso do Pingdom padrão é usá-lo somente para notificar se o site fi
     
     @client = Twilio::REST::Client.new account_sid, auth_token
     
-    @client.account.SMS.messages.create(
+    @client.account.sms.messages.create(
       from: "+5511…",
       to: "+5511…",
       body: "Houston we have a problem, the website is down."
@@ -134,9 +134,9 @@ Para enviar um SMS: a partir de 1.2¢/mensagem
 
 #### Número fixo
 
-Número fixo brasileiro = 3$/mês
+Número fixo brasileiro: 3$/mês
 
-Número fixo americano = 1$/mês
+Número fixo americano: 1$/mês
 
 ## Começando com o Twilio
 
