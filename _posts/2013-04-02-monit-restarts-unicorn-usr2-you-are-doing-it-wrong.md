@@ -17,7 +17,6 @@ Although Monit is awesome, unfortunately for process monitoring, it hasn't a `re
 
 In fact, you can see in the [Monit source code](http://mmonit.com/monit/download/), the `restart` explicit executes `stop` and `start`.
 
-    rc.monit#47
      restart)
      	$0 stop
     	$0 start
@@ -28,8 +27,8 @@ Monit checks for a pid or process matching (depending on your configuration) in 
 
 Monit only restarts (`stop` and `start`) a process, if you manually execute `monit restart all|name` or if you defined a resource testing triggering a restart.
 
-    check process unicorn_master with pidfile "…"
-      start = ".."
+    check process unicorn_master with pidfile "..."
+      start = "..."
       stop = "..."
       if cpu is greater than 50% for 5 cycles then restart
 
@@ -53,7 +52,7 @@ Unicorn accepts [signals](http://unicorn.bogomips.org/SIGNALS.html) in kill acti
 
 ## What is my point?
 
-For me this `start` and `stop` actions are a dirty workaround, I don't like them. Sometimes my Monit doesn't work well and I can't blame it, because I'm using a workaround. When Monit doesn't behave as expected, I usually do a manually combination of `pgrep` and `pkill`.
+For me this `start` and `stop` actions (mentioned in example above) are a dirty workaround, I don't like them. Sometimes my Monit doesn't work well and I can't blame it, because I'm using a workaround. When Monit doesn't behave as expected, I usually do a manually combination of `pgrep` and `pkill`.
 
 My suggestion is to use Monit as is.
 
@@ -67,7 +66,7 @@ In the most scenarios you only need graceful restart when:
 
 1. Your application source code was updated. In this scenario, when you make a new deploy, instead of executing `monit restart name`, you can execute a script `/usr/bin/unicorn_restart` in the end of your deploy. We use a [Capistrano](https://github.com/capistrano/capistrano) after deploy hook to execute the restart `run "pkill -USR2 -f unicorn_rails.*master"`.
 
-2. A resource testing triggers a `restart`. In place of using `restart` action, tries to trigger a command `if cpu is greater than 50% for 5 cycles then exec "/usr/bin/unicorn_restart"`
+2. A resource testing triggers a `restart`. In place of using `restart` action, tries to execute a command `if cpu is greater than 50% for 5 cycles then exec "/usr/bin/unicorn_restart"`
 
 #### Resource testing
 
@@ -75,7 +74,7 @@ Beware of using Resource Testing.
 
 Firstly, you can hide an internal problem. You don't need to be a hacker like the [Stripe guys](http://blog.nelhage.com/2013/03/tracking-an-eventmachine-leak/) going too deep to discover the cause of the memory leak, but you should, at least have a look at.
 
-Secondly, if you are using [AWS AutoScaling](http://aws.amazon.com/autoscaling/), you probably use AutoScaling Policies ([avoid Cloud Smells](http://pablocantero.com/blog/2012/09/07/use-auto-scaling-avoid-cloud-smells/)), in this scenario your Resource Testing can conflict with AutoScaling Policies. If you have a Scale Up `if cpu > 80%` and a Resource Testing for the same, one will "annulate" the other.
+Secondly, if you are using [AWS AutoScaling](http://aws.amazon.com/autoscaling/), you probably use AutoScaling Policies ([avoid Cloud Smells](http://pablocantero.com/blog/2012/09/07/use-auto-scaling-avoid-cloud-smells/)), in this scenario your Resource Testing can conflict with AutoScaling Policies. If you have a Scale Up `if cpu > 80%` and a Resource Testing for the same, one will "annulate" other.
 
 
 
