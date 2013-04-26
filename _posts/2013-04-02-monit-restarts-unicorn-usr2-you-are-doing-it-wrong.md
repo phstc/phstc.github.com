@@ -44,15 +44,15 @@ I saw several posts over the internet suggesting this configuration.
       start program = "/bin/true"
       stop program = "set ruby;set gems path; kill -USR2 `cat pidfile`"
 
-I'm not saying that it is wrong. If it works for you, it's ok. But even if it works, don't use a long command in the Monit actions because it is hard to maintain so instead, create a bash script and set it in the action.
-
 People use this suggested configuration above to keep Unicorn always running and restarts it gracefully.
 
-Unicorn accepts [signals](http://unicorn.bogomips.org/SIGNALS.html) in kill action. The signal `USR2`, reexecutes the running binary. When the new process is up and running, it kills the original one, keeping the server always running. The advantage to use `USR2` in place of `HUP` is because you are probably (should be) using `preload_app true` directive, specially in a Rails environment. The kill `USR2` works when your code was updated and the new process will get the fresh code. If you use `HUP` instead and `preload_app true` the code will not be updated.
+I'm not saying that it is wrong. If it works for you, it's ok. But even if it works, don't use a long command in the Monit actions because it is hard to maintain so instead, create a bash script and set it in the action.
+
+Unicorn accepts [signals](http://unicorn.bogomips.org/SIGNALS.html) in kill action. The signal `USR2`, reexecutes the running binary. When the new process is up and running, it kills the original one, keeping the server always running. The advantage to use `USR2` in place of `HUP` is because you are probably (should be) using `preload_app true` directive, specially in a Rails environment. The kill `USR2` works when your code was updated and the new process needs to get the fresh code. If you use `HUP` instead and `preload_app true` the code will not be updated.
 
 ## What is my point?
 
-For me this `start` and `stop` actions (mentioned in the example above) are a dirty workaround. I don't like them. Sometimes my Monit doesn't work well and I can't blame it because I'm using a workaround. When Monit doesn't behave as expected, I usually do a manually combination of `pgrep` and `pkill`.
+For me this `start` and `stop` actions mentioned in the example above are a dirty workaround. I don't like them. Sometimes my Monit doesn't work well and I can't blame it because I'm using a workaround. When Monit doesn't behave as expected, I usually do a manually combination of `pgrep` and `pkill`.
 
 My suggestion is to use Monit as is.
 
@@ -66,7 +66,7 @@ In most scenarios you only need graceful restart when:
 
 1. Your application source code was updated. In this scenario, when you make a new deploy, instead of executing `monit restart name`, you can run the script `/usr/bin/unicorn_restart` in the end of your deploy. We use a [Capistrano](https://github.com/capistrano/capistrano) after deploy hook to execute the restart `run "pkill -USR2 -f unicorn_rails.*master"`.
 
-2. A resource testing triggers a `restart`. In place of using `restart` action, it tries to execute a command `if cpu is greater than 50% for 5 cycles then exec "/usr/bin/unicorn_restart"`
+2. A resource testing triggers a `restart`. In place of using `restart` action, try to execute a command `if cpu is greater than 50% for 5 cycles then exec "/usr/bin/unicorn_restart"`
 
 #### Resource testing
 
