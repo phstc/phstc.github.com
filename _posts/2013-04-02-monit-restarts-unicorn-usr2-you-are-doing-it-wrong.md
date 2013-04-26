@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Monit restarts Unicorn USR2, you are doing it wrong"
+title: "Monit restarts Unicorn USR2 - You are doing it wrong"
 description: ""
 category: 
 tags: [Monit, Unicorn]
@@ -11,11 +11,11 @@ tags: [Monit, Unicorn]
 
 ## Monit
 
-[Monit](http://mmonit.com/monit/) is an awesome open source tool for managing and monitoring process, programs, files etc.
+[Monit](http://mmonit.com/monit/) is an awesome open source tool for managing and monitoring processes, programs, files etc.
 
-Although Monit is awesome, unfortunately for process monitoring, it hasn't a `restart` action, it only has `start` and `stop` actions.
+Although Monit is awesome, unfortunately for process monitoring, it hasn't a `restart` action, but only `start` and `stop` actions.
 
-In fact, you can see in the [Monit source code](http://mmonit.com/monit/download/), the `restart` explicit executes `stop` and `start`.
+In fact, as you can see in the [Monit source code](http://mmonit.com/monit/download/), the `restart` explicit executes `stop` and `start`.
 
      restart)
      	$0 stop
@@ -23,7 +23,7 @@ In fact, you can see in the [Monit source code](http://mmonit.com/monit/download
 
 ### Monit life cycle
 
-Monit checks for a pid or process matching (depending on your configuration) in a specific interval defined in `monitrc` (`set daemon n`) if the process doesn't exist, Monit will execute the `start` action.
+Monit checks for a pid or process matching (depending on your configuration) in a specific interval defined in `monitrc` (`set daemon n`) and, if the process doesn't exist, Monit will execute the `start` action.
 
 Monit only restarts (`stop` and `start`) a process, if you manually execute `monit restart all|name` or if you defined a resource testing triggering a restart.
 
@@ -36,7 +36,7 @@ Monit only restarts (`stop` and `start`) a process, if you manually execute `mon
 
 [Unicorn](http://unicorn.bogomips.org/) is a [great ass](http://www.youtube.com/watch?v=zc16ABAWTRk&feature=youtu.be&t=6m12s) Rack HTTP server.
 
-The combination of Monit and Unicorn, is the motivation for this post.
+The combination of Monit and Unicorn is the motivation for this post.
 
 I saw several posts over the internet suggesting this configuration.
 
@@ -44,15 +44,15 @@ I saw several posts over the internet suggesting this configuration.
       start program = "/bin/true"
       stop program = "set ruby;set gems path; kill -USR2 `cat pidfile`"
 
-I'm not saying that it is wrong, if it works for you, it is ok. But even if it works for you, don't use a long command in the Monit actions, it is hard to maintain, create a bash script instead and set it in the action.
+I'm not saying that it is wrong. If it works for you, it's ok. But even if it works, don't use a long command in the Monit actions because it is hard to maintain so instead, create a bash script and set it in the action.
 
 People use this suggested configuration above to keep Unicorn always running and restarts it gracefully.
 
-Unicorn accepts [signals](http://unicorn.bogomips.org/SIGNALS.html) in kill action. The signal `USR2`, reexecutes the running binary, when the new process is up and running, it kills the original one, keeping the server always running. The advantage to use `USR2` instead of `HUP`, is because you are probably (should be) using `preload_app true` directive, specially in a Rails environment. The kill `USR2` works when your code was updated, the new process will get the fresh code, if you use `HUP` instead and `preload_app true` the code will not be updated.
+Unicorn accepts [signals](http://unicorn.bogomips.org/SIGNALS.html) in kill action. The signal `USR2`, reexecutes the running binary. When the new process is up and running, it kills the original one, keeping the server always running. The advantage to use `USR2` in place of `HUP` is because you are probably (should be) using `preload_app true` directive, specially in a Rails environment. The kill `USR2` works when your code was updated and the new process will get the fresh code. If you use `HUP` instead and `preload_app true` the code will not be updated.
 
 ## What is my point?
 
-For me this `start` and `stop` actions (mentioned in example above) are a dirty workaround, I don't like them. Sometimes my Monit doesn't work well and I can't blame it, because I'm using a workaround. When Monit doesn't behave as expected, I usually do a manually combination of `pgrep` and `pkill`.
+For me this `start` and `stop` actions (mentioned in the example above) are a dirty workaround. I don't like them. Sometimes my Monit doesn't work well and I can't blame it because I'm using a workaround. When Monit doesn't behave as expected, I usually do a manually combination of `pgrep` and `pkill`.
 
 My suggestion is to use Monit as is.
 
@@ -62,11 +62,11 @@ My suggestion is to use Monit as is.
 
 ### Ok ok… How about graceful restart? 
 
-In the most scenarios you only need graceful restart when:
+In most scenarios you only need graceful restart when:
 
-1. Your application source code was updated. In this scenario, when you make a new deploy, instead of executing `monit restart name`, you can execute a script `/usr/bin/unicorn_restart` in the end of your deploy. We use a [Capistrano](https://github.com/capistrano/capistrano) after deploy hook to execute the restart `run "pkill -USR2 -f unicorn_rails.*master"`.
+1. Your application source code was updated. In this scenario, when you make a new deploy, instead of executing `monit restart name`, you can run the script `/usr/bin/unicorn_restart` in the end of your deploy. We use a [Capistrano](https://github.com/capistrano/capistrano) after deploy hook to execute the restart `run "pkill -USR2 -f unicorn_rails.*master"`.
 
-2. A resource testing triggers a `restart`. In place of using `restart` action, tries to execute a command `if cpu is greater than 50% for 5 cycles then exec "/usr/bin/unicorn_restart"`
+2. A resource testing triggers a `restart`. In place of using `restart` action, it tries to execute a command `if cpu is greater than 50% for 5 cycles then exec "/usr/bin/unicorn_restart"`
 
 #### Resource testing
 
@@ -74,7 +74,7 @@ Beware of using Resource Testing.
 
 Firstly, you can hide an internal problem. You don't need to be a hacker like the [Stripe guys](http://blog.nelhage.com/2013/03/tracking-an-eventmachine-leak/) going too deep to discover the cause of the memory leak, but you should, at least have a look at.
 
-Secondly, if you are using [AWS AutoScaling](http://aws.amazon.com/autoscaling/), you probably use AutoScaling Policies ([avoid Cloud Smells](http://pablocantero.com/blog/2012/09/07/use-auto-scaling-avoid-cloud-smells/)), in this scenario your Resource Testing can conflict with AutoScaling Policies. If you have a Scale Up `if cpu > 80%` and a Resource Testing for the same, one will "annulate" other.
+Secondly, if you are using [AWS AutoScaling](http://aws.amazon.com/autoscaling/), you probably use AutoScaling Policies ([avoid Cloud Smells](http://pablocantero.com/blog/2012/09/07/use-auto-scaling-avoid-cloud-smells/)). In this scenario your Resource Testing can conflict with AutoScaling Policies. If you have a Scale Up `if cpu > 80%` and a Resource Testing for the same, one will nullify the other.
 
 
 
