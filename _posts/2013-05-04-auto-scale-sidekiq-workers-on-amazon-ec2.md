@@ -7,13 +7,13 @@ tags: [Sidekiq, Auto Scaling, CloudWatch]
 ---
 {% include JB/setup %}
 
-We use [Sidekiq](https://github.com/mperham/sidekiq) to process messages from images conversion to shipping tickets' generation etc.
+We use [Sidekiq](https://github.com/mperham/sidekiq) to process messages from images conversion to shipping tickets' generation.
 
 The total size of our queues decreases and increases drastically during the day. When it happens we have to increase or decrease our workers by adding or removing new EC2 instances.
 
 ## Amazon Auto Scale
 
-I will not get into the details of [Amazon Auto Scaling](http://aws.amazon.com/autoscaling/), it deserves an entire post about it.
+I will not get into the details of [Amazon Auto Scaling](http://aws.amazon.com/autoscaling/), as it deserves an entire post about it.
 
 Roughly you have to create an Auto Scaling Group, Launch Configuration and Scaling Up/Down policies.
 
@@ -21,11 +21,11 @@ Remember that Amazon Auto Scaling will not remove your instances automatically. 
 
 ### Netflix Asgard
 
-Instead of creating your own scripts to Auto Scale with [AWS-SDK](http://aws.amazon.com/sdkforruby/), I recommend [Netflix Asgard](https://github.com/Netflix/asgard). It isn't a killer tool, but it works.
+Instead of creating your own Auto Scale scripts with [AWS-SDK](http://aws.amazon.com/sdkforruby/), I recommend [Netflix Asgard](https://github.com/Netflix/asgard). It isn't a killer tool, but it works.
 
 #### Asgard considerations
 
-It doesn't work well with other Tomcat apps. To work properly on Tomcat, it must be the ROOT app. Other option is to run it as a [standalone app](https://github.com/Netflix/asgard/wiki/Quick-Start-Guide), it is how I use it.
+It doesn't work well with other Tomcat apps. To work properly on Tomcat, it must be the ROOT app. Another option is to run it as a [standalone app](https://github.com/Netflix/asgard/wiki/Quick-Start-Guide), this is how I use it.
 
     JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home java -Xmx1024M -XX:MaxPermSize=128m -jar asgard-standalone.jar "" localhost 8888
 
@@ -60,7 +60,7 @@ To trigger your Scale Up/Down policies based on the Queue Size, you have to publ
       end
     end
 
-That is it… When you create your Scale Policies, you just have to set up the metric namespace to "Worker" and name to "QueueSize".
+That's it… When you create your Scale Policies, you just have to set up the metric namespace to "Worker" and name to "QueueSize".
 
 ## Update the metric
 
