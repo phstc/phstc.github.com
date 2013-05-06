@@ -75,3 +75,15 @@ We use the [whenever gem](https://github.com/javan/whenever) to create a cron jo
     task :update_queue_size_metric do
       QueueSizeMetric.new.put
     end
+    
+Another options is to use a worker to update the metrics. 
+
+    # app/workers/queue_size_metric_worker.rb
+    class QueueSizeMetricWorker
+      include Sidekiq::Worker
+      
+      def perform
+        QueueSizeMetric.new.put
+        QueueSizeMetricWorker.perform_in 1.minute 
+      end
+    end
