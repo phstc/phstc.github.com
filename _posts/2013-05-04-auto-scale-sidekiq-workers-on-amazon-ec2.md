@@ -41,7 +41,7 @@ To trigger your Scale Up/Down policies based on the Queue Size, you have to publ
     class SidekiqMetric
       def queue_size
         stats = Sidekiq::Stats.new
-        stats.queues.values.reduce :+
+        stats.queues.values.inject 0, :+
       end
     end
 
