@@ -119,9 +119,9 @@ No caso do Support Roulette há dois custos: um de voz, quando o Twilio recebe u
 O custo para redirecionamento de voz é de duas pernas, é cobrado para receber e também para fazer (redirecionar) a ligação.
 
 
-Para receber uma ligação: 1¢/minuto
+Para receber uma ligação: USD 1¢/minuto
 
-Para fazer uma ligação: 33¢/minuto
+Para fazer uma ligação: USD 33¢/minuto
 
 #### SMS
 
@@ -130,13 +130,13 @@ Para fazer uma ligação: 33¢/minuto
 
 Número fixo no Brasil ainda não envia SMS. Para enviar um SMS Tupiniquim é necessário ter um número americano. O principal inconveniente em usar um número americano para enviar SMS é no caso de resposta, ter que responder para um número americano.
 
-Para enviar um SMS: a partir de 1.2¢/mensagem
+Para enviar um SMS: a partir de USD 1.2¢/mensagem
 
 #### Número fixo
 
-Número fixo brasileiro: 3$/mês
+Número fixo brasileiro: USD 3$/mês
 
-Número fixo americano: 1$/mês
+Número fixo americano: USD 1$/mês
 
 ## Começando com o Twilio
 
