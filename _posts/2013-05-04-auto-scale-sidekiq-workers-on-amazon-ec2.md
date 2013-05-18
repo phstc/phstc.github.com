@@ -41,7 +41,7 @@ To trigger your Scale Up/Down policies based on the Queue Size, you have to publ
     class SidekiqMetric
       def queue_size
         stats = Sidekiq::Stats.new
-        stats.queues.values.reduce :+
+        stats.queues.values.inject 0, :+
       end
     end
 
@@ -74,4 +74,16 @@ We use the [whenever gem](https://github.com/javan/whenever) to create a cron jo
     # RakeFile
     task :update_queue_size_metric do
       QueueSizeMetric.new.put
+    end
+    
+Another options is to use a worker to update the metrics. 
+
+    # app/workers/queue_size_metric_worker.rb
+    class QueueSizeMetricWorker
+      include Sidekiq::Worker
+      
+      def perform
+        QueueSizeMetric.new.put
+        QueueSizeMetricWorker.perform_in 1.minute 
+      end
     end
