@@ -1,25 +1,15 @@
 --- 
 layout: post
-title: "Cola r\xC3\xA1pida para criar Cron Jobs"
+title: "Cola rápida para criar Cron Jobs"
 tags: 
 - CentOS
 - Cron
 - Crontabs
-status: publish
-type: post
-published: true
-meta: 
-  _wp_old_slug: cola-rapida-para-criar-cron-jobs-2
-  dsq_thread_id: "206534728"
-  _edit_last: "1"
-  _syntaxhighlighter_encoded: "1"
 ---
-Como eu não crio [Cron jobs](http://en.wikipedia.org/wiki/Cron) com muita frequência, sempre que preciso criar um novo, tenho que pesquisar na internet, pois já esqueci os passos de como criá-lo. Por que não pesquisar direto no meu blog?
-<!--more-->
 
 As instruções abaixo são baseados no linux [CentOS](http://en.wikipedia.org/wiki/Centos).
 
-##Motivação
+## Motivação
 
 A motivação para escrever esse post, foi para criar um Cron para ser executado de hora em hora no [Heroku](http://heroku.com/), pois o [Add-on Cron](http://addons.heroku.com/cron) do Heroku só é gratuito para uma execução por dia, eu precisava executar de hora em hora.
 
@@ -28,13 +18,13 @@ Para isso criei um Cron que invoca a minha url no Heroku de hora em hora.
     #! /bin/sh
     wget pablocantero.com/service
 
-##Como fazer de graça?
+## Como fazer de graça?
 
-Existem serviços gratuitos na internet para isso, como o [www.mywebcron.com](http://www.mywebcron.com), que pode ser uma opção interessante para invocar urls de tempos em tempos.
+Existem serviços gratuitos na internet para isso, como o [www.mywebcron.com](http://www.mywebcron.com), que podem ser uma opção interessante para invocar URLs de tempos em tempos.
 
-##Crontab
+## Crontab
 
-Para criar um Cron, você pode utilizar o programa [Crontab](http://pt.wikipedia.org/wiki/Crontab).
+Para criar um Cron você pode utilizar o programa [Crontab](http://pt.wikipedia.org/wiki/Crontab).
 
     crontab usage: crontab [-u user] file
      crontab [-u user] [ -e | -l | -r ]
@@ -45,7 +35,7 @@ Para criar um Cron, você pode utilizar o programa [Crontab](http://pt.wikipedia
      -i  (prompt before deleting user's crontab)
      -s  (selinux context)
 
-##Editando com o Vi
+## Editando com o Vi
 
 No CentOS por padrão ao usar o crontab -e, abrirá o [Nano](http://en.wikipedia.org/wiki/Nano_%28text_editor%29), que não estou muito acostumado. Portanto prefiro editar com o [Vi](http://pt.wikipedia.org/wiki/Vi), para isso basta abrir diretamente o arquivo Cron do usuário.
 
@@ -75,13 +65,13 @@ Essa configuração fica no arquivo /etc/crontab.
     58 5 * * 0 root run-parts /etc/cron.weekly
     23 2 18 * * root run-parts /etc/cron.monthly
 
-##Parâmetros para criar um Cron
+## Parâmetros para criar um Cron
 
-A configuração de um Cron é feita com o seguinte padrão.
+A configuração de um Cron é feita com o seguinte padrão:
 
 [minutos] [horas] [dias do mês] [mês] [dias da semana] [usuário] [comando]
 
-Sendo
+Sendo:
 
 Minuto: 0-59
 Hora: 0-23
@@ -89,7 +79,7 @@ Dia do mês: 1-31
 Mês: 1-12
 Dia da semana: 0-6, onde domingo = 0, segunda = 1 etc
 
-##Exemplo de Cron
+## Exemplo de Cron
 
 Para executar um script que recupera o [resultado da Mega Sena](http://www1.caixa.gov.br/loterias/loterias/megasena/megasena_resultado.asp) no site Caixa. Precisamos executar um script [Web scraping](http://en.wikipedia.org/wiki/Web_scraping), das 18h até 22h, toda quarta-feira e sábado. Que é quando ocorre os sorteios da Mega Sena.
 
@@ -107,7 +97,7 @@ Seguindo o [comentário](http://pablocantero.com/blog/2011/01/10/cola-rapida-par
 
 Lembre-se que é importante definir o parâmetro minuto, pois se deixar com *, o script será executado de minuto em minuto.
 
-##Executando em intervalo de minutos
+## Executando em intervalo de minutos
 
 Se somente o parâmetro de minuto estiver configurado, isso não fará que o script seja executado a cada minuto, na verdade ele será executado sempre no minuto configurado no intervalo de hora em hora.
 
@@ -121,12 +111,3 @@ Ou
     */1 * * * * /meus_scripts/script.sh
 
 Onde */1, indica o intervalo de 1 minuto.
-
-##OFF-TOPIC - Script para recuperar dados da Mega-Sena
-
-Criei um site para enviar alertas dos resultados da Mega-Sena.
-
->Mega-Sena Me
-> Receba os resultados da Mega-Sena por e-mail. (1) Faça o seu jogo na lotérica mais próxima, (2) entre no site Mega-Sena Me, (3) digite as dezenas apostadas, PRONTO! Você receberá os resultados dos seus jogos por e-mail assim que Caixa disponibilizar os resultados no site.
-
-[Mega-Sena Me](http://megasena.me) o código para esse site está disponível no [GitHub](https://github.com/phstc/megasena.me).
