@@ -6,7 +6,7 @@ tags: [English posts, RESTful]
 ---
 {% include JB/setup %}
 
-I'm writing this post inspired by the book [RESTful Web Services Cookbook](http://www.amazon.com/dp/0596801688/). This book has many useful examples on how to use [RESTful Web Services](http://en.wikipedia.org/wiki/Representational_State_Transfer#RESTful_web_services). If you are looking for a book on RESTFul I will highly recommend this book.
+I'm writing this post inspired by the book [RESTful Web Services Cookbook](http://www.amazon.com/dp/0596801688/). This book has many useful examples on how to use [RESTful Web Services](http://en.wikipedia.org/wiki/Representational_State_Transfer#RESTful_web_services). If you are looking for a book on RESTFul I highly recommend this book.
 
 This post is an example of an Asynchronous POST using RESTful. I chose this example, because it covers good principles of RESTful, for example the proper usage of HTTP codes.
 
@@ -14,11 +14,11 @@ This post is an example of an Asynchronous POST using RESTful. I chose this exam
 
 The Asynchronous POST will be used on this example to create an invitation to a friend. Typically used on social networks. This operation must be async, users can't wait for the operation to complete.
 
-The are many ways to do async operations that fit in our case, for example using [Resque](https://github.com/blog/542-introducing-resque) and [JMS](http://en.wikipedia.org/wiki/Java_Message_Service) etc. These tools will not be covered on this post.
+The are many ways to use async operations that fit in our case, for example using [Resque](https://github.com/blog/542-introducing-resque) and [JMS](http://en.wikipedia.org/wiki/Java_Message_Service) etc. These tools will not be covered on this post.
 
 Mapping resources and operations in RESTful is done by using nouns as resources and verbs (HTTP) as operations, similar to the technique used in OOP mapping.
 
-Although RESTful hasn't an official standard for HTTP verbs into operations. We will follow the convention bellow to operate resources.
+Although RESTful hasn't an official standard for HTTP verbs into operations. We will follow the convention below to operate the resources.
 
 * Create = POST
 * Retrieve = GET
@@ -60,9 +60,9 @@ I didn't specify the charset, because JSON uses [UTF-8 by default](http://www.ie
 
 The response `202 Accepted` was used to represent that the operation wasn't completed yet. The operation was only accepted, kind of "We are working on it. Come back later".
 
-## Consulting the invitation status
+## Checking the invitation status
 
-By using the previous `link rel` received in the last response, we can consult the invitation status.
+By using the previous `link rel` received in the last response, we can check the invitation status.
 
     # REQUEST
     GET /invitations/tasks/1 HTTP/1.1
@@ -82,7 +82,7 @@ By using the previous `link rel` received in the last response, we can consult t
        ]
     }
 
-Even though the invitation wasn't yet sent, the response code was `200 OK` because the operation "Consulting the invitation status" was completed. It isn't a pending operation.
+Even though the invitation wasn't sent yet, the response code was `200 OK`, because the operation "Checking the invitation status" was completed. It isn't a pending operation.
 
 ## The server successfully completes the processing
 
@@ -105,6 +105,6 @@ Even though the invitation wasn't yet sent, the response code was `200 OK` becau
        ]
     }
 
-After the server successfully completes the processing, the response code will be `303 See Other` and the `Content-Location` header will contain the url to retrieve the generated invitation.
+After the server completes the processing, the response code will be `303 See Other` and the `Content-Location` header will contain the url to access the generated invitation.
 
 
