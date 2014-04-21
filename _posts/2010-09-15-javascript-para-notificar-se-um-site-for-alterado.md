@@ -1,19 +1,13 @@
 --- 
 layout: post
-title: JavaScript para notificar se um site for alterado
+title: "JavaScript para notificar se um site for alterado"
 tags: 
 - Bookmarklet
 - JavaScript
 - Notifier
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  _syntaxhighlighter_encoded: "1"
-  dsq_thread_id: "178280166"
-  _wp_old_slug: javascript-para-notificar-se-o-site-teve-alteracoes
 ---
+{% include JB/setup %}
+
 Inspirado em uma thread de um grupo de e-mail que participo, onde aguardávamos ansiosamente a abertura das inscrições para o Google Developer Day 2010 (F5, F5, F5 ...). Criei um Bookmarklet para notificar quando um site for alterado.
 <!--more-->
 

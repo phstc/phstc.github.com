@@ -6,14 +6,9 @@ tags:
 - Node.js
 - Supervisor
 - Ubuntu
-status: publish
-type: post
-published: true
-meta: 
-  _syntaxhighlighter_encoded: "1"
-  _edit_last: "1"
-  dsq_thread_id: "527152108"
 ---
+{% include JB/setup %}
+
 Esse post é <del>copiado</del> baseado no post [DIY node.js server on Amazon EC2](http://cuppster.com/2011/05/12/diy-node-js-server-on-amazon-ec2/), que foi a melhor referência que encontrei de como configurar um servidor [node.js](http://nodejs.org) completo em uma instância do EC2, no caso uma instância com Ubuntu (ubuntu-maverick-10.10-i386-server). 
 
 <!--more-->

@@ -5,14 +5,9 @@ tags:
 - Apache2
 - bitnami-tomcat-stack
 - OpenSSL
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  _syntaxhighlighter_encoded: "1"
-  dsq_thread_id: "355916085"
 ---
+{% include JB/setup %}
+
 Em continuação ao [Primeiros passos no Amazon EC2](http://pablocantero.com/blog/2011/07/08/primeiros-passos-no-amazon-ec2/), este post descreve os passos para habilitar SSL no BitNami Tomcat Stack.
 
 <!--more-->

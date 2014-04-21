@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Automate multiple servers startup"
-description: ""
-category:
 tags: [Foreman, Tmuxinator]
 ---
 {% include JB/setup %}

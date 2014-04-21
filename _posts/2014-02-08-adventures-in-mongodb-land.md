@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "[WIP] Adventures in MongoDB land"
-description: ""
-category: 
 tags: [MongoDB]
 ---
 {% include JB/setup %}

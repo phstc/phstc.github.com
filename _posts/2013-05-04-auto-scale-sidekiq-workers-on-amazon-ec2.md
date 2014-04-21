@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Auto scale Sidekiq workers on Amazon EC2"
-description: ""
-category: 
 tags: [Sidekiq, Auto Scaling, CloudWatch]
 ---
 {% include JB/setup %}

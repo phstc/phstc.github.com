@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Quick and Dirty: Ruby interpolation"
-description: ""
-category: 
 tags: [Ruby]
 ---
 {% include JB/setup %}

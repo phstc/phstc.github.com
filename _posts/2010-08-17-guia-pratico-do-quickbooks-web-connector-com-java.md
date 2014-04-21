@@ -8,9 +8,6 @@ tags:
 - Web services
 - QBWC
 - wsdl
-status: publish
-type: post
-published: true
 ---
 
 O [QuickBooks Web Connector](http://marketplace.intuit.com/webconnector) é uma ótima alternativa para fazer integrações com o [QuickBooks](http://quickbooks.intuit.com), pois com QBWC não é necessário utilizar os componentes COM+, que limitam a escolha da tecnologia para ser utilizado na integração.

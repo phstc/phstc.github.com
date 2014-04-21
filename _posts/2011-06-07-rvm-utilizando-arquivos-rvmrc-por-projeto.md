@@ -5,14 +5,9 @@ tags:
 - .rvmrc
 - Ruby
 - RVM
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  _syntaxhighlighter_encoded: "1"
-  dsq_thread_id: "324674458"
 ---
+{% include JB/setup %}
+
 O [rvmrc](https://rvm.beginrescueend.com/workflow/rvmrc#project) por projeto é um recurso muito útil do [Ruby Version Manager (RVM)](https://rvm.beginrescueend.com). Com ele você pode configurar qual [rubie](https://rvm.beginrescueend.com/rubies) e qual [gemset](https://rvm.beginrescueend.com/gemsets/) o seu projeto utilizará, evitando possíveis conflitos entre projetos.
 <!--more-->
 

@@ -2,7 +2,6 @@
 layout: post
 title: Programando na Espanha
 tags: [Burgos, Espanha, Madrid, Trabalho]
-published: false
 ---
 {% include JB/setup %}
 

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Por que eu troquei o WordPress pelo Jekyll?"
-category:
 tags: [Jekyll, WordPress]
 ---
 {% include JB/setup %}

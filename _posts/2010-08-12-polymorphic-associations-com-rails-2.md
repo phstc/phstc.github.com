@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Polymorphic associations com Rails"
-category:
 tags: [Polymorphic, Rails]
 ---
 {% include JB/setup %}

@@ -5,14 +5,6 @@ tags:
 - Cookies
 - Rails
 - Session store
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  _syntaxhighlighter_encoded: "1"
-  _wp_old_slug: ""
-  dsq_thread_id: "176926937"
 ---
 
 A sessão padrão do Rails é o Cookie Store, que tem um limite de 4K, sendo usada tipicamente usada para armazenar ids de objetos persistidos na base de dados ou pequenas informações.

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Monit restarts Unicorn USR2 - You are doing it wrong"
-description: ""
-category: 
 tags: [Monit, Unicorn]
 ---
 {% include JB/setup %}

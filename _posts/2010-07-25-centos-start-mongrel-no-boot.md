@@ -5,13 +5,6 @@ tags:
 - CentOS
 - Mongrel
 - Rails
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  _syntaxhighlighter_encoded: "1"
-  dsq_thread_id: "181630835"
 ---
 
 Este post detalha os passos para iniciar, parar ou reiniciar uma aplicação Rails no CentOS.

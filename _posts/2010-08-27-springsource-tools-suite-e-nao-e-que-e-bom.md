@@ -1,19 +1,11 @@
 --- 
 layout: post
-title: "SpringSource Tools Suite - E n\xC3\xA3o \xC3\xA9 que \xC3\xA9 bom"
+title: "SpringSource Tools Suite"
 tags: 
 - Eclipse
 - IDE
 - Java
 - Spring
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  _wp_old_slug: springsource-tools-suite-vale-a-pena
-  _syntaxhighlighter_encoded: "1"
-  dsq_thread_id: "176367042"
 ---
 [SpringSource Tools Suite](http://www.springsource.com/products/springsource-tool-suite-download) é mais uma IDE baseada no Eclipse, mas não é por ser mais uma que não vale a pena. Pelo contrário, é uma ótima IDE, principalmente para quem trabalha com o família Spring-*, FACILITA MUITO!
 

@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: "RESTful: How to use POST for Asynchronous operations"
-category: 
 tags: [English posts, RESTful]
 ---
 {% include JB/setup %}

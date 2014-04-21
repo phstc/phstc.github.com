@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "LazyInitializationException? Dá-lhe OpenEntityManagerInViewFilter"
-category: 
 tags: [Java, Spring, JPA, OpenEntityManagerInViewFilter]
 ---
 {% include JB/setup %}

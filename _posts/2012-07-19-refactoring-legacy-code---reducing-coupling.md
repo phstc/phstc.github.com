@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Refactoring Legacy Code - Reducing coupling"
-category: 
 tags: 
 - Java
 - Refactory

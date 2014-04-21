@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Using SSH Tunneling on AWS EC2 to receive API callbacks"
-category: 
 tags: 
 - EC2
 - SSH Tunnel

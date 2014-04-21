@@ -6,14 +6,10 @@ tags:
 - English posts
 - JavaScript
 - Twitter
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  _syntaxhighlighter_encoded: "1"
-  dsq_thread_id: "194711660"
 ---
+{% include JB/setup %}
+
+
 Have you ever wanted to check if a twitter profile is following another twitter profile, this bookmarklet can help you.
 <!--more-->
 isFollowing Bookmarklet – it’s a very simple JavaScript created to check if screen name (b) is following screen name (a).

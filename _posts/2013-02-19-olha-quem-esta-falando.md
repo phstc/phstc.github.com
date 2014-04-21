@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Olha quem está falando"
-description: ""
-category: 
 tags: [Twilio, CaaS]
 ---
 {% include JB/setup %}

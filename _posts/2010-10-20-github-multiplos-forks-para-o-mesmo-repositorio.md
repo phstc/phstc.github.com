@@ -1,16 +1,10 @@
 --- 
 layout: post
-title: "GitHub - M\xC3\xBAltiplos forks para o mesmo reposit\xC3\xB3rio"
+title: "GitHub - Múltiplos forks para o mesmo repositório"
 tags: 
 - GitHub
-status: publish
-type: post
-published: true
-meta: 
-  _syntaxhighlighter_encoded: "1"
-  _edit_last: "1"
-  dsq_thread_id: "175663337"
 ---
+{% include JB/setup %}
 
 No GitHub não é possível fazer vários forks de um mesmo projeto.
 

@@ -3,14 +3,9 @@ layout: post
 title: Equal, equal ou equal, equal, equal
 tags: 
 - JavaScript
-status: publish
-type: post
-published: true
-meta: 
-  dsq_thread_id: "251575972"
-  _syntaxhighlighter_encoded: "1"
-  _edit_last: "1"
 ---
+{% include JB/setup %}
+
 ##É igual, mas é diferente
 
 [JavaScript](http://pt.wikipedia.org/wiki/JavaScript) permite comparar a igualdade de valores usando ==, ===, !==, !===. Esses operadores podem ter um comportamento igual em muitos casos, porém possuem uma sutil diferença que pode gerar muita dor de cabeça.

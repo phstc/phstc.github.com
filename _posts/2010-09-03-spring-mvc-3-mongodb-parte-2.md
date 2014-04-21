@@ -2,7 +2,6 @@
 layout: post
 title: "Spring MVC 3 + MongoDB - Parte 2"
 tags: [Java, MongoDB, Spring MVC]
-published: false
 ---
 {% include JB/setup %}
 

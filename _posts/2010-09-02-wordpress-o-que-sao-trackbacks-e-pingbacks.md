@@ -1,19 +1,13 @@
 --- 
 layout: post
-title: "Wordpress - O que s\xC3\xA3o trackbacks e pingbacks?"
+title: "Wordpress - O que são trackbacks e pingbacks?"
 tags: 
 - Pingbacks
 - Trackbacks
 - WordPress
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  _wp_old_slug: wordpress-o-que-e-trackbacks-e-pingbacks
-  _syntaxhighlighter_encoded: "1"
-  dsq_thread_id: "204467781"
 ---
+{% include JB/setup %}
+
 ##Trackbacks
 
 São uma forma para notificar outro blog que um post dele está sendo referenciado.

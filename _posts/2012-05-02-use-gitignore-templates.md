@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Use .gitignore templates!"
-category: 
 tags:
 - Git
 - Gitignore

@@ -1,21 +1,15 @@
 --- 
 layout: post
-title: jQuery Twitter Search Plugin
+title: "jQuery Twitter Search Plugin"
 tags: 
 - English posts
 - JavaScript
 - jQuery
 - Plugin
 - Twitter
-status: publish
-type: post
-published: true
-meta: 
-  _syntaxhighlighter_encoded: "1"
-  _edit_last: "1"
-  dsq_thread_id: "199555821"
-  _wp_old_slug: jquery-twitter-search-library
 ---
+{% include JB/setup %}
+
 It's a jQuery plugin only for tweets search. Where you need to implement the layout to display the tweets. Actually, it means that you are free to use your own layout. ;)
 <!--more-->
 

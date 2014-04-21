@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Property files com PropertyPlaceholderConfigurer"
-category: 
 tags: [Spring, PropertyPlaceholderConfigurer]
 ---
 {% include JB/setup %}

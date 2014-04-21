@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Mocha and subdirectories"
-category: 
 tags: [Mocha, Node.js, English posts]
 ---
 {% include JB/setup %}

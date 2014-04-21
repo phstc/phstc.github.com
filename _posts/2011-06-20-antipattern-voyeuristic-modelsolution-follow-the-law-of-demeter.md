@@ -5,14 +5,9 @@ tags:
 - AntiPattern
 - Delegate
 - Rails
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  dsq_thread_id: "337523755"
-  _syntaxhighlighter_encoded: "1"
 ---
+{% include JB/setup %}
+
 Esse post é um pedacinho do capitulo 1, do livro [Rails Antipatterns](http://www.amazon.com/Rails-AntiPatterns-Refactoring-Addison-Wesley-Professional/dp/0321604814). Focando no uso do método [delegate](http://api.rubyonrails.org/classes/Module.html#method-i-delegate) do Rails, referênciado no tópico Solution: Follow the [Law of Demeter](http://en.wikipedia.org/wiki/Law_of_Demeter).
 
 <!--more-->

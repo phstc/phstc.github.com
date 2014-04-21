@@ -1,19 +1,13 @@
 --- 
 layout: post
-title: Upload com Spring MVC
+title: "Upload com Spring MVC"
 tags: 
 - Java
 - Spring MVC
 - Upload
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  _syntaxhighlighter_encoded: "1"
-  _wp_old_slug: ""
-  dsq_thread_id: "175767059"
 ---
+{% include JB/setup %}
+
 Esse post é um tutorial passo a passo para fazer upload com Spring MVC.
 
 Os passos desdes posts foram feitos com o projeto template "Spring MVC Project" do [SpringSource Tool Suite](http://pablocantero.com/blog/2010/08/27/springsource-tools-suite-e-nao-e-que-e-bom/), a versão do Spring MVC utilizada foi a 3.0.1.RELEASE.

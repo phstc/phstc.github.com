@@ -5,15 +5,9 @@ tags:
 - Bookmarklet
 - English posts
 - JavaScript
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  _syntaxhighlighter_encoded: "1"
-  dsq_thread_id: "187940788"
-  _wp_old_slug: scroll-it-a-javascript-bookmarklet-to-make-automatic-scrolling-in-the-page
 ---
+{% include JB/setup %}
+
 
 Have you ever had trouble when trying to play a song in your guitar when reading the chords from a web site? Don't you always need to stop playing to scroll the page?
 

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Look Who's Talking"
-description: ""
-category: 
 tags: [Twilio, CaaS]
 ---
 {% include JB/setup %}

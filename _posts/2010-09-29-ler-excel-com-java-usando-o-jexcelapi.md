@@ -1,19 +1,13 @@
 --- 
 layout: post
-title: Ler excel com Java usando o JExcelApi
+title: "Ler excel com Java usando o JExcelApi"
 tags: 
 - Java
 - JExcelApi
 - POI
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  _syntaxhighlighter_encoded: "1"
-  _wp_old_slug: ""
-  dsq_thread_id: "175172533"
 ---
+{% include JB/setup %}
+
 Esse post é uma continuação do post [Upload com Spring MVC](http://pablocantero.com/blog/2010/09/29/upload-com-spring-mvc), pois além do upload eu precisava ler o Excel e adicionar as informações no Banco de Dados.
 
 Para ler Excel estou usando o [JExcelApi](http://jexcelapi.sourceforge.net/). Outra opção seria o [Apache POI](http://poi.apache.org/) que é mais popular.

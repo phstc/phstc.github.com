@@ -5,14 +5,9 @@ tags:
 - EC2
 - Cloud
 - IaaS
-status: publish
-type: post
-published: true
-meta: 
-  dsq_thread_id: "353340006"
-  _syntaxhighlighter_encoded: "1"
-  _edit_last: "1"
 ---
+{% include JB/setup %}
+
 ##Por que estou migrando para a Amazon?
 
 Há alguns anos utilizo uma maquina virtual (VM) com o CentOS hospedada fora do Brasil, obviamente está fora devido ao custo favorável. Nessa VM estou rodando esse blog, uma aplicação Rails, uma aplicação Java e algumas vezes utilizo para testes diversos. Apesar do ambiente misto com PHP, Ruby e Java, essas aplicações não consomem muito processamento e nem memória.

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Website monitoring. You will become addicted"
-category: 
 tags: 
 - RUM
 - StatsD

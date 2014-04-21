@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Use Auto Scaling, avoid Cloud Smells"
-category: 
 tags: [AWS, Auto Scaling, Cloud Smells]
 ---
 {% include JB/setup %}

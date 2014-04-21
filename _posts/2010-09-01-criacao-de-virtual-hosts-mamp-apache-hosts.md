@@ -1,19 +1,13 @@
 --- 
 layout: post
-title: "Cria\xC3\xA7\xC3\xA3o de Virtual Hosts: MAMP + Apache + Hosts"
+title: "Criação de Virtual Hosts: MAMP + Apache + Hosts"
 tags: 
 - Apache
 - MAMP
 - Virtual Hosts
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  _syntaxhighlighter_encoded: "1"
-  _wp_old_slug: criacao-de-virtualhosts-mamp-apache-hosts
-  dsq_thread_id: "177009183"
 ---
+{% include JB/setup %}
+
 O acrônimo [MAMP](http://www.mamp.info) é um programa free para o Mac OSX que instala e configura automáticamente o Apache, MySQL, PHP e phpMyAdmin.
 
 * __M__ac OSX

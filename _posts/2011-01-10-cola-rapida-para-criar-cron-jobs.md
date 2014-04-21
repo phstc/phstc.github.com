@@ -6,6 +6,7 @@ tags:
 - Cron
 - Crontabs
 ---
+{% include JB/setup %}
 
 As instruções abaixo são baseados no linux [CentOS](http://en.wikipedia.org/wiki/Centos).
 

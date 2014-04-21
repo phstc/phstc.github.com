@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Use Capybara!"
-category: 
 tags: [Rails, Capybara, RSpec]
 ---
 {% include JB/setup %}

@@ -5,13 +5,9 @@ tags:
 - English posts
 - iPhone simulator
 - Titanium
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  dsq_thread_id: "324799440"
 ---
+{% include JB/setup %}
+
 This post is based on this thread "[Adding images to iPhone Simulator](http://stackoverflow.com/questions/468879/adding-images-to-iphone-simulator/)" on [Stack Overflow](http://stackoverflow.com/).
 
 The [easiest answer](http://stackoverflow.com/questions/468879/adding-images-to-iphone-simulator/2039856#2039856) which worked for me to add pictures in the Simulator Photo Gallery was:

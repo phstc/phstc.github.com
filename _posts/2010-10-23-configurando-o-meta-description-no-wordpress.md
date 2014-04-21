@@ -4,14 +4,9 @@ title: Configurando o Meta description no WordPress
 tags: 
 - Meta description
 - WordPress
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  _syntaxhighlighter_encoded: "1"
-  dsq_thread_id: "175770077"
 ---
+{% include JB/setup %}
+
 Nem sei mais o quão importante são as tags de Meta description para indexação de conteúdo hoje em dia. Já vi sites bem posicionados que não usavam tags Meta description.
 
 <!--more-->

@@ -6,14 +6,9 @@ tags:
 - iPhone
 - LCD
 - Touch Screen
-status: publish
-type: post
-published: true
-meta: 
-  _edit_last: "1"
-  dsq_thread_id: "495757864"
-  _wp_old_slug: como-trocar-uma-tela-quebrada-do-iphone-3gs
 ---
+{% include JB/setup %}
+
 Quebrou a tela do seu iPhone? E aí..., como consertar? Busquei várias [assistências técnica](http://www.google.com.br/search?gcx=w&ix=c2&sourceid=chrome&ie=UTF-8&q=assis%C3%AAncias+t%C3%A9cnica+iphone#hl=pt-BR&sa=X&ei=zwOVTsHkA8e5tgeZksTyBg&ved=0CCoQBSgA&q=assist%C3%AAncias+t%C3%A9cnica+iphone&spell=1&bav=on.2,or.r_gc.r_pw.,cf.osb&fp=17c3f9c38adae7f1&biw=1280&bih=633) para o conserto, os orçamentos foram à partir de 400 reais para trocar o LCD e tela (digitizer/touch screen). Hein?!
 
 <!--more-->
