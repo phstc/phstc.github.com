@@ -5,11 +5,11 @@ tags: [SPA, Backbone, Rails]
 ---
 {% include JB/setup %}
 
-**tl;dr** single-page applications are awesome and fast. But if you don't have a strong requirement to create a single-page application, don't do that. It will slow down your development time. You can rewrite your application to be a single-page application in the future as an improvement, but if you start it as a single-page application and you need to deliver fast, you can get a big headache to yourself and maybe need to rewrite it as a normal web application (in our case in Rails) to meet the deadlines.
+**tl;dr** single-page applications are awesome and fast. But if you don't have a strong requirement to create a single-page application, don't do that. It will slow down your development time. You can rewrite your application to be a single-page application in the future as an improvement, but if you start it as a single-page application and you need to deliver fast, you can give a big headache to yourself and maybe need to rewrite it as a normal web application (in our case in Rails) to meet the deadlines.
 
 DISCLAIMER: Although the AngularJS first commit ([Jan 05, 2010](https://github.com/angular/angular.js/commit/c9c176a53b1632ca2b1c6ed27382ab72ac21d45d)) is older than the Backbone one ([Sep 30, 2010](https://github.com/jashkenas/backbone/commit/8a960b479859d343a6c734eb1a5817a2ff6c2b52)), for me, Backbone became a reference for MVW before AngularJS or any other, so that's why I'm referring to Backbone as the oldest one.
 
-Another day a friend of mine shared a post with me - "[I Coded the AngularJS Tutorial App in Backbone and it Took 260% More Code](http://blog.42floors.com/coded-angular-tutorial-app-backbone-took-260-code)". It is an interesting post showing that newer MVW frameworks such as AngularJS require less code to do the work than the "old ones" like Backbone. This comparison reminded me a long time ago, in the Java world, the changes from HttpServlets (spaghetti servlets), then Struts (struts-config.xml), then Spring MVC (annotations) and so on. 
+Another day a friend of mine shared a post with me - "[I Coded the AngularJS Tutorial App in Backbone and it Took 260% More Code](http://blog.42floors.com/coded-angular-tutorial-app-backbone-took-260-code)". It is an interesting post showing that newer MVW frameworks such as AngularJS require less code to do the work than the "old ones" like Backbone. This comparison reminded me of a long time ago, in the Java world, the changes from HttpServlets (spaghetti servlets), then Struts (struts-config.xml), then Spring MVC (annotations) and so on. 
 
 In my opinion it is the way to go. Backbone formalised a convention to write Rich Internet Application by creating "classes" with specific responsibilities, it uses Routes, Models, Collections, Views and Templates instead of spaghetti JavaScript with Ajax calls. But on the other hand you have to write all callbacks, bindings etc and it isn't magically implemented by a convention, like using data attributes (ng-*).
 
@@ -58,7 +58,7 @@ You have much more code and you can't reuse Rails helpers. You can try to use [j
 
 ### Everything will be an API
 
-Sometimes in Rails we write some very specific actions i.e. `PUT users/:id/bio`, because there is a specific page, which only updates the user bio and has some specific logic. As it is something internal, we don't mind for the Restful like route, because it "isn't public exposed". But when we expose it as an API to access from Backbone, even though it isn't a real API, we can start overthinking on the "best fit" url, nouns and verbs etc. 
+Sometimes in Rails we write some very specific actions i.e. `PUT users/:id/bio`, because there is a specific page, which only updates the user bio and has some specific logic. As it is something internal, we don't mind the non-Restful like route, because it "isn't publicly exposed". But when we expose it as an API to access from Backbone, even though it isn't a real API, we can start overthinking on the "best fit" URL, nouns, verbs etc. 
 
 Sometimes it can be an anti-pattern, but who's never used a [helper_method](http://apidock.com/rails/ActionController/Helpers/ClassMethods/helper_method)? You can't use it anymore. If you want to, you will need to expose it as an API.
 
@@ -66,15 +66,15 @@ Backbone works "automatically" with Rails resources URLs, but for custom URLs, w
 
 ### Page reload is a user feedback
 
-It can be a poor user feedback, but page reload is a user feedback. If a user clicks on the Save button and the page is reloaded, the user knows that something happened, even without an explicit feedback. But if the Save is handled by Ajax, you must do something: show an ajax loader, alert or whatever, otherwise it will be frustrating, the users will not be sure if the action was properly done and they will probably click on the button multiple times, just to make sure it was done, causing much more requests to your server.
+It can be a poor user feedback, but page reload is a user feedback. If a user clicks on the Save button and the page is reloaded, the user knows that something happened, even without explicit feedback. But if the Save is handled by Ajax, you must do something: show an ajax loader, alert or whatever, otherwise it will be frustrating, the users will not be sure if the action was properly done and they will probably click on the button multiple times, just to make sure it was done, causing much more requests to your server.
 
 ### Page reload is a garbage collector
 
-Do you clean your Backbone objects? I mean, if the user open a view which loads N objects (collection, models, sub-views, templates etc), paginate, load more N objects then triggers a new route which loads a new view and other objects. Do you erase the previous view and nested objects? If the user returns to the previous view, do you reuse the previous loaded view to keep the previous state? If yes, if the user opens 20 views with N objects each, do you keep all these objects in memory?
+Do you clean your Backbone objects? I mean, if the user opens a view which loads N objects (collection, models, sub-views, templates etc), paginate, load more N objects then triggers a new route which loads a new view and other objects. Do you erase the previous view and nested objects? If the user returns to the previous view, do you reuse the previous loaded view to keep the previous state? If yes, if the user opens 20 views with N objects each, do you keep all these objects in memory?
 
 These are the questions you have to ask to yourself when developing a real single-page application. You have to take care   of the memory usage by hand - it isn't magically handled by Backbone. If you never used Chrome/Developer/Profile or similar, you should to!
 
-You can get surprised on how a single-page application with many many views can becomes slow and consumes a lot of memory.
+You can get surprised on how a single-page application with many many views can become slow and consumes a lot of memory.
 
 Page reload erases the page memory for almost every user action.
 
@@ -92,4 +92,4 @@ My point is just this: single-page applications frameworks/ecosystem aren't read
 
 You can rewrite your application to be a single-page application in the future, the bad is when you need to rollback to a normal one. If you start in Rails, you can rewrite one page then another and so on, but if you start a project only with the JavaScript ecosystem outside Ruby/Rails (it was our case), it will be hard to migrate to Rails smoothly. 
 
-Something I did before, which worked great, was to develop just specific parts of the application with Backbone (can be any other MVW). For example, we developed a Store Palette Editor using Backbone Models and Views, without Routers or Templates. It worked great, we could use the Backbone convention for Models and Views, isolate the classes with specific responsibilities, the UX was great and it made the development faster and the code easier to test.
+Something I did before, which worked great, was to develop just specific parts of the application with Backbone (can be any other MVW). For example, we developed a Store Palette Editor using Backbone Models and Views, without Routers and Templates. It worked great, we could use the Backbone convention for Models and Views, isolate the classes with specific responsibilities, the UX was great and it made the development faster and the code easier to test.
