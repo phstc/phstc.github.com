@@ -143,15 +143,19 @@ Edit your `/usr/local/etc/mongod.conf` and enable [Syslog Rotation](http://docs.
 
 [On OS X >= 10.9.1 we need to set up some extra rules to enable syslog](https://groups.google.com/d/msg/mongodb-user/XyGzMZ4dTYY/XzjyLfdL7RIJ), otherwise it will not fail, but we will not be able to get the log outputs.
 
+Log all messages via syslog to a separate mongodb.log:
+
     sudo vim /etc/asl/org.mongodb
 
-    # Log all messages via syslog to a separate mongodb.log
+
     ? [= Sender mongod.27017] claim only
     * file /var/log/mongodb.log mode=0640 compress format=bsd rotate=seq file_max=5M all_max=20M
 
-or
+**or**
 
-     # Save all messages to system.log
+Save all messages to system.log:
+
+
      ? [= Sender mongod.27017] file /var/log/system.log
 
 Then reload the syslogd configuration:
