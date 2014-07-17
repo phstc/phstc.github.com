@@ -94,6 +94,41 @@ If you don't have a `created_at` field by your own and someone asks you to give 
 
 Unfortunately `ObjectId.from_time(time)` isn't available in the MongoDB Shell. But it is available in the [mongo-ruby-driver](http://api.mongodb.org/ruby/current/BSON/ObjectId.html#from_time-class_method). Ruby rocks! :)
 
+## Expensive counts
+
+When you have collections with million of documents, you will notice the searches aren't that fast, even when using indexes. It also applies for counts, if you use a simple count without any criteria, it will be fine, fast, because MongoDB knows the collection size, but [if you need to filter the count, it might be very expensive](https://www.google.com/webhp?#q=slow%20count%20mongodb):
+
+    Notification.where(account_id: '5347c18a69702d1ef10c0000').count
+    => # Completed in 15.354520466 seconds
+
+It took 15 seconds to return the filtered count in a collection with 6120054 documents. To be fair with MongoDB, I have to mention that there are lot of documents (4951369) that matches the criteria above, which makes the query even more expensive, but it's a real use case in my application.
+
+To make it faster, we created a `capped_count`, so instead of showing "4951369" found we show "99+".
+
+    Notification.where(account_id: '5371ec6869702d131d010000').limit(-100).only(:_id).count(true)
+    => # Completed in 0.021699112 seconds
+
+Pretty fast, hum?
+
+* `count(true)` - sets the [applySkipLimit](http://docs.mongodb.org/manual/reference/method/cursor.count/) = true, so the count respects the limit and skip when supplied. By default the count ignores the limit and skip.
+
+* `limit(-100)` - a negative limit will ask [MongoDB to return that number and close the cursor](http://docs.mongodb.org/manual/reference/method/cursor.limit/).
+
+* `only(:_id)` - returns only the _id. 
+
+For sure the `count(true)` is the most responsible for the performance improvement, but you will also notice that the negative limit and specifying only the _id to return helps with the performance too. Performance improvements is usually a lot of minor milliseconds improvements.
+
+If you are using [Mongoid](http://mongoid.org/), you can add the `capped_count` to your Models.
+
+    class Notification
+      def self.capped_count(limit = -100)
+        self.limit(limit).only(:_id).count(true)
+      end
+    end
+
+    # Notification.where(account_id: '5371ec6869702d131d010000').capped_count
+
+
 ## WARNING: Collection names should not begin with underscores
 
 If you are using one of the most advanced backup techniques which consists in renaming collections with a underscore prefix, you should beware of that.
