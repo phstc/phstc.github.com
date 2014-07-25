@@ -9,7 +9,7 @@ Is it one more post about MongoDB thoughts? Yes, it is: Pablo's adventures in Mo
 
 ## Primary key on steroids
 
-MongoDB's primary key `_id` by default is an [ObjectId](http://docs.mongodb.org/manual/reference/object-id/), which is automatically added to your documents while inserting them into a collection. 
+MongoDB's primary key `_id` by default is an [ObjectId](http://docs.mongodb.org/manual/reference/object-id/), which is automatically added to your documents while inserting them into a collection.
 
 But you can also set your own `_id` if you want.
 
@@ -17,7 +17,7 @@ But you can also set your own `_id` if you want.
 
 Have the ability of writing your own `_id` can be very useful. We have an internal system which uses MongoDB as a queue database. When we move messages across the queues, we preserve the original `_id`.
 
-    // find a message to be processed 
+    // find a message to be processed
     message = db.incoming.find_one({ _id: ObjectId("52f578c1ecf69b714400004a") })
 
     // some processing
@@ -44,7 +44,7 @@ So the message will have the same `_id` no matter where it is sitting on.
 >
 > a 3-byte counter, starting with a random value.
 
-**a 4-byte value representing the seconds since the Unix epoch** means `created_at` field for free! Which we can use to sort, search and retrieve the creation date. 
+**a 4-byte value representing the seconds since the Unix epoch** means `created_at` field for free! Which we can use to sort, search and retrieve the creation date.
 
 #### Sort by _id
 
@@ -114,7 +114,7 @@ Pretty fast, hum?
 
 * `limit(-100)` - a negative limit will ask [MongoDB to return that number and close the cursor](http://docs.mongodb.org/manual/reference/method/cursor.limit/).
 
-* `only(:_id)` - returns only the _id. 
+* `only(:_id)` - returns only the _id.
 
 For sure the `count(true)` is the most responsible for the performance improvement, but you will also notice that the negative limit and specifying only the _id to return helps with the performance too. Performance improvements is usually a lot of minor milliseconds improvements.
 
@@ -128,6 +128,9 @@ If you are using [Mongoid](http://mongoid.org/), you can add the `capped_count` 
 
     # Notification.where(account_id: '5371ec6869702d131d010000').capped_count
 
+## mongorestore --drop
+
+Use `--drop` for a full restore. By default the [mongorestore](http://docs.mongodb.org/manual/reference/program/mongorestore/) utility only inserts documents. Any existing data in the target database will be left intact. The `--drop` option drops every collection from the target database before restoring the collection from the dumped backup.
 
 ## WARNING: Collection names should not begin with underscores
 
@@ -167,7 +170,7 @@ Short-term solution:
 
     rm  /usr/local/var/log/mongodb/mongo.log
 
-Long-term solution: 
+Long-term solution:
 
 Edit your `/usr/local/etc/mongod.conf` and enable [Syslog Rotation](http://docs.mongodb.org/manual/tutorial/rotate-log-files/#syslog-log-rotation):
 
@@ -196,8 +199,8 @@ Save all messages to system.log:
 Then reload the syslogd configuration:
 
     pkill -HUP -f syslogd
-     
-### Local databases 
+
+### Local databases
 
 Check your local databases you might have some which you don't use anymore.
 
