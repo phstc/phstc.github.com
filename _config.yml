@@ -2,7 +2,7 @@
 # For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink: /blog/:categories/:year/:month/:day/:title
 
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+exclude: ['.rvmrc', '.rbenv-version', 'README.md', 'Rakefile', 'changelog.md']
 highlighter: pygments
 markdown: rdiscount
 
@@ -14,11 +14,11 @@ tagline: São Paulo, Brasil
 author:
   name: Pablo Cantero
   email: pablo@pablocantero.com
-  email_encoded: "&#112;&#097;&#098;&#108;&#111;&#064;&#112;&#097;&#098;&#108;&#111;&#099;&#097;&#110;&#116;&#101;&#114;&#111;&#046;&#099;&#111;&#109;"
+  email_encoded: '&#112;&#097;&#098;&#108;&#111;&#064;&#112;&#097;&#098;&#108;&#111;&#099;&#097;&#110;&#116;&#101;&#114;&#111;&#046;&#099;&#111;&#109;'
   github: phstc
   twitter: pablocantero
   linkedin: pablocantero
-  googleplus: 103130216786674277351
+  googleplus: '103130216786674277351'
   feedburner: pablocantero
 
 # The production_url is only used when full-domain names are needed
