@@ -11,7 +11,7 @@ This post is an example of an Asynchronous POST using RESTful. I chose this exam
 
 ## Introduction
 
-The Asynchronous POST will be used on this example to create an invitation to a friend. Typically used on social networks. This operation must be async, because users can't wait its completion.
+The Asynchronous POST will be used on this example is to create a new product in an external application "ABCSuite". This operation needs to be async, because it can take long to complete.
 
 Mapping resources and operations in RESTful is typically done by using nouns as resources and verbs (HTTP) as operations, similar to the technique used in OOP mapping.
 
@@ -22,86 +22,86 @@ Although RESTful hasn't an official standard for HTTP verbs into operations. We 
 * Update = PUT
 * Delete = DELETE
 
-## Create an invitation
+## Create a product
 
     # REQUEST
-    POST /invitation HTTP/1.1
-    Host: www.example.org
+    POST /products HTTP/1.1
+    Host: www.abcsuite.com
     Content-Type: application/json
     
     {
-      "from": "flanders@simpsons.com",
-      "to": "homer@simpsons.com",
-      "message": "Okilly-dokilly!"
+      "id": "1",
+      "name": "Awesome Product",
+      "price": 1.00
     }
     
     # RESPONSE
     HTTP/1.1 202 Accepted
     Content-Type: application/json
-    Content-Location: http://www.example.org/invitations/tasks/1
+    Content-Location: http://www.abcsuite.com/products/tasks/1
     Date: Mon, 4 July 2011 17:25:10 GMT
     
     {
       "status": "pending"
       "links": [
          "rel": "self"
-         "href": "http://www.example.org/invitations/tasks/1"
+         "href": "http://www.abcsuite.com/products/tasks/1"
        ]
     }
 
 ### Content-Type: application/json
 
-I didn't specify the charset, because JSON uses [UTF-8 by default](http://www.ietf.org/rfc/rfc4627.txt).
+The charset wasn't explicitly specified, because JSON uses [UTF-8 by default](http://www.ietf.org/rfc/rfc4627.txt).
 
 ### HTTP/1.1 202 Accepted
 
-The response `202 Accepted` was used to represent that the operation wasn't completed yet. The operation was only accepted, kind of "We are working on it. Come back later".
+The response `202 Accepted` was used to represent that the operation wasn't completed yet. The operation was only accepted - "We are working on it. Check it later".
 
-## Checking the invitation status
+## Checking the production creation status
 
-By using the previous `link rel` received in the last response, we can check the invitation status.
+By using the previous `link rel` received in the last response, we can check the production creation status.
 
     # REQUEST
-    GET /invitations/tasks/1 HTTP/1.1
-    Host: www.example.org
+    GET /products/tasks/1 HTTP/1.1
+    Host: www.abcsuite.com
     
     # RESPONSE
     HTTP/1.1 200 OK
     Content-Type: application/json
-    Content-Location: http://ww.example.org/invitations/tasks/1
+    Content-Location: http://ww.abcsuite.com/products/tasks/1
     Date: Mon, 4 July 2011 17:25:10 GMT
     
     {
       "status": "pending"
       "links": [
          "rel": "self"
-         "href": "http://ww.example.org/invitations/tasks/1"
+         "href": "http://ww.abcsuite.com/products/tasks/1"
        ]
     }
 
-The response code above was `200 OK`, because the operation "Checking the invitation status" was completed.
+The response code above was `200 OK`, because the operation "Checking the product creation status" was completed.
 
 ## The server successfully completes the processing
 
     # REQUEST
-    GET /invitations/tasks/1 HTTP/1.1
-    Host: www.example.org
+    GET /products/tasks/1 HTTP/1.1
+    Host: www.abcsuite.com
     
     # RESPONSE
     HTTP/1.1 302 See Other
     Content-Type: application/json
-    Location: http://ww.example.org/invitations/1
-    Content-Location: http://ww.example.org/invitations/taks/1
+    Location: http://ww.abcsuite.com/products/1
+    Content-Location: http://ww.abcsuite.com/products/taks/1
     Date: Mon, 4 July 2011 17:25:10 GMT
     
     {
       "status": "done"
       "links": [
          "rel": "self"
-         "href": "http://ww.example.org/invitations/1"
+         "href": "http://ww.abcsuite.com/products/1"
        ]
     }
 
-After the server completes the processing, the response code will be `303 See Other` and the `Content-Location` header will contain the url to access the generated invitation.
+After the server completes the processing, the response code will be `303 See Other` and the `Content-Location` header will contain the url to access the created product.
 
 
