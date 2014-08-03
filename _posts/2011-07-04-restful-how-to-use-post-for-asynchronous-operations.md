@@ -1,7 +1,7 @@
 --- 
 layout: post
 title: "RESTful: How to use POST for Asynchronous operations"
-tags: [English posts, RESTful]
+tags: [RESTful]
 ---
 {% include JB/setup %}
 
@@ -11,11 +11,9 @@ This post is an example of an Asynchronous POST using RESTful. I chose this exam
 
 ## Introduction
 
-The Asynchronous POST will be used on this example to create an invitation to a friend. Typically used on social networks. This operation must be async, users can't wait for the operation to complete.
+The Asynchronous POST will be used on this example to create an invitation to a friend. Typically used on social networks. This operation must be async, because users can't wait its completion.
 
-The are many ways to use async operations that fit in our case, for example using [Resque](https://github.com/blog/542-introducing-resque) and [JMS](http://en.wikipedia.org/wiki/Java_Message_Service) etc. These tools will not be covered on this post.
-
-Mapping resources and operations in RESTful is done by using nouns as resources and verbs (HTTP) as operations, similar to the technique used in OOP mapping.
+Mapping resources and operations in RESTful is typically done by using nouns as resources and verbs (HTTP) as operations, similar to the technique used in OOP mapping.
 
 Although RESTful hasn't an official standard for HTTP verbs into operations. We will follow the convention below to operate the resources.
 
@@ -81,7 +79,7 @@ By using the previous `link rel` received in the last response, we can check the
        ]
     }
 
-Even though the invitation wasn't sent yet, the response code was `200 OK`, because the operation "Checking the invitation status" was completed. It isn't a pending operation.
+The response code above was `200 OK`, because the operation "Checking the invitation status" was completed.
 
 ## The server successfully completes the processing
 
