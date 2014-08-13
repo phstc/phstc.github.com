@@ -1,13 +1,7 @@
---- 
+---
 layout: post
 title: isFollowing Bookmarklet - Who is following who?
-tags: 
-- Bookmarklet
-- English posts
-- JavaScript
-- Twitter
 ---
-{% include JB/setup %}
 
 
 Have you ever wanted to check if a twitter profile is following another twitter profile, this bookmarklet can help you.

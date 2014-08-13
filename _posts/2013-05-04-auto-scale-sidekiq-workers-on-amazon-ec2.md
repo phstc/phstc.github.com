@@ -1,9 +1,7 @@
 ---
 layout: post
-title: "Auto scale Sidekiq workers on Amazon EC2"
-tags: [Sidekiq, Auto Scaling, CloudWatch]
+title: Auto scale Sidekiq workers on Amazon EC2
 ---
-{% include JB/setup %}
 
 We use [Sidekiq](https://github.com/mperham/sidekiq) to process messages from images conversion to shipping tickets' generation.
 
@@ -48,9 +46,9 @@ To trigger your Scale Up/Down policies based on the Queue Size, you have to publ
     require "aws-sdk"
     class QueueSizeMetric
       def initialize
-        AWS.config access_key_id: "…", secret_access_key: "…" 
+        AWS.config access_key_id: "…", secret_access_key: "…"
       end
-  
+
       def put
         metric = AWS::CloudWatch::Metric.new "Worker", "QueueSize"
         size   = SidekiqMetric.new.queue_size
@@ -73,15 +71,15 @@ We use the [whenever gem](https://github.com/javan/whenever) to create a cron jo
     task :update_queue_size_metric do
       QueueSizeMetric.new.put
     end
-    
-Another options is to use a worker to update the metrics. 
+
+Another options is to use a worker to update the metrics.
 
     # app/workers/queue_size_metric_worker.rb
     class QueueSizeMetricWorker
       include Sidekiq::Worker
-      
+
       def perform
         QueueSizeMetric.new.put
-        QueueSizeMetricWorker.perform_in 1.minute 
+        QueueSizeMetricWorker.perform_in 1.minute
       end
     end

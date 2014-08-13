@@ -1,12 +1,7 @@
---- 
-layout: post
-title: "Ler excel com Java usando o JExcelApi"
-tags: 
-- Java
-- JExcelApi
-- POI
 ---
-{% include JB/setup %}
+layout: post
+title: Ler excel com Java usando o JExcelApi
+---
 
 Esse post é uma continuação do post [Upload com Spring MVC](http://pablocantero.com/blog/2010/09/29/upload-com-spring-mvc), pois além do upload eu precisava ler o Excel e adicionar as informações no Banco de Dados.
 
@@ -36,9 +31,9 @@ Escrever o código para ler o Excel. No caso estou usando a action de upload do 
      MultipartFile multipartFile = multipartRequest.getFile("file");
      Workbook workbook = Workbook
      .getWorkbook(multipartFile.getInputStream());
-    
+
      Sheet sheet = workbook.getSheet("Nome da planilha");
-    
+
      for (int i = 0; i < sheet.getRows(); i++) {
     for(int j = 0; j < sheet.getColumns(); j++){
     Cell celulaJ = sheet.getCell(j, i);
@@ -46,7 +41,7 @@ Escrever o código para ler o Excel. No caso estou usando a action de upload do 
     .println("Conteúdo da célula " + j + ": " + celularJ.getContents());
     }
      }
-    
+
      return "redirect:upload-success";
      }
 

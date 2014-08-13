@@ -1,9 +1,7 @@
 ---
 layout: post
-title: "Use Capybara!"
-tags: [Rails, Capybara, RSpec]
+title: Use Capybara!
 ---
-{% include JB/setup %}
 
 Aplicações não podem falhar, um usuário não pode clicar em algo e receber um erro. Principalmente em aplicações web abertas. Imaginem uma busca no Google retornando "500 Internal Server Error".
 
@@ -62,10 +60,10 @@ Teste de login usando Capybara.
         fill_in "user[email]",                 with: user.email
         fill_in "user[password]",              with: password
         click_button "user_submit"
-        current_path.should == corridas_proximas_path  
+        current_path.should == corridas_proximas_path
       end
     end
-    
+
     describe "Login sem sucesso", :type => :request do
       it "login sem sucesso deve voltar para a página de login" do
         visit new_user_session_path

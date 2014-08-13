@@ -1,9 +1,7 @@
---- 
-layout: post
-title: "RESTful: How to use POST for Asynchronous operations"
-tags: [RESTful]
 ---
-{% include JB/setup %}
+layout: post
+title: RESTful: How to use POST for Asynchronous operations
+---
 
 I'm writing this post inspired by the book [RESTful Web Services Cookbook](http://www.amazon.com/dp/0596801688/). This book has many useful examples on how to use [RESTful Web Services](http://en.wikipedia.org/wiki/Representational_State_Transfer#RESTful_web_services). If you are looking for a book on RESTFul I highly recommend this book.
 
@@ -28,19 +26,19 @@ Although RESTful hasn't an official standard for HTTP verbs into operations. We 
     POST /products HTTP/1.1
     Host: www.abcsuite.com
     Content-Type: application/json
-    
+
     {
       "id": "1",
       "name": "Awesome Product",
       "price": 1.00
     }
-    
+
     # RESPONSE
     HTTP/1.1 202 Accepted
     Content-Type: application/json
     Content-Location: http://www.abcsuite.com/products/tasks/1
     Date: Mon, 4 July 2011 17:25:10 GMT
-    
+
     {
       "status": "pending"
       "links": [
@@ -64,13 +62,13 @@ By using the previous `link rel` received in the last response, we can check the
     # REQUEST
     GET /products/tasks/1 HTTP/1.1
     Host: www.abcsuite.com
-    
+
     # RESPONSE
     HTTP/1.1 200 OK
     Content-Type: application/json
     Content-Location: http://ww.abcsuite.com/products/tasks/1
     Date: Mon, 4 July 2011 17:25:10 GMT
-    
+
     {
       "status": "pending"
       "links": [
@@ -86,14 +84,14 @@ The response code above was `200 OK`, because the operation "Checking the produc
     # REQUEST
     GET /products/tasks/1 HTTP/1.1
     Host: www.abcsuite.com
-    
+
     # RESPONSE
     HTTP/1.1 302 See Other
     Content-Type: application/json
     Location: http://ww.abcsuite.com/products/1
     Content-Location: http://ww.abcsuite.com/products/taks/1
     Date: Mon, 4 July 2011 17:25:10 GMT
-    
+
     {
       "status": "done"
       "links": [

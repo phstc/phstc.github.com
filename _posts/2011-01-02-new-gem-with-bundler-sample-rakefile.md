@@ -1,9 +1,7 @@
 ---
 layout: post
 title: New Gem with Bundler - Sample Rakefile
-tags: [Bundler, English posts, Gem, Rakefile, Ruby]
 ---
-{% include JB/setup %}
 
 This post is an extension of the Ryan Bates post [New Gem with Bundler](http://railscasts.com/episodes/245-new-gem-with-bundler).
 

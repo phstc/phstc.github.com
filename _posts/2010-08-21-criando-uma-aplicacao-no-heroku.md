@@ -1,9 +1,7 @@
---- 
-layout: post
-title: "Criando uma aplicação no Heroku"
-tags: [Heroku, Rails, Ruby]
 ---
-{% include JB/setup %}
+layout: post
+title: Criando uma aplicação no Heroku
+---
 
 ## Breve introdução
 

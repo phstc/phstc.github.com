@@ -1,16 +1,14 @@
---- 
-layout: post
-title: "Guia rápido de configuração do Cucumber"
-tags: [BDD, Cucumber, Rails]
 ---
-{% include JB/setup %}
+layout: post
+title: Guia rápido de configuração do Cucumber
+---
 
 <del>Os passos desses post foram utilizados no projeto [click-anywhere-to-leave-a-message.com](http://click-anywhere-to-leave-a-message.com), disponível para download no [GitHub](http://github.com/phstc/click-anywhere-to-leave-a-message.com).</del>
- 
+
 [Cucumber](http://cukes.info/) é um framework de [Behavior Driven Development](http://en.wikipedia.org/wiki/Behavior_Driven_Development) (BDD), que permite a criação de testes automatizados por comportamento usando uma linguagem mais natural chamada [Gherkin](https://github.com/aslakhellesoy/cucumber/wiki/Gherkin).
 
 > Cucumber lets software development teams describe how software should behave in plain text. The text is written in a business-readable domain-specific language and serves as documentation, automated tests and development-aid - all rolled into one format.
- 
+
 A instalação do Cucumber deve ser seguida pela url oficial do projeto [Cucumber Ruby on Rails](http://wiki.github.com/aslakhellesoy/cucumber/ruby-on-rails).
 
 ## Adicionando o Cucumber em um projeto Rails
@@ -35,7 +33,7 @@ A primeira feature será a `messages.feature`, que descreverá as funcionalidade
     In order to create a new message
     As an author
     I want to create and manage messages
-    
+
     Scenario: List messages
     Given that I have created a message "Olá, essa é a minha primeira mensagem" at position "0", "0"
     When I go to the homepage
@@ -51,9 +49,9 @@ Ao executar pela primeira vez os testes o Cucumber retornará:
     1 scenario (1 undefined)
     3 steps (2 skipped, 1 undefined)
     0m0.109s
-    
+
     You can implement step definitions for undefined steps with these snippets:
-    
+
     Given /^that I have created a message "([^\"]*)" at position "([^\"]*)", "([^\"]*)"$/ do |arg1, arg2, arg3|
      pending # express the regexp above with the code you wish you had
     end

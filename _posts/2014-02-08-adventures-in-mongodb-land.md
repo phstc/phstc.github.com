@@ -1,9 +1,7 @@
 ---
 layout: post
-title: "[WIP] Adventures in MongoDB land"
-tags: [MongoDB]
+title: [WIP] Adventures in MongoDB land
 ---
-{% include JB/setup %}
 
 Is it one more post about MongoDB thoughts? Yes, it is: Pablo's adventures in MongoDB-land™.
 

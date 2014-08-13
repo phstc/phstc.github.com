@@ -1,12 +1,7 @@
---- 
+---
 layout: post
 title: Adding images to iPhone Simulator
-tags: 
-- English posts
-- iPhone simulator
-- Titanium
 ---
-{% include JB/setup %}
 
 This post is based on this thread "[Adding images to iPhone Simulator](http://stackoverflow.com/questions/468879/adding-images-to-iphone-simulator/)" on [Stack Overflow](http://stackoverflow.com/).
 

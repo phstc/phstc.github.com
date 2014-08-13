@@ -1,12 +1,7 @@
---- 
-layout: post
-title: "Criação de Virtual Hosts: MAMP + Apache + Hosts"
-tags: 
-- Apache
-- MAMP
-- Virtual Hosts
 ---
-{% include JB/setup %}
+layout: post
+title: Criação de Virtual Hosts: MAMP + Apache + Hosts
+---
 
 O acrônimo [MAMP](http://www.mamp.info) é um programa free para o Mac OSX que instala e configura automáticamente o Apache, MySQL, PHP e phpMyAdmin.
 
@@ -40,17 +35,17 @@ Feito isso o MAC irá resolver [projeto1.local](http://projeto1.local) como [127
 Para adicionar o Virtual Host basta adicionar no ```/Applications/MAMP/conf/apache/httpd.conf``` as entradas abaixo.
 
     NameVirtualHost *
-    
+
     <VirtualHost *>
      DocumentRoot "/Applications/MAMP/htdocs"
      ServerName localhost
     </VirtualHost>
-    
+
     <VirtualHost *>
      DocumentRoot "/Users/pablo/workspace/projeto1"
      ServerName projeto1
     </VirtualHost>
-    
+
     <VirtualHost *>
      DocumentRoot "/Users/pablo/workspace/projeto2"
      ServerName projeto2

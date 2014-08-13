@@ -1,8 +1,6 @@
---- 
+---
 layout: post
 title: Publicando um web service JAX-WS + Spring MVC 3
-tags: 
-- JAX-WS
 ---
 Em continuação aos posts [Guia prático do QuickBooks Web Connector com Java](http://pablocantero.com/blog/2010/08/17/guia-pratico-do-quickbooks-web-connector-com-java/) e [SpringSource Tools Suite – E não é que é bom](http://pablocantero.com/blog/2010/08/27/springsource-tools-suite-e-nao-e-que-e-bom/), vou apresentar uma forma fácil de integrar os Web Services gerados com o [wsimport](https://jax-ws.dev.java.net/jax-ws-ea3/docs/wsimport.html) com o Spring MVC 3, criando um projeto do ZERO, utilizando o template "Spring MVC Project" do SpringSource Tools Suite.
 
@@ -31,9 +29,9 @@ Vamos criar uma nova classe para implementar a interface QBWebConnectorSvcSoap c
 Após criada a classe basta adicionar as anotações [JAX-WS](http://jax-ws.java.net/).
 
     package com.cantero.teste_ws.ws;
-    
+
     import javax.jws.WebService;
-    
+
     @WebService(serviceName = "QBWebConnectorSvcSoapImpl",
      endpointInterface = "com.cantero.teste_ws.ws.QBWebConnectorSvcSoap")
     public class QBWebConnectorSvcSoapImpl implements QBWebConnectorSvcSoap {
@@ -47,7 +45,7 @@ Adicionando as definições do Web Service gerado no arquivo app-config.xml gera
     <bean>
      <property name="baseAddress" value="http://192.168.0.137:9801/" />
     </bean>
-    
+
     <bean id="QBWebConnectorSvcSoapImpl"
      class="com.cantero.teste_ws.ws.QBWebConnectorSvcSoapImpl" />
 

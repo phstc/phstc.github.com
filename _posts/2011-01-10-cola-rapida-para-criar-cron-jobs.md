@@ -1,12 +1,7 @@
---- 
-layout: post
-title: "Cola rápida para criar Cron Jobs"
-tags: 
-- CentOS
-- Cron
-- Crontabs
 ---
-{% include JB/setup %}
+layout: post
+title: Cola rápida para criar Cron Jobs
+---
 
 As instruções abaixo são baseados no linux [CentOS](http://en.wikipedia.org/wiki/Centos).
 
@@ -59,7 +54,7 @@ Essa configuração fica no arquivo /etc/crontab.
     PATH=/sbin:/bin:/usr/sbin:/usr/bin
     MAILTO=root
     HOME=/
-    
+
     # run-parts
     21 * * * * root run-parts /etc/cron.hourly
     35 1 * * * root run-parts /etc/cron.daily

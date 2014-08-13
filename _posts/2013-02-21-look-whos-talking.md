@@ -1,9 +1,7 @@
 ---
 layout: post
-title: "Look Who's Talking"
-tags: [Twilio, CaaS]
+title: Look Who's Talking
 ---
-{% include JB/setup %}
 
 ![Look who's talking](/assets/images/posts/look-who-is-talking.jpg)
 
@@ -34,7 +32,7 @@ We decided to use a Communication as a Service (CaaS) to register a fixed phone 
 
 ### Voip
 
-The standard Voip services that we evaluated, even though they allow to register a fixed phone number in Brazil and redirect the calls, don't allow to change the redirect target number via API. We would have to access their control panel weekly and configure the new redirect target number. As developers, we want to schedule the support agenda and have an app that will notify the new developer on duty and make the redirects. 
+The standard Voip services that we evaluated, even though they allow to register a fixed phone number in Brazil and redirect the calls, don't allow to change the redirect target number via API. We would have to access their control panel weekly and configure the new redirect target number. As developers, we want to schedule the support agenda and have an app that will notify the new developer on duty and make the redirects.
 
 ## Why Twilio?
 
@@ -83,7 +81,7 @@ An usual usage of Pingdom is to use it only to monitor uptime, basically to noti
 #### Monit script
 
     # /etc/monitrc
-    
+
     check host rexnuke with address 127.0.0.1
       if failed port 8080
        with timeout 15 seconds
@@ -95,12 +93,12 @@ An usual usage of Pingdom is to use it only to monitor uptime, basically to noti
     # /usr/bin/notify-site-is-down.rb
     require "rubygems"
     require "twilio-ruby"
-    
+
     account_sid = "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     auth_token = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
-    
+
     @client = Twilio::REST::Client.new account_sid, auth_token
-    
+
     @client.account.sms.messages.create(
       from: "+5511…",
       to: "+5511…",
@@ -150,6 +148,6 @@ I also recommend you to have a look at Support Roulete [source code](https://git
 
 ## Twimlets
 
-[Twimlets](https://www.twilio.com/labs/twimlets) are tiny web applications that implement basic communication functionality, such as: [call forward](https://www.twilio.com/labs/twimlets/forward), [voicemail](https://www.twilio.com/labs/twimlets/voicemail) etc. 
+[Twimlets](https://www.twilio.com/labs/twimlets) are tiny web applications that implement basic communication functionality, such as: [call forward](https://www.twilio.com/labs/twimlets/forward), [voicemail](https://www.twilio.com/labs/twimlets/voicemail) etc.
 
 If you are in New York but you want a fixed number in Rio de Janeiro, you can easily create a Twilio account, configure a twimlet for a forward call and in less than 10 minutes everything will be working as expected. Awesome!

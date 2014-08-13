@@ -1,9 +1,7 @@
 ---
 layout: post
-title: "Polymorphic associations com Rails"
-tags: [Polymorphic, Rails]
+title: Polymorphic associations com Rails
 ---
-{% include JB/setup %}
 
 
 ## Polymorphic associations

@@ -1,9 +1,7 @@
---- 
+---
 layout: post
 title: Guia para integrar o RCov com o Cucumber
-tags: [Code coverage, Cucumber, RCov, Ruby]
 ---
-{% include JB/setup %}
 
 Esse post é um guia rápido para integrar o [RCov](https://github.com/relevance/rcov) com o [Cucumber](http://cukes.info/). O RCov é uma ferramenta para gerar relatórios de [cobertura de testes](http://en.wikipedia.org/wiki/Code_coverage).
 

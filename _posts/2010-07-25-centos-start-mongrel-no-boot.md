@@ -1,10 +1,6 @@
---- 
+---
 layout: post
 title: CentOS start Mongrel no boot
-tags: 
-- CentOS
-- Mongrel
-- Rails
 ---
 
 Este post detalha os passos para iniciar, parar ou reiniciar uma aplicação Rails no CentOS.
@@ -29,19 +25,19 @@ Esse arquivo deve ser criado ou ter um link simbólico em `/etc/init.d/ror`.
     #
     # chkconfig: 2345 82 82
     # description: ror
-    
+
     function start_rails(){
      echo "Starting app/current";
      cd "/home/user/rails_apps/app/current";
      mongrel_rails start -e production -p 12006 -d;
     }
-    
+
     function stop_rails(){
      echo "Stopping app/current";
      cd "/home/user/rails_apps/app/current";
      mongrel_rails stop;
     }
-    
+
     case "$1" in
      start)
        start_rails;

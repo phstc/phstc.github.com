@@ -1,17 +1,14 @@
---- 
+---
 layout: post
 title: Equal, equal ou equal, equal, equal
-tags: 
-- JavaScript
 ---
-{% include JB/setup %}
 
-##É igual, mas é diferente
+## É igual, mas é diferente
 
 [JavaScript](http://pt.wikipedia.org/wiki/JavaScript) permite comparar a igualdade de valores usando ==, ===, !==, !===. Esses operadores podem ter um comportamento igual em muitos casos, porém possuem uma sutil diferença que pode gerar muita dor de cabeça.
 <!--more-->
 
-##Equal, equal
+## Equal, equal
 
 Os operadores == e != fazem a comparação **sem checagem de tipo**.
 
@@ -22,7 +19,7 @@ Os operadores == e != fazem a comparação **sem checagem de tipo**.
       // Vai passar por aqui
     }
 
-##Equal, equal, equal
+## Equal, equal, equal
 
 Os operadores === e !=== fazem a comparação **com a checagem de tipo**.
 
@@ -33,7 +30,7 @@ Os operadores === e !=== fazem a comparação **com a checagem de tipo**.
       // Não vai passar por aqui
     }
 
-##Sutil diferença
+## Sutil diferença
 
 Nos exemplos acima provavelmente não teremos nenhum problema, porém temos que levar em consideração algumas peculiaridades do JavaScript.
 
@@ -86,7 +83,7 @@ Para evitarmos esse tipo de comportamento podemos fazer a comparação com checa
       // Não vai vai passar por aqui
     }
 
-##Conclusão
+## Conclusão
 
 Segundo Douglas Crockford's o autor do livro [O melhor do JavaScript](http://www.submarino.com.br/produto/1/21471189/melhor+do+javascript,+o).
 

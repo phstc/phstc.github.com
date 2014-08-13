@@ -1,9 +1,7 @@
---- 
-layout: post
-title: "Criação de urls amigáveis com Rails"
-tags: [Friendly url, Slug, Rails]
 ---
-{% include JB/setup %}
+layout: post
+title: Criação de urls amigáveis com Rails
+---
 
 ## Atualização do post 18/03/2012
 
@@ -23,7 +21,7 @@ O parameterize é um método adicionado diretamente na classe String.
             "#{id}-#{name.parameterize}"
         end
     end
-    
+
     Product.create(:name => "Produto Amigável") # Product#1
     product_path(product_1) # /products/1-produto-amigavel
     Product.find("1-produto-amigavel") # Product#1

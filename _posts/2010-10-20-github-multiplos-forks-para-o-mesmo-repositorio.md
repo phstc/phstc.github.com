@@ -1,10 +1,7 @@
---- 
-layout: post
-title: "GitHub - Múltiplos forks para o mesmo repositório"
-tags: 
-- GitHub
 ---
-{% include JB/setup %}
+layout: post
+title: GitHub - Múltiplos forks para o mesmo repositório
+---
 
 No GitHub não é possível fazer vários forks de um mesmo projeto.
 
@@ -16,7 +13,7 @@ Uma forma de simular isso é com branches.
 
 ##Motivação
 
-Fiz um [fork](http://help.github.com/forking/) de um projeto onde fiz muitas alterações, algumas eram interessantes para um [pull request](http://help.github.com/pull-requests/) e outras eram interessantes só para mim. 
+Fiz um [fork](http://help.github.com/forking/) de um projeto onde fiz muitas alterações, algumas eram interessantes para um [pull request](http://help.github.com/pull-requests/) e outras eram interessantes só para mim.
 
 Pensei em fazer um segundo fork e subir as alterações para o pull request nesse novo fork. Porém isso não é possível.
 

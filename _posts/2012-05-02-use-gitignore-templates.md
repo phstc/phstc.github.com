@@ -1,11 +1,7 @@
 ---
 layout: post
-title: "Use .gitignore templates!"
-tags:
-- Git
-- Gitignore
+title: Use .gitignore templates!
 ---
-{% include JB/setup %}
 
 Com o tempo acabamos criando alguns arquivos [.gitignore](http://help.github.com/ignore-files) de acordo com o environment que trabalhamos. Geralmente quando eu inicio um novo projeto eu copio o .gitignore de um projeto similar que eu já trabalhei.
 
@@ -20,7 +16,7 @@ O projeto contém vários templates de arquivos .gitignore por tipo de projeto/f
 [Java.gitignore](https://github.com/github/gitignore/blob/master/Java.gitignore)
 
     *.class
-    
+
     # Package Files #
     *.jar
     *.war
@@ -31,10 +27,10 @@ Os arquivos .gitignore globais ficam separados na pasta [Global](https://github.
 [OSX.gitignore](https://github.com/github/gitignore/blob/master/Global/OSX.gitignore)
 
     .DS_Store
-    
+
     # Thumbnails
     ._*
-    
+
     # Files that might appear on external disk
     .Spotlight-V100
     .Trashes

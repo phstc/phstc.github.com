@@ -1,9 +1,7 @@
---- 
-layout: post
-title: "Tag Files - E não é que é bom"
-tags: [Java, JSP, JSTL, Tag Files]
 ---
-{% include JB/setup %}
+layout: post
+title: Tag Files - E não é que é bom
+---
 
 
 Tag Files são uma forma rápida de encapsular conteúdos em páginas JSP. Elas são muito "mais fáceis" de implementar que uma tag library, mesmo que seja uma [javax.servlet.jsp.tagext.SimpleTagSupport](http://download-llnw.oracle.com/javaee/1.4/api/javax/servlet/jsp/tagext/SimpleTagSupport.html).

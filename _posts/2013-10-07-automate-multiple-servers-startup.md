@@ -1,9 +1,7 @@
 ---
 layout: post
-title: "Automate multiple servers startup"
-tags: [Foreman, Tmuxinator]
+title: Automate multiple servers startup
 ---
-{% include JB/setup %}
 
 So, do you need to startup multiple servers or services to start your development environment? I do!
 
@@ -43,21 +41,21 @@ I show the `tmuxinator project name/pane title:window number` in [my left status
 
     # tmux.conf
     set -g status-utf8 on
-    
+
     # status line left side
     set -g status-left-length 40
     set -g status-left "#[bold,fg=green]#S/#T:#[fg=yellow]#I"
-    
+
     # set -g status-left-length 100
     # set -g status-left '#[fg=green] #T#[default]'
-    
+
     # status line right side
     # 15% | 28 Nov 08:15AM
     set -g status-right "#[bg=colour251,fg=colour240]%I:%M%p #[bg=colour240,fg=colour251] %d %b"
-    
+
     # update the status bar every sixty seconds
     set -g status-interval 30
-    
+
     # center the window list
     set -g status-justify centre
 

@@ -1,12 +1,7 @@
---- 
+---
 layout: post
 title: Scroll it - A Javascript bookmarklet to automatically scroll the page
-tags: 
-- Bookmarklet
-- English posts
-- JavaScript
 ---
-{% include JB/setup %}
 
 
 Have you ever had trouble when trying to play a song in your guitar when reading the chords from a web site? Don't you always need to stop playing to scroll the page?

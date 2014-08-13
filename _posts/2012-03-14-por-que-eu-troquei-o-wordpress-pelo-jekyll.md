@@ -1,9 +1,7 @@
 ---
 layout: post
-title: "Por que eu troquei o WordPress pelo Jekyll?"
-tags: [Jekyll, WordPress]
+title: Por que eu troquei o WordPress pelo Jekyll?
 ---
-{% include JB/setup %}
 
 Eu já estava utilizando o [WordPress](http://wordpress.org/) (WP) desde o meu primeiro post que foi em [22/07/2010](http://pablocantero.com/blog/2010/07/22/guia-rapido-de-configuracao-do-cucumber/). Não tenho muitas críticas ao WP, ele funciona bem. O principal motivo para migrar para o  [Jekyll](https://github.com/mojombo/jekyll) foi pela simplicidade e redução custos.
 

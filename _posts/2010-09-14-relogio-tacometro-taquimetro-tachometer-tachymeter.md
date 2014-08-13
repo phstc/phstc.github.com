@@ -1,9 +1,7 @@
---- 
-layout: post
-title: "Relógio – tacômetro, taquímetro, tachometer, tachymeter?!?!"
-tags: [Tachometer, Tachymeter, Tacômetro, Taquímetro, Relógio]
 ---
-{% include JB/setup %}
+layout: post
+title: Relógio – tacômetro, taquímetro, tachometer, tachymeter?!?!
+---
 
 ## Atualização do post 21/03/2012
 
@@ -22,11 +20,11 @@ A pouco tempo voltei a me interessar por relógios, nada demais, só para usá-l
 Eu queria um relógio barato e que fosse versátil, esporte e clássico ao mesmo tempo. Encontrei o relógio Orient CEM65001B no site [askmen](http://www.askmen.com/fashion/trends_500/533b_watches-for-under-300-part-iii.html), aparentemente ideal para o que eu queria.
 
 > Orient CEM65001M
-> 
+>
 > ![Relógio Orient CEM65001B](/assets/images/posts/relogio-orient-cem65001b.jpg)
-> 
+>
 > Cost: $190
-> 
+>
 > What if you're looking for an everyday watch with an automatic movement  and a classic, sporty design? You can do no better than this  dive-inspired Orient. It features a solid Japanese automatic movement, a  [Rolex Submariner](http://www.askmen.com/fashion/watch/rolex-submariner-16800.html)-esque design and it’s rated to 200 meters.
 
 O modelo citado no askmen não é o CEM65001M (versão laranja) e sim CEM65001B (versão preta).

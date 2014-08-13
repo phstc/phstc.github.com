@@ -1,9 +1,7 @@
 ---
 layout: post
-title: "Use Auto Scaling, avoid Cloud Smells"
-tags: [AWS, Auto Scaling, Cloud Smells]
+title: Use Auto Scaling, avoid Cloud Smells
 ---
-{% include JB/setup %}
 
 A Cloud hosting has two main characteristics:
 
@@ -31,7 +29,7 @@ Traditional hosting typically charges by longer periods (monthly, semiannually, 
 
 ## Scale Resources up or down based on demand (Elastic Architecture)
 
-Elastic Architecture allows you to add or remove resources on demand. If your website needs more resources during the day you can scale up, but if at night it doesn't need these resources you can easily scale down. 
+Elastic Architecture allows you to add or remove resources on demand. If your website needs more resources during the day you can scale up, but if at night it doesn't need these resources you can easily scale down.
 
 Basically, if you have more than one instance, you should use Auto Scaling. Normal websites don't have the same traffic at night as during the day. If all of your instances are running 24x7, it probably means that your Cloud Smells.
 
@@ -79,7 +77,7 @@ For each deploy of your application, you should create a new and  fresh instance
 
 ### Logging
 
-An important advice is to use [Rsyslog](http://en.wikipedia.org/wiki/Rsyslog) or other similar tool. If you have more than one instance running, you will need a centralized logging system. 
+An important advice is to use [Rsyslog](http://en.wikipedia.org/wiki/Rsyslog) or other similar tool. If you have more than one instance running, you will need a centralized logging system.
 
 ### Scripting
 

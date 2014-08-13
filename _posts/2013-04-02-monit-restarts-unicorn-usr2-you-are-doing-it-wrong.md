@@ -1,9 +1,7 @@
 ---
 layout: post
-title: "Monit restarts Unicorn USR2 - You are doing it wrong"
-tags: [Monit, Unicorn]
+title: Monit restarts Unicorn USR2 - You are doing it wrong
 ---
-{% include JB/setup %}
 
 **TL;DR** Use Monit to `start` and `stop` Unicorn, if you want to graceful `restart`, do it outside Monit ([sample scripts](https://gist.github.com/phstc/5312520)).
 
@@ -58,7 +56,7 @@ My suggestion is to use Monit as is.
       start program = "/usr/bin/unicorn_start"
       stop program = "/usr/bin/unicorn_stop"
 
-### Ok ok… How about graceful restart? 
+### Ok ok… How about graceful restart?
 
 In most scenarios you only need graceful restart when:
 
@@ -68,7 +66,7 @@ In most scenarios you only need graceful restart when:
 
 #### Resource testing
 
-Beware of using Resource Testing. 
+Beware of using Resource Testing.
 
 Firstly, you can hide an internal problem. You don't need to be a hacker like the [Stripe guys](http://blog.nelhage.com/2013/03/tracking-an-eventmachine-leak/) going too deep to discover the cause of the memory leak, but you should, at least have a look at.
 

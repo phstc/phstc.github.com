@@ -1,9 +1,7 @@
 ---
 layout: post
-title: "Property files com PropertyPlaceholderConfigurer"
-tags: [Spring, PropertyPlaceholderConfigurer]
+title: Property files com PropertyPlaceholderConfigurer
 ---
-{% include JB/setup %}
 
 Os arquivos de propriedades são muito úteis para configurar variáveis de ambiente, parâmetros de inicialização etc. Quem nunca usou um [.properties](http://en.wikipedia.org/wiki/.properties)?!
 

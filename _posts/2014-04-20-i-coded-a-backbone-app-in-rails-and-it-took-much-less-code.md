@@ -1,15 +1,13 @@
 ---
 layout: post
-title: "I coded a Backbone App in Rails and it took much less code"
-tags: [SPA, Backbone, Rails]
+title: I coded a Backbone App in Rails and it took much less code
 ---
-{% include JB/setup %}
 
 **tl;dr** single-page applications are awesome and fast. But if you don't have a strong requirement to create a single-page application, don't do that. It will slow down your development time. You can rewrite your application to be a single-page application in the future as an improvement, but if you start it as a single-page application and you need to deliver fast, you can give a big headache to yourself and maybe need to rewrite it as a normal web application (in our case in Rails) to meet the deadlines.
 
 DISCLAIMER: Although the AngularJS first commit ([Jan 05, 2010](https://github.com/angular/angular.js/commit/c9c176a53b1632ca2b1c6ed27382ab72ac21d45d)) is older than the Backbone one ([Sep 30, 2010](https://github.com/jashkenas/backbone/commit/8a960b479859d343a6c734eb1a5817a2ff6c2b52)), for me, Backbone became a reference for MVW before AngularJS or any other, so that's why I'm referring to Backbone as the oldest one.
 
-Another day a friend of mine shared a post with me - "[I Coded the AngularJS Tutorial App in Backbone and it Took 260% More Code](http://blog.42floors.com/coded-angular-tutorial-app-backbone-took-260-code)". It is an interesting post showing that newer MVW frameworks such as AngularJS require less code to do the work than the "old ones" like Backbone. This comparison reminded me of a long time ago, in the Java world, the changes from HttpServlets (spaghetti servlets), then Struts (struts-config.xml), then Spring MVC (annotations) and so on. 
+Another day a friend of mine shared a post with me - "[I Coded the AngularJS Tutorial App in Backbone and it Took 260% More Code](http://blog.42floors.com/coded-angular-tutorial-app-backbone-took-260-code)". It is an interesting post showing that newer MVW frameworks such as AngularJS require less code to do the work than the "old ones" like Backbone. This comparison reminded me of a long time ago, in the Java world, the changes from HttpServlets (spaghetti servlets), then Struts (struts-config.xml), then Spring MVC (annotations) and so on.
 
 In my opinion it is the way to go. Backbone formalised a convention to write Rich Internet Application by creating "classes" with specific responsibilities, it uses Routes, Models, Collections, Views and Templates instead of spaghetti JavaScript with Ajax calls. But on the other hand you have to write all callbacks, bindings etc and it isn't magically implemented by a convention, like using data attributes (ng-*).
 
@@ -30,7 +28,7 @@ So, if you need to deliver fast, go with the language and tools you know more!
 ### Write everything twice
 
 For a normal Customer CRUD on Rails, you usually have:
- 
+
 * Customer Model
 * Customer Controller
 * Customer views: index.html.erb, show.html.erb, new.html.erb, show.html.erb and _form.html.erb
@@ -58,7 +56,7 @@ You have much more code and you can't reuse Rails helpers. You can try to use [j
 
 ### Everything will be an API
 
-Sometimes in Rails we write some very specific actions i.e. `PUT users/:id/bio`, because there is a specific page, which only updates the user bio and has some specific logic. As it is something internal, we don't mind the non-Restful like route, because it "isn't publicly exposed". But when we expose it as an API to access from Backbone, even though it isn't a real API, we can start overthinking on the "best fit" URL, nouns, verbs etc. 
+Sometimes in Rails we write some very specific actions i.e. `PUT users/:id/bio`, because there is a specific page, which only updates the user bio and has some specific logic. As it is something internal, we don't mind the non-Restful like route, because it "isn't publicly exposed". But when we expose it as an API to access from Backbone, even though it isn't a real API, we can start overthinking on the "best fit" URL, nouns, verbs etc.
 
 Sometimes it can be an anti-pattern, but who's never used a [helper_method](http://apidock.com/rails/ActionController/Helpers/ClassMethods/helper_method)? You can't use it anymore. If you want to, you will need to expose it as an API.
 
@@ -88,8 +86,8 @@ For those who are already working on a single-page application, do you feel conf
 
 Yes, they are awesome. I love when I'm using Gmail and it doesn't reload the page and also keeps the previous state. I can do things without Internet connection, because they are loaded in the browser.
 
-My point is just this: single-page applications frameworks/ecosystem aren't ready enough for everything; might be in the future, but for now it can be too expensive to develop and the users are more used to the UX of normal web applications than the single-page (desktop like) ones. You can't do the same UX for both. 
+My point is just this: single-page applications frameworks/ecosystem aren't ready enough for everything; might be in the future, but for now it can be too expensive to develop and the users are more used to the UX of normal web applications than the single-page (desktop like) ones. You can't do the same UX for both.
 
-You can rewrite your application to be a single-page application in the future, the bad is when you need to rollback to a normal one. If you start in Rails, you can rewrite one page then another and so on, but if you start a project only with the JavaScript ecosystem outside Ruby/Rails (it was our case), it will be hard to migrate to Rails smoothly. 
+You can rewrite your application to be a single-page application in the future, the bad is when you need to rollback to a normal one. If you start in Rails, you can rewrite one page then another and so on, but if you start a project only with the JavaScript ecosystem outside Ruby/Rails (it was our case), it will be hard to migrate to Rails smoothly.
 
 Something I did before, which worked great, was to develop just specific parts of the application with Backbone (can be any other MVW). For example, we developed a Store Palette Editor using Backbone Models and Views, without Routers and Templates. It worked great, we could use the Backbone convention for Models and Views, isolate the classes with specific responsibilities, the UX was great and it made the development faster and the code easier to test.

@@ -1,13 +1,11 @@
 ---
 layout: post
-title: "Mocha and subdirectories"
-tags: [Mocha, Node.js, English posts]
+title: Mocha and subdirectories
 ---
-{% include JB/setup %}
 
-So, did you run ```mocha``` and your tests under subdirectories of ```test/``` weren't executed? 
+So, did you run ```mocha``` and your tests under subdirectories of ```test/``` weren't executed?
 
-Don't worry, [you aren't alone](https://github.com/visionmedia/mocha/issues/106). 
+Don't worry, [you aren't alone](https://github.com/visionmedia/mocha/issues/106).
 
 It's an expected behaviour of mocha.
 
@@ -21,10 +19,10 @@ The [recommended approach](http://visionmedia.github.com/mocha/#best-practices) 
 
     # Makefile
     TESTS = $(shell find test -name "*test.js")
-    
+
     test:
       ./node_modules/.bin/mocha $(TESTS) --reporter list
-    
+
     .PHONY: test
 
 Then ```make test```.

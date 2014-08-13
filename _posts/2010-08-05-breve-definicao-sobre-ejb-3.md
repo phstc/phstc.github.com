@@ -1,9 +1,7 @@
---- 
-layout: post
-title: "Breve definição sobre EJB 3"
-tags: [EJB 3, JEE, JPA, JSE, MDB]
 ---
-{% include JB/setup %}
+layout: post
+title: Breve definição sobre EJB 3
+---
 
 
 EJB 3 classifica os beans em três tipos fundamentais, baseados no que eles fazem:

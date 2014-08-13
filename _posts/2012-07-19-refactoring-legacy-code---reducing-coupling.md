@@ -1,12 +1,7 @@
 ---
 layout: post
-title: "Refactoring Legacy Code - Reducing coupling"
-tags: 
-- Java
-- Refactory
-- English posts
+title: Refactoring Legacy Code - Reducing coupling
 ---
-{% include JB/setup %}
 
 I'm working in a Java Legacy Code and facing high coupling and low cohesion, kind of trivial problems in this scenario.
 
@@ -21,13 +16,13 @@ This post concerns about the baby steps that I used to refactor the code.
     	// ...
     	}
     }
-    
+
     public class OrderService {
     	public boolean delete(int id) {
     		return new OrderDAO().delete(id);
     	}
     }
-    
+
     public class OrderServiceTest {
     	@Test
     	public void shouldDeleteAnOrder() {
@@ -54,7 +49,7 @@ The test is an integration test, not unit test. To run it, I need to provide a d
     		return new OrderDAO();
     	}
     }
-    
+
     public class OrderServiceTest {
     	@Test
     	public void shouldDeleteAnOrder() {
@@ -86,7 +81,7 @@ Mockito has a convenient method called <a href="http://mockito.googlecode.com/sv
 
     public class OrderService {
     	private OrderDAO orderDAO;
-    
+
     	public OrderService() {
     		orderDAO = new OrderDAO();
     	}
@@ -97,7 +92,7 @@ Mockito has a convenient method called <a href="http://mockito.googlecode.com/sv
     		return orderDAO.delete(id);
     	}
     }
-    
+
     public class OrderServiceTest {
     	@Test
     	public void shouldDeleteAnOrder() {
@@ -115,16 +110,16 @@ A little bit better, still having a strong dependency of OrderDAO, but at least 
     public interface Persistable {
     	public boolean delete(int id);
     }
-    
+
     public class OrderDAO implements Persistable {
     	public boolean delete(int id) {
             // ...
     	}
     }
-    
+
     public class OrderService {
     	private Persistable orderDAO;
-    
+
     	public OrderService() {
     		orderDAO = new OrderDAO();
     	}
@@ -135,7 +130,7 @@ A little bit better, still having a strong dependency of OrderDAO, but at least 
     		return orderDAO.delete(id);
     	}
     }
-    
+
     public class OrderServiceTest {
     	@Test
     	public void shouldDeleteAnOrder() {

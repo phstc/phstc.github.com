@@ -1,11 +1,7 @@
---- 
+---
 layout: post
 title: Configurando o Meta description no WordPress
-tags: 
-- Meta description
-- WordPress
 ---
-{% include JB/setup %}
 
 Nem sei mais o quão importante são as tags de Meta description para indexação de conteúdo hoje em dia. Já vi sites bem posicionados que não usavam tags Meta description.
 

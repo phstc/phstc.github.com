@@ -1,15 +1,13 @@
---- 
-layout: post
-title: "Heroku + GitHub, ativar"
-tags: [Git, GitHub, Heroku]
 ---
-{% include JB/setup %}
+layout: post
+title: Heroku + GitHub, ativar
+---
 
 Esse post descreve como utilizar o Heroku e GitHub simultaneamente Quem se lembra do [Supergêmeos](http://pt.wikipedia.org/wiki/Superg%C3%AAmeos), ativar?
 
 ![Supergêmeos, ativar!](/assets/images/posts/supergemeos-ativar.jpg)
 
-A utilização simultânea do Heroku e GitHub é dada graças ao Git, pois ele permite trabalhar com mais de um server remoto (remote) por repositório. Para isso, após criar um repositório com o Heroku, basta adicionar o GitHub como remote ou vice-versa. 
+A utilização simultânea do Heroku e GitHub é dada graças ao Git, pois ele permite trabalhar com mais de um server remoto (remote) por repositório. Para isso, após criar um repositório com o Heroku, basta adicionar o GitHub como remote ou vice-versa.
 
 ## Heroku + GitHub, ativar
 
@@ -25,7 +23,7 @@ Quando executamos o comando "heroku create", a gem do Heroku simplesmente adicio
       Local ref configured for 'git push':
         master pushes to master (up to date)
 
-Para adicionar o remote do GitHub, basta executar o [git-remote](http://www.kernel.org/pub/software/scm/git/docs/git-remote.html). 
+Para adicionar o remote do GitHub, basta executar o [git-remote](http://www.kernel.org/pub/software/scm/git/docs/git-remote.html).
 
     # Adicionando o GitHub.
     git remote add github git@github.com:phstc/meu-projeto.git

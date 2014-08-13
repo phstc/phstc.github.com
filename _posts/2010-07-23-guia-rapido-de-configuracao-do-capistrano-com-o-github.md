@@ -1,9 +1,7 @@
---- 
-layout: post
-title: "Guia rápido de configuração do Capistrano com o GitHub"
-tags: [Capistrano, Deployment, Git, GitHub, Rails]
 ---
-{% include JB/setup %}
+layout: post
+title: Guia rápido de configuração do Capistrano com o GitHub
+---
 
 Esse é um guia rápido de configuração do [Capistrano](http://www.capify.org/) com o [GitHub](http://github.com).
 

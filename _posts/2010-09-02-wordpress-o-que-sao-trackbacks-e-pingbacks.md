@@ -1,12 +1,7 @@
---- 
-layout: post
-title: "Wordpress - O que são trackbacks e pingbacks?"
-tags: 
-- Pingbacks
-- Trackbacks
-- WordPress
 ---
-{% include JB/setup %}
+layout: post
+title: Wordpress - O que são trackbacks e pingbacks?
+---
 
 ##Trackbacks
 
@@ -42,7 +37,7 @@ Trackbacks e Pingback de blogs externos precisam de aprovação, portanto só se
 Já Trackbacks e Pingbacks de um blog para o si próprio são automaticamente aprovados, porém podem ser rejeitados posteriormente.
 
 ##SEO
- 
+
 Trackbacks e Pingbacks ajudam na otimização de buscas [SEO](http://en.wikipedia.org/wiki/Search_engine_optimization), pois se um link de um blog "a" estiver referênciado em um blog "b", aumentará o ranking do blog "a".
 
 ##Principais referências

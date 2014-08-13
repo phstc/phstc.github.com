@@ -1,12 +1,7 @@
---- 
-layout: post
-title: "Upload com Spring MVC"
-tags: 
-- Java
-- Spring MVC
-- Upload
 ---
-{% include JB/setup %}
+layout: post
+title: Upload com Spring MVC
+---
 
 Esse post é um tutorial passo a passo para fazer upload com Spring MVC.
 

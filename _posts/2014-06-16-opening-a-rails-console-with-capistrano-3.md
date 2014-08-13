@@ -1,12 +1,7 @@
 ---
 layout: post
-title: "Opening a Rails console with Capistrano 3"
-description: ""
-category: 
-tags: []
+title: Opening a Rails console with Capistrano 3
 ---
-{% include JB/setup %}
-
 
 To open a Rails console with Capistrano add the snippet below in your `config/deploy.rb`.
 
@@ -32,10 +27,10 @@ To open a Rails console with Capistrano add the snippet below in your `config/de
 Usage:
 
     # To open the first server in the servers list
-    cap [staging] rails:console 
+    cap [staging] rails:console
 
     # To open the second server in the servers list
-    cap [staging] rails:console 1 
+    cap [staging] rails:console 1
 
 BONUS: Opening a SSH connection with Capistrano 3
 
@@ -59,9 +54,9 @@ BONUS: Opening a SSH connection with Capistrano 3
 Usage:
 
     # To open the first server in the servers list
-    cap [staging] ssh 
+    cap [staging] ssh
 
     # To open the second server in the servers list
-    cap [staging] ssh 1 
+    cap [staging] ssh 1
 
 

@@ -1,14 +1,7 @@
 ---
 layout: post
-title: "Website monitoring. You will become addicted"
-tags: 
-- RUM
-- StatsD
-- Graphite
-- Dashboard
-- English posts
+title: Website monitoring. You will become addicted
 ---
-{% include JB/setup %}
 
 This year (2012) I attended to a [ThoughtWorks Radar](http://www.thoughtworks.com/articles/technology-radar-march-2012) presentation. The guys from TW talked about radar topics, including Health Check Pages technique, which is really interesting and motived my self to create this post.
 
@@ -46,9 +39,9 @@ I strongly recommend this article [Measure Anything, Measure Everything](http://
 
 ## Make it nicer
 
-It is nice to have an URL where everybody can access these graphics. But.... it is nicer to have a big television showing these graphics in the middle of the office. 
+It is nice to have an URL where everybody can access these graphics. But.... it is nicer to have a big television showing these graphics in the middle of the office.
 
-We did it, we have a computer, an Apple TV and a television. The computer has Chrome tabs opened for Graphite, Google Analytics Realtime and Hudson (green or red). We also use a Google Chrome extension to automatically switch the tabs in a specific interval. 
+We did it, we have a computer, an Apple TV and a television. The computer has Chrome tabs opened for Graphite, Google Analytics Realtime and Hudson (green or red). We also use a Google Chrome extension to automatically switch the tabs in a specific interval.
 
 The Apple TV can be expensive, but it is really useful. We can switch from the computer to an iPad streaming showing the Olympics Games or a presentation etc.
 
@@ -58,4 +51,4 @@ Maybe you are thinking... "Why not Google Analytics (Standard and Realtime), New
 
 ## Final thoughts
 
-If it moves, you can track it. Be creative and you will become addicted. 
+If it moves, you can track it. Be creative and you will become addicted.

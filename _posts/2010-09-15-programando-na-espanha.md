@@ -1,9 +1,7 @@
---- 
+---
 layout: post
 title: Programando na Espanha
-tags: [Burgos, Espanha, Madrid, Trabalho]
 ---
-{% include JB/setup %}
 
 As vagas para programadores na Espanha são bem parecidas com as vagas no Brasil, São Paulo está para Madrid e Rio de Janeiro está para Barcelona, claro que existem vagas em outras cidades como Valência, Bilbau etc, mas são cidades que possuem menor quantidade de ofertas, assim como salários geralmente inferiores.
 

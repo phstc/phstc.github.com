@@ -1,9 +1,7 @@
---- 
-layout: post
-title: "Utilizando o Rails form select"
-tags: [form, Rails, select]
 ---
-{% include JB/setup %}
+layout: post
+title: Utilizando o Rails form select
+---
 
 Pesquisei bastante na internet, até achar uma [thread](http://www.ruby-forum.com/topic/160291) demonstrando como utilizar o form select com um array de objetos.
 

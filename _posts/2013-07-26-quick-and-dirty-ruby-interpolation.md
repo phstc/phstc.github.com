@@ -1,9 +1,7 @@
 ---
 layout: post
-title: "Quick and Dirty: Ruby interpolation"
-tags: [Ruby]
+title: Quick and Dirty: Ruby interpolation
 ---
-{% include JB/setup %}
 
 Hey, it's been a while since I last wrote something here.
 
@@ -24,7 +22,7 @@ That's how interpolation works: some magic double quotes `""` + `#{}` + expressi
     # hello.rb
     name = ARGV[0]
     puts "Hello World, #{name}"
-   
+
     # ruby hello.rb Pablo
     # => Hello World, Pablo
 
@@ -37,11 +35,11 @@ One of them which I demonstrate here is with arrays.
     def generate_awesome_key(some_object)
       # [customer].[server].[source].[msg].[dest].awesome_key
 
-      [ some_object.customer, 
+      [ some_object.customer,
         ENV['SERVER_NAME'],
-        some_object.source, 
-        some_object.message_name, 
-        some_object.destination_name, 
+        some_object.source,
+        some_object.message_name,
+        some_object.destination_name,
         'awesome_key' ].join '.'
     end
 
@@ -51,11 +49,11 @@ Or more "generic".
     def generate_awesome_key(some_object, *keys)
       # [customer].[server].[source].[msg].[dest].[keys…]
 
-      ([ some_object.customer, 
+      ([ some_object.customer,
         ENV['SERVER_NAME'],
-        some_object.source, 
-        some_object.message_name, 
-        some_object.destination_name, 
+        some_object.source,
+        some_object.message_name,
+        some_object.destination_name,
        ] + keys).join '.'
     end
 

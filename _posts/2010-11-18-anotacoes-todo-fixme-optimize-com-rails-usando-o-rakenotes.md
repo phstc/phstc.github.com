@@ -1,9 +1,7 @@
---- 
-layout: post
-title: "Anotações TODO, FIXME, OPTIMIZE com Rails usando o rake:notes"
-tags: [Rails, Rake]
 ---
-{% include JB/setup %}
+layout: post
+title: Anotações TODO, FIXME, OPTIMIZE com Rails usando o rake:notes
+---
 
 Comentários do tipo TODO são bastante úteis para deixar pontos de atenção no seu código.
 
@@ -34,17 +32,17 @@ Para visualizar os comentários:
 
     # app/models/article.rb
     class Article < ActiveRecord::Base
-    
+
      # TODO add named_scopes
      def some_method1
        # ...
      end
-    
+
      # FIXME method A is broken
      def method_a
        # ...
      end
-    
+
      # OPTIMIZE improve the code
      def some_method2
        # ...

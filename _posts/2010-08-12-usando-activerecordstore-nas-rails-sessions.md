@@ -1,10 +1,6 @@
---- 
+---
 layout: post
 title: Usando ActiveRecordStore nas Rails Sessions
-tags: 
-- Cookies
-- Rails
-- Session store
 ---
 
 A sessão padrão do Rails é o Cookie Store, que tem um limite de 4K, sendo usada tipicamente usada para armazenar ids de objetos persistidos na base de dados ou pequenas informações.
@@ -14,7 +10,7 @@ Caso você receba um ```ActionController::Session::CookieStore::CookieOverflow``
 
     /!\ FAILSAFE /!\ Thu Jul 29 21:23:39 -0300 2010
      Status: 500 Internal Server Error
-     ActionController::Session::CookieStore::CookieOverflow             
+     ActionController::Session::CookieStore::CookieOverflow
     /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:102:in `call'
 
 (eu só consegui resolver esse problema removendo os cookies do browser, reiniciar o servidor não resolveu para mim.)

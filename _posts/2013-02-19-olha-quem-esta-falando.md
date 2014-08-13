@@ -1,15 +1,13 @@
 ---
 layout: post
-title: "Olha quem está falando"
-tags: [Twilio, CaaS]
+title: Olha quem está falando
 ---
-{% include JB/setup %}
 
 ![Olha quem está falando](/assets/images/posts/look-who-is-talking.jpg)
 
 # Senta que lá vem a história
 
-Antes de começar a falar do [Twilio](http://www.twilio.com/), vou falar a minha motivação para usá-lo. Foi para um aplicativo de suporte por telefone, o [Support Roulette](https://github.com/phstc/support-roulette). No final, acabamos não usando exatamente o Support Roulette, mas foi uma ótima base. 
+Antes de começar a falar do [Twilio](http://www.twilio.com/), vou falar a minha motivação para usá-lo. Foi para um aplicativo de suporte por telefone, o [Support Roulette](https://github.com/phstc/support-roulette). No final, acabamos não usando exatamente o Support Roulette, mas foi uma ótima base.
 
 Devido à facilidade de implementar uma aplicação que pode responder uma chamada telefônica, gravar uma mensagem de voz, enviar e receber SMS, ou seja, uma aplicação que fala, me inspirei para escrever esse post e inclusive apresentar um [Tech Talk](https://github.com/phstc/support-roulette/tree/master/slides) (Vim talk rs) sobre o assunto.
 
@@ -33,7 +31,7 @@ Usando um serviço de CaaS, podemos registrar um número fixo no Brasil, que, ao
 
 ### Voip
 
-Os serviços convencionais de Voip que avaliamos, apesar de permitirem a criação de número fixo no Brasil e inclusive permitirem o redirecionamento de ligação, não permitem que alteremos o número de redirecionamento via API. Teríamos que acessar um painel de controle semanalmente para configurar o novo número de redirecionamento. Isso é inviável pois somos programadores, queremos agendar as escalas de suporte e ter um sistema que automaticamente avise o desenvolvedor de plantão e faça o redirecionamento. 
+Os serviços convencionais de Voip que avaliamos, apesar de permitirem a criação de número fixo no Brasil e inclusive permitirem o redirecionamento de ligação, não permitem que alteremos o número de redirecionamento via API. Teríamos que acessar um painel de controle semanalmente para configurar o novo número de redirecionamento. Isso é inviável pois somos programadores, queremos agendar as escalas de suporte e ter um sistema que automaticamente avise o desenvolvedor de plantão e faça o redirecionamento.
 
 ## Por que Twilio?
 
@@ -85,7 +83,7 @@ Um caso de uso do Pingdom padrão é usá-lo somente para notificar se o site fi
 #### Monit script
 
     # /etc/monitrc
-    
+
     check host rexnuke with address 127.0.0.1
       if failed port 8080
        with timeout 15 seconds
@@ -96,12 +94,12 @@ Um caso de uso do Pingdom padrão é usá-lo somente para notificar se o site fi
     # /usr/bin/notify-site-is-down.rb
     require "rubygems"
     require "twilio-ruby"
-    
+
     account_sid = "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     auth_token = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
-    
+
     @client = Twilio::REST::Client.new account_sid, auth_token
-    
+
     @client.account.sms.messages.create(
       from: "+5511…",
       to: "+5511…",
@@ -110,7 +108,7 @@ Um caso de uso do Pingdom padrão é usá-lo somente para notificar se o site fi
 
 ### Custos
 
-No caso do Support Roulette há dois custos: um de voz, quando o Twilio recebe uma ligação e redireciona para o desenvolvedor de plantão e outro de SMS, para notificá-lo que ele é o plantonista da vez. 
+No caso do Support Roulette há dois custos: um de voz, quando o Twilio recebe uma ligação e redireciona para o desenvolvedor de plantão e outro de SMS, para notificá-lo que ele é o plantonista da vez.
 
 #### Voz
 
@@ -152,6 +150,6 @@ Recomendo também uma olhada no [Support Roulete](https://github.com/phstc/suppo
 
 ## Twimlets
 
-[Twimlets](https://www.twilio.com/labs/twimlets) são aplicações prontas que implementam funcionalidades básicas, como [redirecionamento de ligação](https://www.twilio.com/labs/twimlets/forward), [caixa postal](https://www.twilio.com/labs/twimlets/voicemail) etc. 
+[Twimlets](https://www.twilio.com/labs/twimlets) são aplicações prontas que implementam funcionalidades básicas, como [redirecionamento de ligação](https://www.twilio.com/labs/twimlets/forward), [caixa postal](https://www.twilio.com/labs/twimlets/voicemail) etc.
 
-Se você quiser hoje mesmo ter um número fixo em São Paulo que redirecione para um celular do Acre, basta  criar uma conta no Twilio, configurar um twimlet de redirecionemto e, em menos de 10 minutos, estará tudo funcionado. 
+Se você quiser hoje mesmo ter um número fixo em São Paulo que redirecione para um celular do Acre, basta  criar uma conta no Twilio, configurar um twimlet de redirecionemto e, em menos de 10 minutos, estará tudo funcionado.
