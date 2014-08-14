@@ -9,7 +9,7 @@ DISCLAIMER: Although the AngularJS first commit ([Jan 05, 2010](https://github.c
 
 Another day a friend of mine shared a post with me - "[I Coded the AngularJS Tutorial App in Backbone and it Took 260% More Code](http://blog.42floors.com/coded-angular-tutorial-app-backbone-took-260-code)". It is an interesting post showing that newer MVW frameworks such as AngularJS require less code to do the work than the "old ones" like Backbone. This comparison reminded me of a long time ago, in the Java world, the changes from HttpServlets (spaghetti servlets), then Struts (struts-config.xml), then Spring MVC (annotations) and so on.
 
-In my opinion it is the way to go. Backbone formalised a convention to write Rich Internet Application by creating "classes" with specific responsibilities, it uses Routes, Models, Collections, Views and Templates instead of spaghetti JavaScript with Ajax calls. But on the other hand you have to write all callbacks, bindings etc and it isn't magically implemented by a convention, like using data attributes (ng-*).
+In my opinion it is the way to go. Backbone formalised a convention to write Rich Internet Applications by creating "classes" with specific responsibilities, it uses Routes, Models, Collections, Views and Templates instead of spaghetti JavaScript with Ajax calls. But on the other hand you have to write all callbacks, bindings etc and it isn't magically implemented by a convention, like using data attributes (ng-*).
 
 So, if you have a requirement to be a single-page application, I mean, if it must be a single-page application, go and check what's the best, maybe the "standard" isn't the best one anymore.
 
