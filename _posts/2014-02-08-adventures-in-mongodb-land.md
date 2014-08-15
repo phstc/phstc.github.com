@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [WIP] Adventures in MongoDB land
+title: "[WIP] Adventures in MongoDB land"
 ---
 
 Is it one more post about MongoDB thoughts? Yes, it is: Pablo's adventures in MongoDB-land™.

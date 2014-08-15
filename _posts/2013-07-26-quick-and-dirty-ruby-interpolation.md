@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Quick and Dirty: Ruby interpolation
+title: "Quick and Dirty: Ruby interpolation"
 ---
 
 Hey, it's been a while since I last wrote something here.

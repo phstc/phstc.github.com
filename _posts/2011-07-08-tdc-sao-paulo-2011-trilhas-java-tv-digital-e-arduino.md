@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TDC São Paulo 2011: Trilhas Java, TV Digital e Arduino
+title: "TDC São Paulo 2011: Trilhas Java, TV Digital e Arduino"
 ---
 
 Esse ano fui ao [TDC São Paulo 2011](http://www.thedevelopersconference.com.br/tdc/2011/index.html#saopaulo), onde assisti às trilhas de [Java](http://www.thedevelopersconference.com.br/tdc/2011/saopaulo/trilha-java), [TV Digital](http://www.thedevelopersconference.com.br/tdc/2011/saopaulo/trilha-tvdigital) e [Arduino](http://www.thedevelopersconference.com.br/tdc/2011/saopaulo/trilha-arduino).
