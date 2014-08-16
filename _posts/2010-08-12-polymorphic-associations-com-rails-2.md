@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Polymorphic associations com Rails
+title: "Polymorphic associations com Rails"
 ---
 
 

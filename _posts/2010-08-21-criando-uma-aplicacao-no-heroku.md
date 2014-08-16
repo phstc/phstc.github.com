@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Criando uma aplicação no Heroku
+title: "Criando uma aplicação no Heroku"
 ---
 
 ## Breve introdução

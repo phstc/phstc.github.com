@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Scroll it - A Javascript bookmarklet to automatically scroll the page
+title: "Scroll it - A Javascript bookmarklet to automatically scroll the page"
 ---
 
 

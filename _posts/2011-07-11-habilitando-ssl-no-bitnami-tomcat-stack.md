@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Habilitando SSL no BitNami Tomcat Stack
+title: "Habilitando SSL no BitNami Tomcat Stack"
 ---
 
 Em continuação ao [Primeiros passos no Amazon EC2](http://pablocantero.com/blog/2011/07/08/primeiros-passos-no-amazon-ec2/), este post descreve os passos para habilitar SSL no BitNami Tomcat Stack.

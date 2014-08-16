@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CentOS start Mongrel no boot
+title: "CentOS start Mongrel no boot"
 ---
 
 Este post detalha os passos para iniciar, parar ou reiniciar uma aplicação Rails no CentOS.

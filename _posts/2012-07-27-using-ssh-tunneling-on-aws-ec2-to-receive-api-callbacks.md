@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using SSH Tunneling on AWS EC2 to receive API callbacks
+title: "Using SSH Tunneling on AWS EC2 to receive API callbacks"
 ---
 
 Some APIs use callbacks in their communication process, e.g. payment gateways. They usually use callbacks to notify when a payment status was changed (STARTED, ANALYSING, AUTHORIZED, COMPLETED etc).

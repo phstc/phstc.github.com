@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Olha quem está falando
+title: "Olha quem está falando"
 ---
 
 ![Olha quem está falando](/assets/images/posts/look-who-is-talking.jpg)

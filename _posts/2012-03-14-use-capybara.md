@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Use Capybara!
+title: "Use Capybara!"
 ---
 
 Aplicações não podem falhar, um usuário não pode clicar em algo e receber um erro. Principalmente em aplicações web abertas. Imaginem uma busca no Google retornando "500 Internal Server Error".

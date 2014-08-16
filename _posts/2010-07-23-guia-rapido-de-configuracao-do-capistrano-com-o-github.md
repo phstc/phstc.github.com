@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Guia rápido de configuração do Capistrano com o GitHub
+title: "Guia rápido de configuração do Capistrano com o GitHub"
 ---
 
 Esse é um guia rápido de configuração do [Capistrano](http://www.capify.org/) com o [GitHub](http://github.com).

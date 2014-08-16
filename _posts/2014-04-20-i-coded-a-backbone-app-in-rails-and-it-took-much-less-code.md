@@ -1,6 +1,6 @@
 ---
 layout: post
-title: I coded a Backbone App in Rails and it took much less code
+title: "I coded a Backbone App in Rails and it took much less code"
 ---
 
 **tl;dr** single-page applications are awesome and fast. But if you don't have a strong requirement to create a single-page application, don't do that. It will slow down your development time. You can rewrite your application to be a single-page application in the future as an improvement, but if you start it as a single-page application and you need to deliver fast, you can give a big headache to yourself and maybe need to rewrite it as a normal web application (in our case in Rails) to meet the deadlines.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Use .gitignore templates!
+title: "Use .gitignore templates!"
 ---
 
 Com o tempo acabamos criando alguns arquivos [.gitignore](http://help.github.com/ignore-files) de acordo com o environment que trabalhamos. Geralmente quando eu inicio um novo projeto eu copio o .gitignore de um projeto similar que eu já trabalhei.

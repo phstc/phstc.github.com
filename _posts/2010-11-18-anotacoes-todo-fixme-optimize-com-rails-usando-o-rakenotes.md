@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Anotações TODO, FIXME, OPTIMIZE com Rails usando o rake:notes
+title: "Anotações TODO, FIXME, OPTIMIZE com Rails usando o rake:notes"
 ---
 
 Comentários do tipo TODO são bastante úteis para deixar pontos de atenção no seu código.

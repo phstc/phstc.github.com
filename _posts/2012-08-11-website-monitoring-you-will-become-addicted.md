@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Website monitoring. You will become addicted
+title: "Website monitoring. You will become addicted"
 ---
 
 This year (2012) I attended to a [ThoughtWorks Radar](http://www.thoughtworks.com/articles/technology-radar-march-2012) presentation. The guys from TW talked about radar topics, including Health Check Pages technique, which is really interesting and motived my self to create this post.

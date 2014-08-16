@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Automate multiple servers startup
+title: "Automate multiple servers startup"
 ---
 
 So, do you need to startup multiple servers or services to start your development environment? I do!

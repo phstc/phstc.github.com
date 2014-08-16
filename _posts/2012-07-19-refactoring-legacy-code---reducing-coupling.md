@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Refactoring Legacy Code - Reducing coupling
+title: "Refactoring Legacy Code - Reducing coupling"
 ---
 
 I'm working in a Java Legacy Code and facing high coupling and low cohesion, kind of trivial problems in this scenario.

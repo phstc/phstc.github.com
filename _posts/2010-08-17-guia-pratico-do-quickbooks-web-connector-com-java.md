@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Guia prático do QuickBooks Web Connector com Java
+title: "Guia prático do QuickBooks Web Connector com Java"
 ---
 
 O [QuickBooks Web Connector](http://marketplace.intuit.com/webconnector) é uma ótima alternativa para fazer integrações com o [QuickBooks](http://quickbooks.intuit.com), pois com QBWC não é necessário utilizar os componentes COM+, que limitam a escolha da tecnologia para ser utilizado na integração.

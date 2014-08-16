@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Equal, equal ou equal, equal, equal
+title: "Equal, equal ou equal, equal, equal"
 ---
 
 ## É igual, mas é diferente

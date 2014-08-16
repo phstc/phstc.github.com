@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Auto scale Sidekiq workers on Amazon EC2
+title: "Auto scale Sidekiq workers on Amazon EC2"
 ---
 
 We use [Sidekiq](https://github.com/mperham/sidekiq) to process messages from images conversion to shipping tickets' generation.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cola rápida para criar Cron Jobs
+title: "Cola rápida para criar Cron Jobs"
 ---
 
 As instruções abaixo são baseados no linux [CentOS](http://en.wikipedia.org/wiki/Centos).

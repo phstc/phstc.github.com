@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Configurando o Node.js no Amazon EC2
+title: "Configurando o Node.js no Amazon EC2"
 ---
 
 Esse post é <del>copiado</del> baseado no post [DIY node.js server on Amazon EC2](http://cuppster.com/2011/05/12/diy-node-js-server-on-amazon-ec2/), que foi a melhor referência que encontrei de como configurar um servidor [node.js](http://nodejs.org) completo em uma instância do EC2, no caso uma instância com Ubuntu (ubuntu-maverick-10.10-i386-server).

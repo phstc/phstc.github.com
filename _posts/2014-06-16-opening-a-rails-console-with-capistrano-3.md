@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Opening a Rails console with Capistrano 3
+title: "Opening a Rails console with Capistrano 3"
 ---
 
 To open a Rails console with Capistrano add the snippet below in your `config/deploy.rb`.

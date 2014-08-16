@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Guia rápido de configuração do Cucumber
+title: "Guia rápido de configuração do Cucumber"
 ---
 
 <del>Os passos desses post foram utilizados no projeto [click-anywhere-to-leave-a-message.com](http://click-anywhere-to-leave-a-message.com), disponível para download no [GitHub](http://github.com/phstc/click-anywhere-to-leave-a-message.com).</del>

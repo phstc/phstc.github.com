@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Heroku + GitHub, ativar
+title: "Heroku + GitHub, ativar"
 ---
 
 Esse post descreve como utilizar o Heroku e GitHub simultaneamente Quem se lembra do [Supergêmeos](http://pt.wikipedia.org/wiki/Superg%C3%AAmeos), ativar?

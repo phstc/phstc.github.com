@@ -1,6 +1,6 @@
 ---
 layout: post
-title: jQuery Twitter Search Plugin
+title: "jQuery Twitter Search Plugin"
 ---
 
 It's a jQuery plugin only for tweets search. Where you need to implement the layout to display the tweets. Actually, it means that you are free to use your own layout. ;)

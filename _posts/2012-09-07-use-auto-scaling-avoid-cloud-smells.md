@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Use Auto Scaling, avoid Cloud Smells
+title: "Use Auto Scaling, avoid Cloud Smells"
 ---
 
 A Cloud hosting has two main characteristics:

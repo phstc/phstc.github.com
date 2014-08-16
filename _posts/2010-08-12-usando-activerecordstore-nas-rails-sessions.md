@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Usando ActiveRecordStore nas Rails Sessions
+title: "Usando ActiveRecordStore nas Rails Sessions"
 ---
 
 A sessão padrão do Rails é o Cookie Store, que tem um limite de 4K, sendo usada tipicamente usada para armazenar ids de objetos persistidos na base de dados ou pequenas informações.

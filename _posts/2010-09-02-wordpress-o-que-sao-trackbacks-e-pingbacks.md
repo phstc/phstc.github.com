@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Wordpress - O que são trackbacks e pingbacks?
+title: "Wordpress - O que são trackbacks e pingbacks?"
 ---
 
 ##Trackbacks

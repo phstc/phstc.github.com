@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Look Who's Talking
+title: "Look Who's Talking"
 ---
 
 ![Look who's talking](/assets/images/posts/look-who-is-talking.jpg)

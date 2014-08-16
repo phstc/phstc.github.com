@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Adding images to iPhone Simulator
+title: "Adding images to iPhone Simulator"
 ---
 
 This post is based on this thread "[Adding images to iPhone Simulator](http://stackoverflow.com/questions/468879/adding-images-to-iphone-simulator/)" on [Stack Overflow](http://stackoverflow.com/).

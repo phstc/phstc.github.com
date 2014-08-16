@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Breve definição sobre EJB 3
+title: "Breve definição sobre EJB 3"
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Use AspirinJS to improve your JavaScript code
+title: "Use AspirinJS to improve your JavaScript code"
 ---
 
 Have you a JavaScript causing you a headache? Will you write a JavaScript that you don't want to cause you a headache?

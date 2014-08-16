@@ -1,6 +1,6 @@
 ---
 layout: post
-title: LazyInitializationException? Dá-lhe OpenEntityManagerInViewFilter
+title: "LazyInitializationException? Dá-lhe OpenEntityManagerInViewFilter"
 ---
 
 Quem nunca recebeu o "gratificante" erro LazyInitializationException?

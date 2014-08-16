@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Primeiros passos no Amazon EC2
+title: "Primeiros passos no Amazon EC2"
 ---
 
 ## Por que estou migrando para a Amazon?

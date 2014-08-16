@@ -1,6 +1,6 @@
 ---
 layout: post
-title: New Gem with Bundler - Sample Rakefile
+title: "New Gem with Bundler - Sample Rakefile"
 ---
 
 This post is an extension of the Ryan Bates post [New Gem with Bundler](http://railscasts.com/episodes/245-new-gem-with-bundler).

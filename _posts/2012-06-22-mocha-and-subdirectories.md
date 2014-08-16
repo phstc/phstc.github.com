@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mocha and subdirectories
+title: "Mocha and subdirectories"
 ---
 
 So, did you run ```mocha``` and your tests under subdirectories of ```test/``` weren't executed?

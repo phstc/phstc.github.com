@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Relógio – tacômetro, taquímetro, tachometer, tachymeter?!?!
+title: "Relógio – tacômetro, taquímetro, tachometer, tachymeter?!?!"
 ---
 
 ## Atualização do post 21/03/2012

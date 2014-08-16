@@ -1,6 +1,6 @@
 ---
 layout: post
-title: isFollowing Bookmarklet - Who is following who?
+title: "isFollowing Bookmarklet - Who is following who?"
 ---
 
 

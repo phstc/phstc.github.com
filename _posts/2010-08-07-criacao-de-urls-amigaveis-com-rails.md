@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Criação de urls amigáveis com Rails
+title: "Criação de urls amigáveis com Rails"
 ---
 
 ## Atualização do post 18/03/2012
