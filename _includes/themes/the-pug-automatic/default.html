@@ -23,20 +23,25 @@
         <div id="main">
           <div id="content">
             <div>
+              <a href="/"><img src="/images/home-icon.png" border='0'></a>
               {{ content }}
 
               {% include JB/analytics %}
             </div>
             <aside class="sidebar">
-            &nbsp; 
+            &nbsp;
             &nbsp;  &nbsp;<header class="site-header">
             <!-- <h1 class="site-title"><a href="/">{{ site.title }}</a></h1> -->
             <!-- <h1 class="site-title"><a href="/">01101000 01110100 01110100 01110000 00111010 00101111 00101111 01100111 01101111 01101111 00101110 01100111 01101100 00101111 00110110 01011010 01000011 01101101 01001001</a></h1> -->
             <!-- <h1 class="site-title"><a href="/">68 74 74 70 3a 2f 2f 67 6f 6f 2e 67 6c 2f 36 5a 43 6d 49</a></h1> -->
             <h1 class="site-title"><a href="/"><img src="/images/pablo-cantero.jpg" alt="Pablo Cantero"></a></h1>
             <p class="site-intro">
-            A blog by <a href="/about/">{{ site.author.name }}</a>.
-            <a href="http://feeds.feedburner.com/{{ site.author.feedburner }}">Subscribe by RSS.</a>
+            <!-- A blog by <a href="/about/">{{ site.author.name }}</a>. -->
+            <!-- <a href="http://feeds.feedburner.com/{{ site.author.feedburner }}">Subscribe by RSS.</a> -->
+
+
+            ping_to <a href="http://twitter.com/{{site.author.twitter}}">@{{site.author.twitter}}</a> || <a href="http://github.com/{{site.author.github}}">GitHub</a> || <a href="http://linkedin.com/in/{{site.author.linkedin}}">Linkedin</a> || <a href="mailto:{{site.author.email_encoded}}">{{site.author.email_encoded}}</a>
+
             </p>
             </header>
 
