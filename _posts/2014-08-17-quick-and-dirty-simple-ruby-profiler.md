@@ -8,7 +8,7 @@ You know when your code work well in test, development and staging environments,
 
 As Ruby is so awesome, there is a super easy way to find slowness in our code. I'm calling it a profiler, but nothing fancy, just a super simple hack to measure the methods execution time, no [memory, complexity etc measurements](https://en.wikipedia.org/wiki/Profiling_(computer_programming\)).
 
-Let's do it! Go to your special production host, the one you use to test in production (testing like a boss). We know, everybody have a production host which is used for badly things.
+Let's do it! Go to your special production host, the one you use to test in production (testing like a boss). We know, everyone has a production host which is used for bad things.
 
 Paste the snippet below in something available to the class scope you want to profile.
 
