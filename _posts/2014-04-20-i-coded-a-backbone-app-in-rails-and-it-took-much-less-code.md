@@ -3,9 +3,9 @@ layout: post
 title: "I coded a Backbone App in Rails and it took much less code"
 ---
 
-**tl;dr** single-page applications are awesome and fast. But if you don't have a strong requirement to create a single-page application, don't do that. It will slow down your development time. You can rewrite your application to be a single-page application in the future as an improvement, but if you start it as a single-page application and you need to deliver fast, you can give a big headache to yourself and maybe need to rewrite it as a normal web application (in our case in Rails) to meet the deadlines.
+**tl;dr** single-page applications (SPA) are awesome and fast. But if you don't have a strong requirement to create a single-page application, don't do that. It will slow down your development time. You can rewrite your application to be a single-page application later as an improvement, but if you start it as a single-page application and you need to deliver fast, you can give a big headache to yourself and maybe need to rewrite it as a normal web application (in our case in Rails) to meet the deadlines.
 
-DISCLAIMER: Although the AngularJS first commit ([Jan 05, 2010](https://github.com/angular/angular.js/commit/c9c176a53b1632ca2b1c6ed27382ab72ac21d45d)) is older than the Backbone one ([Sep 30, 2010](https://github.com/jashkenas/backbone/commit/8a960b479859d343a6c734eb1a5817a2ff6c2b52)), for me, Backbone became a reference for MVW before AngularJS or any other, so that's why I'm referring to Backbone as the oldest one.
+DISCLAIMER: Although the AngularJS first commit ([Jan 05, 2010](https://github.com/angular/angular.js/commit/c9c176a53b1632ca2b1c6ed27382ab72ac21d45d)) is older than the Backbone one ([Sep 30, 2010](https://github.com/jashkenas/backbone/commit/8a960b479859d343a6c734eb1a5817a2ff6c2b52)), for me, Backbone became a reference for MVW before AngularJS or any other, so that's why I will refer to Backbone as the oldest one.
 
 Another day a friend of mine shared a post with me - "[I Coded the AngularJS Tutorial App in Backbone and it Took 260% More Code](http://blog.42floors.com/coded-angular-tutorial-app-backbone-took-260-code)". It is an interesting post showing that newer MVW frameworks such as AngularJS require less code to do the work than the "old ones" like Backbone. This comparison reminded me of a long time ago, in the Java world, the changes from HttpServlets (spaghetti servlets), then Struts (struts-config.xml), then Spring MVC (annotations) and so on.
 
@@ -19,7 +19,7 @@ So, if you have a requirement to be a single-page application, I mean, if it mus
 
 ### Ruby vs JavaScript
 
-No matter how much you like JavaScript <3, calculate how many hours you spend coding in JavaScript and how many you spend coding in Ruby.
+No matter how much you like JavaScript, calculate how many hours you spend coding in JavaScript and how many you spend coding in Ruby.
 
 I really like JavaScript and I think I'm good at, but I usually spend many many more hours coding in Ruby than in JavaScript. So it isn't fair to compare my proficiency in Ruby which I'm coding all the time with JavaScript.
 
@@ -31,7 +31,7 @@ For a normal Customer CRUD on Rails, you usually have:
 
 * Customer Model
 * Customer Controller
-* Customer views: index.html.erb, show.html.erb, new.html.erb, show.html.erb and _form.html.erb
+* Customer views: index.html.erb, show.html.erb, new.html.erb and _form.html.erb
 
 For a normal Customer CRUD on Rails and Backbone, you usually have:
 
@@ -48,7 +48,7 @@ On Backbone side:
 * Customer Collection
 * Customer Model
 * Customer View
-* Customer templates: index.jst.eco, show.jst.eco, new.jst.eco, show.html.jst.eco and _form.jst.eco
+* Customer templates: index.jst.eco, show.jst.eco, new.jst.eco and _form.jst.eco
 
 You have much more code and you can't reuse Rails helpers. You can try to use [js-routes](https://github.com/railsware/js-routes), but you will probably find yourself trying to find some  JavaScript libraries analogue for [Rails TextHelpers](http://api.rubyonrails.org/classes/ActionView/Helpers/TextHelper.html).
 
@@ -58,7 +58,7 @@ You have much more code and you can't reuse Rails helpers. You can try to use [j
 
 Sometimes in Rails we write some very specific actions i.e. `PUT users/:id/bio`, because there is a specific page, which only updates the user bio and has some specific logic. As it is something internal, we don't mind the non-Restful like route, because it "isn't publicly exposed". But when we expose it as an API to access from Backbone, even though it isn't a real API, we can start overthinking on the "best fit" URL, nouns, verbs etc.
 
-Sometimes it can be an anti-pattern, but who's never used a [helper_method](http://apidock.com/rails/ActionController/Helpers/ClassMethods/helper_method)? You can't use it anymore. If you want to, you will need to expose it as an API.
+Sometimes they can be evil, but who's never used a [helper_method](http://apidock.com/rails/ActionController/Helpers/ClassMethods/helper_method)? You can't use it anymore. If you want to, you will need to expose it as an API.
 
 Backbone works "automatically" with Rails resources URLs, but for custom URLs, we can't easily create a form routing to the new specific URL. We need to create a specific method in the User model to make a request to the specific URL and a binding in the User view to call this specific method.
 
@@ -78,7 +78,7 @@ Page reload erases the page memory for almost every user action.
 
 ### Test
 
-It can be subjective, but in my opinion RSpec and Capybara are much easier and complete than any other JavaScript test framework that I know.
+It can be subjective, but in my opinion RSpec and Capybara are much easier and complete than any other JavaScript test framework I know.
 
 For those who are already working on a single-page application, do you feel confidence with your JavaScript test coverage? Can you unit test a Backbone View manipulating DOM objects and feel proud on what we had to do to test it? I think many people can, but I couldn't.
 
@@ -90,4 +90,4 @@ My point is just this: single-page applications frameworks/ecosystem aren't read
 
 You can rewrite your application to be a single-page application in the future, the bad is when you need to rollback to a normal one. If you start in Rails, you can rewrite one page then another and so on, but if you start a project only with the JavaScript ecosystem outside Ruby/Rails (it was our case), it will be hard to migrate to Rails smoothly.
 
-Something I did before, which worked great, was to develop just specific parts of the application with Backbone (can be any other MVW). For example, we developed a Store Palette Editor using Backbone Models and Views, without Routers and Templates. It worked great, we could use the Backbone convention for Models and Views, isolate the classes with specific responsibilities, the UX was great and it made the development faster and the code easier to test.
+Something I did before, which worked great, was to develop just specific parts of the application with Backbone (can be any other MVW). For example, we developed a Store Palette Editor using Backbone Models and Views, without Routers and Templates. It worked great, we could use the Backbone convention for Models and Views, isolate the classes with specific responsibilities, the UX was great, we coded it fast and it was easy to test.
