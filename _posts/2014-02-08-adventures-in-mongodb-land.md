@@ -155,6 +155,18 @@ Underscore suffixes work fine:
     db.my_collections_.find()
     // => success
 
+## Capped collections
+
+### Convert to capped
+
+When you convert a collection to a capped collection, the collection loses the indexes.
+
+    db.runCommand({ "convertToCapped": “my_collection”, size: sizeInBytes, max: maxNumberOfDocuments })
+
+Remember to recreate the indexes. Even the ones with TTL:
+
+    db. my_collection.ensureIndex({ "created_at": 1 }, { expireAfterSeconds: 604800 })
+
 ## MongoDB likes your storage as much as you
 
 ### Log
