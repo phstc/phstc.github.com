@@ -3,13 +3,13 @@ layout: post
 title: "Auto scale Sidekiq workers on Amazon EC2"
 ---
 
-We use [Sidekiq](https://github.com/mperham/sidekiq) to process messages from images conversion to shipping tickets' generation.
+We use [Sidekiq](https://github.com/mperham/sidekiq) a lot, from image conversion to shipment tracking numbers generation. 
 
-The total size of our queues decreases and increases drastically during the day. When it happens we have to increase or decrease our workers by adding or removing new EC2 instances.
+The size of our queues change drastically during the day. When it happens, we increase or decrease our workers by adding or removing EC2 instances automatically, thanks to [Amazon Auto Scaling](http://aws.amazon.com/autoscaling/).
 
-## Amazon Auto Scale
+## Amazon Auto Scaling
 
-I will not get into the details of [Amazon Auto Scaling](http://aws.amazon.com/autoscaling/), as it deserves an entire post about it.
+I will not get into the details of Amazon Auto Scaling, as it deserves an entire post about it.
 
 Roughly you have to create an Auto Scaling Group, Launch Configuration and Scaling Up/Down policies.
 
@@ -21,7 +21,7 @@ Instead of creating your own Auto Scale scripts with [AWS-SDK](http://aws.amazon
 
 #### Asgard considerations
 
-It doesn't work well with other Tomcat apps. To work properly on Tomcat, it must be the ROOT app. Another option is to run it as a [standalone app](https://github.com/Netflix/asgard/wiki/Quick-Start-Guide), this is how I use it.
+It doesn't work well with other Tomcat apps. To work properly with Tomcat, it must be the ROOT app. Another option is to run it as a [standalone app](https://github.com/Netflix/asgard/wiki/Quick-Start-Guide), this is how I use it.
 
     JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home java -Xmx1024M -XX:MaxPermSize=128m -jar asgard-standalone.jar "" localhost 8888
 
@@ -56,9 +56,9 @@ To trigger your Scale Up/Down policies based on the Queue Size, you have to publ
       end
     end
 
-That's it… When you create your Scale Policies, you just have to set up the metric namespace to "Worker" and name to "QueueSize".
 
-## Update the metric
+
+### Keep the metrics updated
 
 We use the [whenever gem](https://github.com/javan/whenever) to create a cron job to update the queue size every minute.
 
@@ -72,7 +72,7 @@ We use the [whenever gem](https://github.com/javan/whenever) to create a cron jo
       QueueSizeMetric.new.put
     end
 
-Another options is to use a worker to update the metrics.
+There are many other ways to keep the metrics updated, for example using a worker to update the metrics.
 
     # app/workers/queue_size_metric_worker.rb
     class QueueSizeMetricWorker
@@ -83,3 +83,9 @@ Another options is to use a worker to update the metrics.
         QueueSizeMetricWorker.perform_in 1.minute
       end
     end
+
+The important thing is to keep them updated, no matter how. Otherwise your Auto Scaling will not behave as expected.
+
+## All Done
+
+Now when creating your Scale Policies, set the metric namespace to **Worker** and name to **QueueSize**.
