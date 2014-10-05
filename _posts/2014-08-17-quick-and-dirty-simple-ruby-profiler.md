@@ -12,32 +12,36 @@ Let's do it! Go to your special production host, the one you use to test in prod
 
 Paste the snippet below in something available to the class scope you want to profile.
 
-    def log_time
-      beginning_time = Time.now
-      
-      result = yield
-      
-      end_time = Time.now
-      
-      info "#{caller[0]} - Completed in #{(end_time - beginning_time) * 1000} ms"
-      
-      result
-    end
+{% highlight ruby %}
+def log_time
+  beginning_time = Time.now
+
+  result = yield
+
+  end_time = Time.now
+
+  info "#{caller[0]} - Completed in #{(end_time - beginning_time) * 1000} ms"
+
+  result
+end
+{% endhighlight %}
 
 
 Use it:
 
-    class UserRegistration
-       def register
-         log_time { do_something }
+{% highlight ruby %}
+class UserRegistration
+   def register
+     log_time { do_something }
 
-         if log_time { something? }
-           # ...
-         elsif some_value = log_time { do_something_else }
-           # ...
-         end 
-       end
-    end
+     if log_time { something? }
+       # ...
+     elsif some_value = log_time { do_something_else }
+       # ...
+     end
+   end
+end
+{% endhighlight %}
 
 Then you will get something like that in your logs output:
 

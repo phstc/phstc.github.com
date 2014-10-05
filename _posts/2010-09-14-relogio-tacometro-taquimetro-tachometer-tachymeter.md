@@ -21,7 +21,7 @@ Eu queria um relógio barato e que fosse versátil, esporte e clássico ao mesmo
 
 > Orient CEM65001M
 >
-> ![Relógio Orient CEM65001B](/assets/images/posts/relogio-orient-cem65001b.jpg)
+> ![Relógio Orient CEM65001B](/public/images/posts/relogio-orient-cem65001b.jpg)
 >
 > Cost: $190
 >
@@ -39,7 +39,7 @@ Essa roda serve para proteger o relógio e para marcação de tempo (contador de
 
 Geralmente o contador de minutos tem um símbolo inicial como um triângulo, que na figura abaixo está acima da marcação de 12h, esse triângulo é o ponto zero do contador de minutos.
 
-![Relógio Orient CEM65001B 5h49](/assets/images/posts/relogio-orient-cem65001b-5h49.jpg)
+![Relógio Orient CEM65001B 5h49](/public/images/posts/relogio-orient-cem65001b-5h49.jpg)
 
 Para usá-lo basta girar o triângulo até a marcação de minutos (**49m**) da hora atual, no caso 5h**49m**.
 
@@ -47,7 +47,7 @@ Após 30 minutos veremos que ponteiro de minutos estará apontando para o númer
 
 Para onde o ponteiro de minutos apontar, será o tempo em minutos desde que giramos o triângulo.
 
-![Relógio Orient CEM65001B 6h14](/assets/images/posts/relogio-orient-cem65001b-5h49.jpg)
+![Relógio Orient CEM65001B 6h14](/public/images/posts/relogio-orient-cem65001b-5h49.jpg)
 
 ## Rodinha dura para girar?
 

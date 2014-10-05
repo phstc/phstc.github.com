@@ -3,7 +3,7 @@ layout: post
 title: "Olha quem está falando"
 ---
 
-![Olha quem está falando](/assets/images/posts/look-who-is-talking.jpg)
+![Olha quem está falando](/public/images/posts/look-who-is-talking.jpg)
 
 # Senta que lá vem a história
 

@@ -3,7 +3,7 @@ layout: post
 title: "Look Who's Talking"
 ---
 
-![Look who's talking](/assets/images/posts/look-who-is-talking.jpg)
+![Look who's talking](/public/images/posts/look-who-is-talking.jpg)
 
 # Once Upon a Time
 
