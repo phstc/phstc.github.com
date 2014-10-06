@@ -27,7 +27,7 @@ end
 {% endhighlight %}
 
 
-Use it:
+Wrap the code you want to profile:
 
 {% highlight ruby %}
 class UserRegistration
@@ -50,4 +50,4 @@ Then you will get something like that in your logs output:
 > /data/app/releases/.../user_registration.rb:10:in register' - Completed in 2000.00 ms
 
 
-And in most of the cases, you will find out that: as the butler is always guilty in old mystery books, your database will be guilty in your application. MOAR indexes needed.
+And as expected, your database will be guilty in most cases. MOAR indexes.
