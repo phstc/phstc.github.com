@@ -12,7 +12,7 @@ Let's do it! Go to your special production host, the one you use to test in prod
 
 Paste the snippet below in something available to the class scope you want to profile.
 
-{% highlight ruby %}
+```ruby
 def log_time
   beginning_time = Time.now
 
@@ -24,12 +24,12 @@ def log_time
 
   result
 end
-{% endhighlight %}
+```
 
 
 Wrap the code you want to profile:
 
-{% highlight ruby %}
+```ruby
 class UserRegistration
    def register
      log_time { do_something }
@@ -41,7 +41,7 @@ class UserRegistration
      end
    end
 end
-{% endhighlight %}
+```
 
 Then you will get something like that in your logs output:
 

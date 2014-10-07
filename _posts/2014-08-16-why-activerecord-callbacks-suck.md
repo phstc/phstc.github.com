@@ -15,28 +15,32 @@ If you follow SRP by the book, you might end up with hundreds of single-public-m
 
 If you need to send a confirmation email every time you create a new user, you have two responsibilities: one to create a user and another to send an email and they need specific classes and methods. If you do it all in the same place class/method, it can result in unexpected processing **depending on your context** or become hard to maintain, because to update one code you need to change the other consequently.
 
-    class User < ActiveRecord:Model
-      after_create :send_confirmation_email
-    
-      def send_confirmation_email
-        UserMailer.registration_confirmation(self).deliver
-      end
-    end
+```ruby
+class User < ActiveRecord:Model
+  after_create :send_confirmation_email
 
-We have two classes: `User` and `UserMailer` and two methods: `User#save` and `UserMailer.registration_confirmation` to create a user and send an email respectively. 
+  def send_confirmation_email
+    UserMailer.registration_confirmation(self).deliver
+  end
+end
+```
+
+We have two classes: `User` and `UserMailer` and two methods: `User#save` and `UserMailer.registration_confirmation` to create a user and send an email respectively.
 
 With this design if you want to create a new user in the console without sending the confirmation email, you can't. The user creation is coupled with the email sending, so it isn't the best design choice, but how frequently do you need to create a user without sending a confirmation email? Does it deserve a `UserRegistration`?
 
-    class UserRegistration
-      def initialize(user)
-        @user = user
-      end
-    
-      def register
-        @user.save
-        UserMailer.registration_confirmation(self).deliver
-      end
-    end
+```ruby
+class UserRegistration
+  def initialize(user)
+    @user = user
+  end
+
+  def register
+    @user.save
+    UserMailer.registration_confirmation(self).deliver
+  end
+end
+```
 
 Being honest, I would go with a `UserRegistration` class as an improvement on demand, based on business requirements (i.e. a requirement to allow users creation without sending the confirmation email). If you do it prematurely, someone can use `User#save` instead of `UserRegistration.new(user).register`, just because it is what he does "by default" using Rails, so that innocently skipping the confirmation email. I prefer to keep the common usage simple and trivial as possible and only treat the exceptions with special code.
 
@@ -48,10 +52,12 @@ Imagine every time you create an order, besides persisting it you need also to s
 
 A new developer joins the project, starts a task to update all orders `origin` attribute based on other order attributes.
 
-    Order.all.find_each do |order|
-      # update `origin`
-      order.save
-    end
+```ruby
+Order.all.find_each do |order|
+  # update `origin`
+  order.save
+end
+```
 
 > Fuck this. Fuck that. Fuck those too. Fuck all these. This thing in particular.
 
@@ -64,16 +70,18 @@ What's expected and unexpected is very relative, I know. But I suggest to consid
 
 Callbacks can slow down your tests (RSpec etc), not your production code. If you need to do more stuff after persisting an order, no matter how you do it:
 
-    class Order < ActiveRecord::Model
-      protect :save
-      
-      def place
-        # do something else
-        save
-      end
-    end
+```ruby
+class Order < ActiveRecord::Model
+  protect :save
 
-Creating new methods and changing others visibility, creating other classes/methods, observers, **callbacks** etc. 
+  def place
+    # do something else
+    save
+  end
+end
+```
+
+Creating new methods and changing others visibility, creating other classes/methods, observers, **callbacks** etc.
 
 You need to do that. So when a user click on "Place Order", he will need to wait all this processing, no matter which abstractions were used to implement it. That's it.
 
