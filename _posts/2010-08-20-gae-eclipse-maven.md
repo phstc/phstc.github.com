@@ -18,7 +18,7 @@ O código fonte do guia está disponível no [GitHub](http://github.com/phstc/te
 
 ## Criação da aplicação com um archetype
 
-```shell
+```bash
 matilde:workspace pablo$ mvn archetype:generate -DarchetypeGroupId=net.kindleit -DarchetypeArtifactId=gae-archetype-jsp -DarchetypeVersion=0.6.0 -DgroupId=com.cantero.testapp_cantero -DartifactId=testapp-cantero -DarchetypeRepository=http://maven-gae-plugin.googlecode.com/svn/repository
 [INFO] Scanning for projects...
 [INFO] Searching repository for plugin with prefix: 'archetype'.
@@ -67,7 +67,7 @@ As versões estão disponíveis no [repositório](http://maven-gae-plugin.google
 
 ## Adicionando Eclipse capabilities
 
-``shell
+``bash
 mvn eclipse:eclipse
 
 
@@ -126,7 +126,7 @@ A versão 1.3.5 não está disponível (até a data desse post no [repositório 
 Para o primeiro deploy é necessário executar:
 
 
-```shell
+```bash
 $ mvn gae:unpack
 $ mvn gae:deploy
 ```

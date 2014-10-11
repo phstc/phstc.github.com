@@ -54,7 +54,7 @@ O WSDL para o Web Services está disponível na url [developer.intuit.com/upload
 
 Para iniciar criei um projeto Java Básico com o Eclipse "File -> New -> Java Project -> JavaQuickBooksWebConnector".
 
-```shell
+```bash
 cd /Users/pablo/workspace/JavaQuickBooksWebConnector/src/
 
 wsimport http://developer.intuit.com/uploadedFiles/Support/QBWebConnectorSvc.wsdl -s . -p com.cantero.quickbooks.ws
