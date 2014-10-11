@@ -13,8 +13,8 @@ relative_permalinks: true
 title:            'Pablo Cantero'
 tagline:          'Coding all the things'
 description:      ''
-url:              http://pablocantero.com
-baseurl:          /
+url:              http://www.pablocantero.com/
+baseurl:          http://www.pablocantero.com/
 
 author:
   name:           'Pablo Cantero'
