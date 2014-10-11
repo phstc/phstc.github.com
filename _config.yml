@@ -14,7 +14,7 @@ title:            'Pablo Cantero'
 tagline:          'Coding all the things'
 description:      ''
 url:              http://www.pablocantero.com/
-baseurl:          http://www.pablocantero.com/
+baseurl:          /
 
 author:
   name:           'Pablo Cantero'
