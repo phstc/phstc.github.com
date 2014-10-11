@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: "GAE + Eclipse + Maven"
@@ -12,7 +11,7 @@ O código fonte do guia está disponível no [GitHub](http://github.com/phstc/te
 
 * Mac OSX 10.6.4 x86_64
 * Java version: 1.6.0_20
-* Eclipse JEE Helios - [Mac OS X)](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/helios/R/eclipse-jee-helios-macosx-cocoa-x86_64.tar.gz)
+* Eclipse JEE Helios - [Mac OS X](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/helios/R/eclipse-jee-helios-macosx-cocoa-x86_64.tar.gz)
 * Apache Maven 2.2.0
 
 
