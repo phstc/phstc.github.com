@@ -1,7 +1,7 @@
 
 ---
 layout: post
-title: "GAE + Eclipse + Maven"
+title: "GAE + Eclipse + Maven + Test"
 ---
 
 Esse é um tutorial para demonstrar como utilizar o [GAE](http://code.google.com/appengine), com [Maven](http://maven.apache.org) ([maven-gae-plugin](http://code.google.com/p/maven-gae-plugin/)) no [Eclipse](http://www.eclipse.org).
