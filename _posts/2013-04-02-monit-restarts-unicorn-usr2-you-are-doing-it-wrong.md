@@ -13,9 +13,11 @@ Although Monit is awesome, unfortunately for process monitoring, it hasn't a `re
 
 In fact, as you can see in the [Monit source code](http://mmonit.com/monit/download/), the `restart` explicit executes `stop` and `start`.
 
-     restart)
-     	$0 stop
-    	$0 start
+```
+restart)
+	$0 stop
+	$0 start
+```
 
 ### Monit life cycle
 
@@ -23,10 +25,12 @@ Monit checks for a pid or process matching (depending on your configuration) in 
 
 Monit only restarts (`stop` and `start`) a process, if you manually execute `monit restart all|name` or if you defined a resource testing triggering a restart.
 
-    check process unicorn_master with pidfile "..."
+```
+check process unicorn_master with pidfile "..."
       start = "..."
       stop = "..."
       if cpu is greater than 50% for 5 cycles then restart
+```
 
 ## Unicorn
 
@@ -36,9 +40,11 @@ The combination of Monit and Unicorn is the motivation for this post.
 
 I saw several posts over the internet suggesting this configuration.
 
-    check process unicorn_master with pidfile "…"
-      start program = "/bin/true"
-      stop program = "set ruby;set gems path; kill -USR2 `cat pidfile`"
+```
+check process unicorn_master with pidfile "…"
+  start program = "/bin/true"
+  stop program = "set ruby;set gems path; kill -USR2 `cat pidfile`"
+```
 
 People use this suggested configuration above to keep Unicorn always running and restarts it gracefully.
 
@@ -52,9 +58,11 @@ For me this `start` and `stop` actions mentioned in the example above are a dirt
 
 My suggestion is to use Monit as is.
 
-    check process unicorn_master with pidfile "…"
-      start program = "/usr/bin/unicorn_start"
-      stop program = "/usr/bin/unicorn_stop"
+```
+check process unicorn_master with pidfile "…"
+  start program = "/usr/bin/unicorn_start"
+  stop program = "/usr/bin/unicorn_stop"
+```
 
 ### Ok ok… How about graceful restart?
 
@@ -64,14 +72,11 @@ In most scenarios you only need graceful restart when:
 
 2. A resource testing triggers a `restart`. In place of using `restart` action, try to execute a command `if cpu is greater than 50% for 5 cycles then exec "/usr/bin/unicorn_restart"`
 
-#### Resource testing
+### Resource testing
 
 Beware of using Resource Testing.
 
 Firstly, you can hide an internal problem. You don't need to be a hacker like the [Stripe guys](http://blog.nelhage.com/2013/03/tracking-an-eventmachine-leak/) going too deep to discover the cause of the memory leak, but you should, at least have a look at.
 
 Secondly, if you are using [AWS AutoScaling](http://aws.amazon.com/autoscaling/), you probably use AutoScaling Policies ([avoid Cloud Smells](http://pablocantero.com/blog/2012/09/07/use-auto-scaling-avoid-cloud-smells/)). In this scenario your Resource Testing can conflict with AutoScaling Policies. If you have a Scale Up `if cpu > 80%` and a Resource Testing for the same, one will nullify the other.
-
-
-
 
