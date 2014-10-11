@@ -28,21 +28,23 @@ Para desenvolver a integração com Java, estou usando:
 
 O arquivo QWC é o arquivo de configuração do seu Web services no QBWC.
 
-    <?xml version="1.0"?>
-    <QBWCXML>
-     <AppName>WCWebService1</AppName>
-     <AppID></AppID>
-     <AppURL>http://localhost/WCWebService/WCWebService.asmx</AppURL>
-     <AppDescription>A short description for WCWebService1</AppDescription>
-     <AppSupport>http://developer.intuit.com</AppSupport>
-     <UserName>iqbal1</UserName>
-     <OwnerID>{57F3B9B1-86F1-4fcc-B1EE-566DE1813D20}</OwnerID>
-     <FileID>{90A44FB5-33D9-4815-AC85-BC87A7E7D1EB}</FileID>
-     <QBType>QBFS</QBType>
-     <Scheduler>
-     <RunEveryNMinutes>2</RunEveryNMinutes>
-     </Scheduler>
-    </QBWCXML>
+```xml
+<?xml version="1.0"?>
+<QBWCXML>
+  <AppName>WCWebService1</AppName>
+  <AppID></AppID>
+  <AppURL>http://localhost/WCWebService/WCWebService.asmx</AppURL>
+  <AppDescription>A short description for WCWebService1</AppDescription>
+  <AppSupport>http://developer.intuit.com</AppSupport>
+  <UserName>iqbal1</UserName>
+  <OwnerID>{57F3B9B1-86F1-4fcc-B1EE-566DE1813D20}</OwnerID>
+  <FileID>{90A44FB5-33D9-4815-AC85-BC87A7E7D1EB}</FileID>
+  <QBType>QBFS</QBType>
+  <Scheduler>
+    <RunEveryNMinutes>2</RunEveryNMinutes>
+  </Scheduler>
+</QBWCXML>
+```
 
 ## Segundo passo - wsimport QBWebConnectorSvc.wsdl
 
@@ -52,8 +54,11 @@ O WSDL para o Web Services está disponível na url [developer.intuit.com/upload
 
 Para iniciar criei um projeto Java Básico com o Eclipse "File -> New -> Java Project -> JavaQuickBooksWebConnector".
 
-    cd /Users/pablo/workspace/JavaQuickBooksWebConnector/src/
-    wsimport http://developer.intuit.com/uploadedFiles/Support/QBWebConnectorSvc.wsdl -s . -p com.cantero.quickbooks.ws
+```shell
+cd /Users/pablo/workspace/JavaQuickBooksWebConnector/src/
+
+wsimport http://developer.intuit.com/uploadedFiles/Support/QBWebConnectorSvc.wsdl -s . -p com.cantero.quickbooks.ws
+```
 
 Parâmetros
 
@@ -68,68 +73,69 @@ A linguagem para requisições do QBWC é [qbXML](http://developer.intuit.com/qb
 
 ### Classe de implementação
 
-    package com.cantero.quickbooks.ws;
+```java
+package com.cantero.quickbooks.ws;
 
-    import java.util.ArrayList;
+import java.util.ArrayList;
 
-    import javax.jws.WebService;
+import javax.jws.WebService;
 
-    /*
-     * http://developer.intuit.com/qbsdk-current/doc/pdf/qbwc_proguide.pdf
-     */
-    @WebService(endpointInterface = "com.cantero.ws.client.QBWebConnectorSvcSoap")
-    public class ItemQueryRqSoapImpl implements QBWebConnectorSvcSoap {
+/*
+* http://developer.intuit.com/qbsdk-current/doc/pdf/qbwc_proguide.pdf
+*/
+@WebService(endpointInterface = "com.cantero.ws.client.QBWebConnectorSvcSoap")
+public class ItemQueryRqSoapImpl implements QBWebConnectorSvcSoap {
 
-     @Override
-     public ArrayOfString authenticate(String strUserName, String strPassword) {
-     ArrayOfString arr = new ArrayOfString();
-     arr.string = new ArrayList<String>();
-     arr.string.add("The first element is a token for the web connector’s session");
-     arr.string.add(""); //To use the currently open company, specify an empty string
-     return arr;
-     }
+  @Override
+  public ArrayOfString authenticate(String strUserName, String strPassword) {
+    ArrayOfString arr = new ArrayOfString();
+    arr.string = new ArrayList<String>();
+    arr.string.add("The first element is a token for the web connector’s session");
+    arr.string.add(""); //To use the currently open company, specify an empty string
+    return arr;
+  }
 
-     @Override
-     public String closeConnection(String ticket) {
-     // TODO Auto-generated method stub
-     return null;
-     }
+  @Override
+  public String closeConnection(String ticket) {
+    // TODO Auto-generated method stub
+    return null;
+  }
 
-     @Override
-     public String connectionError(String ticket, String hresult, String message) {
-     // TODO Auto-generated method stub
-     return null;
-     }
+  @Override
+  public String connectionError(String ticket, String hresult, String message) {
+    // TODO Auto-generated method stub
+    return null;
+  }
 
-     @Override
-     public String getLastError(String ticket) {
-     // TODO Auto-generated method stub
-     return null;
-     }
+  @Override
+  public String getLastError(String ticket) {
+    // TODO Auto-generated method stub
+    return null;
+  }
 
-     /*
-      * A positive integer less than 100 represents the percentage of work completed. A value of 1 means one percent complete, a value of 100 means 100 percent complete--there is no more work. A negative value means an error has occurred and the Web Connector responds to this with a getLastError call. The negative value could be used as a custom error code.
-      */
-    @Override
-     public int receiveResponseXML(String ticket, String response,
-     String hresult, String message) {
-     // a value of 100 means 100 percent complete--there is no more work
-     return 100;
-     }
+  /*
+  * A positive integer less than 100 represents the percentage of work completed. A value of 1 means one percent complete, a value of 100 means 100 percent complete--there is no more work. A negative value means an error has occurred and the Web Connector responds to this with a getLastError call. The negative value could be used as a custom error code.
+  */
+  @Override
+  public int receiveResponseXML(String ticket, String response,
+  String hresult, String message) {
+    // a value of 100 means 100 percent complete--there is no more work
+    return 100;
+  }
 
-     @Override
-     public String sendRequestXML(String ticket, String strHCPResponse,
-     String strCompanyFileName, String qbXMLCountry, int qbXMLMajorVers,
-     int qbXMLMinorVers) {
-     //Example qbXML to Query for an Item
-     //http://www.consolibyte.com/wiki/doku.php/quickbooks_qbxml_itemquery
-     String query = "<?xml version=\"1.0\" encoding=\"utf-8\"?><?qbxml version=\"7.0\"?><QBXML><QBXMLMsgsRq onError=\"stopOnError\"><ItemQueryRq requestID=\"SXRlbVF1ZXJ5fDEyMA==\"><OwnerID>0</OwnerID></ItemQueryRq></QBXMLMsgsRq></QBXML>";
-     return query;
-     }
+  @Override
+  public String sendRequestXML(String ticket, String strHCPResponse,
+  String strCompanyFileName, String qbXMLCountry, int qbXMLMajorVers,
+  int qbXMLMinorVers) {
+    // Example qbXML to Query for an Item
+    // http://www.consolibyte.com/wiki/doku.php/quickbooks_qbxml_itemquery
+    String query = "<?xml version=\"1.0\" encoding=\"utf-8\"?><?qbxml version=\"7.0\"?><QBXML><QBXMLMsgsRq onError=\"stopOnError\"><ItemQueryRq requestID=\"SXRlbVF1ZXJ5fDEyMA==\"><OwnerID>0</OwnerID></ItemQueryRq></QBXMLMsgsRq></QBXML>";
+    return query;
+  }
+}
+```
 
-    }
-
-A instrução ```<OwnerID>0</OwnerID>``` é utilizada para que o QuickBooks retorne os Custom Fields. Na versão QuickBooks Enterprise Edition 10, pode ser inserido mais de 5 custom fields, [mas até o momento só é possível recuperar os 5 primeiros utilizando qbXML](https://idnforums.intuit.com/messageview.aspx?catid=7&amp;threadid=13998).
+A instrução `<OwnerID>0</OwnerID>` é utilizada para que o QuickBooks retorne os Custom Fields. Na versão QuickBooks Enterprise Edition 10, pode ser inserido mais de 5 custom fields, [mas até o momento só é possível recuperar os 5 primeiros utilizando qbXML](https://idnforums.intuit.com/messageview.aspx?catid=7&amp;threadid=13998).
 
 ## Quarto passo - Importando o QWC no QBWC
 
@@ -137,16 +143,18 @@ Basta ir ao QuickBooks Web Connector "Add an application -> Selecionar o QWC -> 
 
 ## Quinto passo - Testando o Web services
 
-    package com.cantero.quickbooks.ws;
+```java
+package com.cantero.quickbooks.ws;
 
-    import javax.xml.ws.Endpoint;
+import javax.xml.ws.Endpoint;
 
-    public class Main {
-     public static void main(String[] args) {
-     Endpoint.publish("http://192.168.0.137:54321/ItemQueryRqSoapImpl",
-     new ItemQueryRqSoapImpl());
-     }
-    }
+public class Main {
+  public static void main(String[] args) {
+    Endpoint.publish("http://192.168.0.137:54321/ItemQueryRqSoapImpl",
+    new ItemQueryRqSoapImpl());
+  }
+}
+```
 
 Para executar o Main diretamente pelo Eclipse basta ir em "Run As -> Java Application, Debug As -> Java Application".
 
