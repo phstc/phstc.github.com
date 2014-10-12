@@ -10,7 +10,7 @@ Esse é um guia rápido de configuração do [Capistrano](http://www.capify.org/
 
 Após logado no GitHub, no seu [dashboard](https://github.com) aparecerá seus repositórios e um botão para criar um novo repositório.
 
-![GitHub - Your Repositories - New Repository](/public/images/posts/github-your-repositories-new-repository.png)
+![GitHub - Your Repositories - New Repository](/assets/images/posts/github-your-repositories-new-repository.png)
 
 Após criado o repositório, o GitHub mostrará as instruções para o seu primeiro commit.
 

@@ -51,5 +51,5 @@ end
 
 desc 'Start jekyll in development mode'
 task :server do
-  exec 'jekyll server --watch --trace --drafts'
+  exec 'jekyll server --watch --drafts'
 end

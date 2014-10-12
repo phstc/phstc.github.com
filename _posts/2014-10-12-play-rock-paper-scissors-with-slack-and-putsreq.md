@@ -15,29 +15,29 @@ First, let’s fork the Rock-paper-scissors webhook on PutsReq.
 * Open [PutsReq Rock-paper-scissors](https://putsreq.herokuapp.com/hfep98jThPU0ffRlmWBx/inspect)
 * Click on Fork
 
-![](/public/images/posts/slack-putsreq/putsreq-fork.png)
+![](/assets/images/posts/slack-putsreq/putsreq-fork.png)
 
 * Copy your PutsReq URL, it will be used as your webhook URL in the next step
 
-![](/public/images/posts/slack-putsreq/copy-putsreq-url.png)
+![](/assets/images/posts/slack-putsreq/copy-putsreq-url.png)
 
 ## Add Rock-paper-scissors Outgoing webhook
 
 * Access your [Slack Services](https://my.slack.com/services/new)
 * Click on Outgoing WebHooks
 
-![](/public/images/posts/slack-putsreq/outgoing-webhooks.png)
+![](/assets/images/posts/slack-putsreq/outgoing-webhooks.png)
 
 * Click on Add Outgoing Webhook
 * Fill Channel: Any, Trigger Word(s): rock, scissors, paper and URL(s): your PutsReq URL.
 
-![](/public/images/posts/slack-putsreq/integration-settings.png)
+![](/assets/images/posts/slack-putsreq/integration-settings.png)
 
 * Click on Save
 
 ## Play it
 
-![](/public/images/posts/slack-putsreq/play.png)
+![](/assets/images/posts/slack-putsreq/play.png)
 
 ## More?
 

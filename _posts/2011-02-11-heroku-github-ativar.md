@@ -5,7 +5,7 @@ title: "Heroku + GitHub, ativar"
 
 Esse post descreve como utilizar o Heroku e GitHub simultaneamente Quem se lembra do [Supergêmeos](http://pt.wikipedia.org/wiki/Superg%C3%AAmeos), ativar?
 
-![Supergêmeos, ativar!](/public/images/posts/supergemeos-ativar.jpg)
+![Supergêmeos, ativar!](/assets/images/posts/supergemeos-ativar.jpg)
 
 A utilização simultânea do Heroku e GitHub é dada graças ao Git, pois ele permite trabalhar com mais de um server remoto (remote) por repositório. Para isso, após criar um repositório com o Heroku, basta adicionar o GitHub como remote ou vice-versa.
 
