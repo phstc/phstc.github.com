@@ -21,7 +21,8 @@ layout: null
    <link href="{{ site.url }}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>{{ site.url }}{{ post.id }}</id>
-   <content type="html">{{ post.content | replace: '/assets/', site.assets_base_url | xml_escape }}</content>
+   {% assign assets_base_url_src = site.assets_base_url | prepend: 'src="' %}
+   <content type="html">{{ post.content | replace: 'src="/assets/', assets_base_url_src) | xml_escape }}</content>
 
  </entry>
  {% endfor %}
