@@ -31,11 +31,14 @@ namespace :draft do
       next if %w[. .. .keep].include? file_name
 
       puts "#{i} - #{file_name}"
+
+      file_name
     end
 
     puts "What's the name of the draft to post?"
 
-    post_name = STDIN.gets.chomp
+    post_index = STDIN.gets.chomp
+    post_name = files[post_index.to_i]
     post_date = Time.now.strftime('%F')
 
     FileUtils.mv("_drafts/#{post_name}",  "_posts/#{post_name}")
