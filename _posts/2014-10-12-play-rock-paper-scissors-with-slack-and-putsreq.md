@@ -41,4 +41,4 @@ First, let’s fork the Rock-paper-scissors webhook on PutsReq.
 
 ## More?
 
-Now that your [Rock-paper-scissors](https://en.wikipedia.org/wiki/Rock-paper-scissors) is working, why not expand it with [Rock-paper-scissors-lizard-Spock](https://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)? If you do that, please share! :)
+Now that your [Rock-paper-scissors](https://en.wikipedia.org/wiki/Rock-paper-scissors) is working, why not expand it to the [Rock-paper-scissors-lizard-Spock](https://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock) version? If you do that, please share! :)
