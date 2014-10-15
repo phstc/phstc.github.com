@@ -9,7 +9,7 @@ Test your HTML emails before sending them.
 
 [putsmail.com](https://putsmail.com)
 
-***PutsMail became the most popular tool to test HTML emails on the internet and was acquired by [Litmus](https://litmus.com/blog/a-new-home-for-putsmail-at-litmus) in 2014.***
+***PutsMail became the most popular tool to test HTML emails on the internet and was acquired by [Litmus](https://putsmail.com/about) in 2014.***
 
 ## PutsReq
 
