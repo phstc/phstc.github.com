@@ -17,6 +17,14 @@ PutsReq lets you record HTTP requests and simulate responses like no other tool 
 
 [putsreq.com](http://www.putsreq.com)
 
+## Taxee
+
+Taxee helps executive taxi companies to manage their customers, rides, drivers etc - it's focused on the Brazilian market.
+
+_Gestão completa para empresas de táxi executivo._
+
+[taxee.com.br](http://www.taxee.com.br/)
+
 ## shoryuken
 
 Super efficient [AWS SQS](https://aws.amazon.com/sqs) message processor for [Ruby](https://www.ruby-lang.org).
