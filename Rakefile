@@ -35,7 +35,7 @@ namespace :draft do
       file_name
     end
 
-    puts "What's the name of the draft to post?"
+    puts "What's the number of the draft to post?"
 
     post_index = STDIN.gets.chomp
     post_name = files[post_index.to_i]
