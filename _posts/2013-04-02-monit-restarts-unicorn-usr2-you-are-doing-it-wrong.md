@@ -3,7 +3,7 @@ layout: post
 title: "Monit restarts Unicorn USR2 - You are doing it wrong"
 ---
 
-**TL;DR** Use Monit to `start` and `stop` Unicorn, if you want to graceful `restart`, do it outside Monit ([sample scripts](https://gist.github.com/phstc/5312520)).
+**tl;dr** Use Monit to `start` and `stop` Unicorn, if you want to graceful `restart`, do it outside Monit ([sample scripts](https://gist.github.com/phstc/5312520)).
 
 ## Monit
 
