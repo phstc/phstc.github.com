@@ -33,7 +33,7 @@ sqs_msg.delete
 
 Catching things up - we created a queue that holds messages for 4 days `message_retention_period: 345600`, which means: if we don't consume a message within 4 days the message will be lost.
 
-The `visibility_timeout` is the time in seconds we have to consume a message after its reception. When we send a message to SQS `send_message`, the message is listed on "Messages Available", when we receive a message `receive_message` the message is moved to "Messages in Flight" if we don't `delete` the message within 600 seconds (which is the visibility timeout we configured above) the message will be moved back to "Messages Available" and become ready to be consumed again. [Read more about the SQS Message Lifecycle](https://aws.amazon.com/sqs/details/#Amazon_SQS_Message_Lifecycle).
+The `visibility_timeout` is the time in seconds we have to consume a message after its reception. When we send a message to SQS `send_message`, the message is listed on "Messages Available", when we receive a message `receive_message` the message is moved to "Messages in Flight", if we don't `delete` the message within 600 seconds (which is the visibility timeout we configured above) the message will be moved back to "Messages Available" and become ready to be consumed again. [Read more about the SQS Message Lifecycle](https://aws.amazon.com/sqs/details/#Amazon_SQS_Message_Lifecycle).
 
 Be generous while configuring the default `visibility_timeout` for a queue. If your worker in the worst case takes 2 minutes to consume a message, set the `visibility_timeout` to at least 4 minutes. It doesn't hurt and it will be better than having the same message being consumed more than the expected.
 
@@ -66,7 +66,7 @@ dl_queue = sqs.queues.create('myqueue_failures')
 sqs.queues.create('myqueue', redrive_policy: %Q{ {"maxReceiveCount":"3", "deadLetterTargetArn":"#{dl_queue.arn}"}" })
 ```
 
-The `redrive_policy` above tells SQS to move messages from `myqueue` to `myqueue_failures` if the receive count of a message reaches 3.
+The `redrive_policy` above tells SQS to move a message from `myqueue` to `myqueue_failures` if its receive count reaches 3.
 
 
 ## Delaying a message `perform_in`
@@ -105,7 +105,7 @@ else
 end
 ```
 
-Be careful with this workaround, it will increase the message receive count.
+Be careful with this workaround, because it will increase the message receive count.
 
 ## 1 million != 1 million
 
@@ -117,11 +117,11 @@ Be careful with this workaround, it will increase the message receive count.
 2. `receive_message`
 3. `sqs_msg.delete`
 
-Although these requests can be executed in batches up to 10 messages, you will need all of them to consume a message, and even if you are using the [poll](http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/SQS/Queue.html#poll-instance_method) method with a high `wait_time_seconds` to receive messages, you will probably make some empty requests while looking for new messages. 
+Although these requests can be executed in batches up to 10 messages, you will need all of them to consume a message, and even if you are using the [poll](http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/SQS/Queue.html#poll-instance_method) method with a high `wait_time_seconds`, you will probably make some empty requests while looking for new messages. 
 
 ## SNS to SQS
 
-Sending the same message to one or more queues using SQS:
+Sending the same message to more than one queue using SQS:
 
 ```ruby
 msg = order.json
@@ -141,7 +141,7 @@ topic.publish(msg)
 # sends to order_email_queue and order_erp_queue
 ```
 
-[SNS will fanout the message to both queues](http://docs.aws.amazon.com/sns/latest/dg/SNS_Scenarios.html). Consequently [paying](https://aws.amazon.com/sns/pricing/) (SNS to SQS is free) and waiting for only one request to SNS, instead of two to SQS.
+[SNS will fanout the message to both queues](http://docs.aws.amazon.com/sns/latest/dg/SNS_Scenarios.html) - consequently you will [pay](https://aws.amazon.com/sns/pricing/) (SNS to SQS is free) and wait for only one request to SNS, instead of two to SQS.
 
 ## Trouble in paradise
 
@@ -176,6 +176,6 @@ Check more on the [project's README](https://github.com/phstc/shoryuken).
 
 ## Conclusion
 
-SQS is cheap, you don't need to worry about managing your queue system, setup Redis etc. 
+SQS is cheap, you don't need to worry about managing your queue services, setup Redis etc. 
 
 Keep your focus on your workers/jobs (which should be the most important to you) and let Amazon to take care of the infrastructure, it works!
