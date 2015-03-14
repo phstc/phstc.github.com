@@ -3,7 +3,9 @@ layout: post
 title: Sidekiq vs Shoryuken (AWS SQS)
 ---
 
-Disclaimer: This post is not intended to compare [Sidekiq](http://sidekiq.org/) and [Shoryuken](https://github.com/phstc/shoryuken) implementations. Both are very similar, actually Shoryuken started as a [shameless copy of Sidekiq](https://github.com/phstc/shoryuken#credits) <3 open source. The idea of this post is to compare Sidekiq as a Redis based queue system with Shoryuken as a [SQS](https://aws.amazon.com/sqs/) client. 
+**WIP**
+
+Disclaimer: This post is not intended to compare [Sidekiq](http://sidekiq.org/) and [Shoryuken](https://github.com/phstc/shoryuken) implementations. Both are very similar, actually Shoryuken started as a [shameless copy of Sidekiq](https://github.com/phstc/shoryuken#credits) <3 open source. The idea of this post is to compare Sidekiq as a Redis based queue system with Shoryuken as a [SQS](https://aws.amazon.com/sqs/) client.
 
 
 ## Resque > Sidekiq > Shoryuken
@@ -52,14 +54,14 @@ Test plan:
 
 Result:
 
-* Sidekiq took 13 seconds to consume 1k jobs 
+* Sidekiq took 13 seconds to consume 1k jobs
 * Shoryuken took 14 seconds to consume 1k jobs
 
 ![](/assets/images/posts/sidekiq-putsreq.png)
 
 ![](/assets/images/posts/shoryuken-putsreq.png)
 
-Although the jobs consumption result was pretty close, sending jobs with Sidekiq is clearly faster than with Shoryuken. 
+Although the jobs consumption result was pretty close, sending jobs with Sidekiq is clearly faster than with Shoryuken.
 
 * Sidekiq took 2278.37ms to send 1k jobs (2.28ms per send)
 * Shoryuken took 55629.93ms to send 1k jobs (55.63ms per send)
@@ -98,11 +100,11 @@ Nope! SQS can be also free or cheaper than Sidekiq:
 
 * Starts at $0 for a very limited option. But keep in mind that Redis To Go isn't an [HA solution](https://en.wikipedia.org/wiki/High_availability), they don't offer a Redis cluster, so it's a [SPOF](https://en.wikipedia.org/wiki/Single_point_of_failure). For an HA solution they recommend [ObjectRocket](https://objectrocket.com/pricing), which starts at $59/month
 
-## From Sidekiq from Shoryuken
+## From Sidekiq to Shoryuken
 
 Did I convince you?
 
-Have a look at the migration steps from [Sidekiq to Shoryuken](https://github.com/phstc/shoryuken/wiki/From-Sidekiq-to-Shoryuken).
+Have a look at the migration steps: [From Sidekiq to Shoryuken](https://github.com/phstc/shoryuken/wiki/From-Sidekiq-to-Shoryuken).
 
 ## Conclusion
 
