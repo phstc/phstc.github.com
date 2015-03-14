@@ -12,7 +12,7 @@ Disclaimer: This post is not intended to compare [Sidekiq](http://sidekiq.org/) 
 
 Before Sidekiq, [Resque](https://github.com/resque/resque) was the main option to go for background jobs for many Rubyists. But Sidekiq changed that, mainly because it uses threads instead of process forking (Resque). No matter how many improvements MRI is receiving on process forking, we can't get the same performance (usage of resources) using forks as we get with threads. You can check some [Sidekiq testimonials](https://github.com/mperham/sidekiq/wiki/Testimonials) confirming that.
 
-But the game is changing again - it's time to Shoryuken.
+But the game is changing again - it's Shoryuken time.
 
 With Sidekiq:
 
@@ -67,6 +67,8 @@ Although the jobs consumption result was pretty close, sending jobs with Sidekiq
 * Shoryuken took 55629.93ms to send 1k jobs (55.63ms per send)
 
 Yeah, Redis write performance is amazing. But is 55.63ms much?
+
+*Every time you run these tests you will get a different result, but in most cases Sidekiq is slightly faster to consume and clearly faster to send jobs than Shoryuken.*
 
 ## Pricing
 
