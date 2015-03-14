@@ -20,14 +20,18 @@ With Sidekiq:
 * If you don't have a Redis cluster, eventually you will lose everything
 * No Dead Letter Queues support
 * No Fanout support
+* You need to host its dashboard (console)
+* You can use [sidekiq-statsd](https://github.com/phstc/sidekiq-statsd) or [Sidekiq pro/Metrics](https://github.com/mperham/sidekiq/wiki/Metrics) to send metrics to Statsd for distribution to Graphite, Librato Metrics, etc, but you will need these services running somewhere
 
 With Shoryuken:
 
-* If your process crashes, your jobs will return to the queue after its `visibility_timeout` expiration, nothing will be lost
+* If your process crashes, your jobs will return to the queue after its [visibility timeout](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html) expiration, nothing will be lost
 * If a SQS node crashes, you don't care, nothing will be lost
 * If your jobs load increases from 1 to 1 million, you don't care, SQS handles that for you
 * [Dead Letter Queues support](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html)
-* [Fanout support](http://www.pablocantero.com/blog/2014/11/29/sqs-to-the-rescue/#sns-to-sqs)
+* [Fanout support via SNS](http://www.pablocantero.com/blog/2014/11/29/sqs-to-the-rescue/#sns-to-sqs)
+* [Hosted console](https://console.aws.amazon.com/sqs/home?region=us-east-1)
+* You can [monitor your queues with CloudWatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MonitorSQSwithCloudWatch.html#SQS_metricscollected) and send [alarm emails](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/AlarmThatSendsEmail.html) (SMS messages, HTTP calls) when a threshold is breached
 
 ## Perfomance
 
@@ -35,18 +39,18 @@ WARNING: SUBJECTIVE PERFORMANCE TESTS!!!
 
 Are you wondering about performance? I would be, Redis is super fast.
 
-To test that, I created two projects:
+To test performance, I created two projects:
 
 * [https://github.com/phstc/sidekiq-putsreq](https://github.com/phstc/sidekiq-putsreq)
 * [https://github.com/phstc/shoryuken-putsreq](https://github.com/phstc/shoryuken-putsreq)
 
-The test plan:
+Test plan:
 
 * Send 1k jobs
 * Make a HTTP call per job to a [PutsReq](http://putsreq.com/) bucket
 * Compare the "From first to last" result
 
-The result:
+Result:
 
 * Sidekiq took 13 seconds to consume 1k jobs 
 * Shoryuken took 14 seconds to consume 1k jobs
@@ -61,7 +65,6 @@ Although the jobs consumption result was pretty close, sending jobs with Sidekiq
 * Shoryuken took 55629.93ms to send 1k jobs (55.63ms per send)
 
 Yeah, Redis write performance is amazing. But is 55.63ms much?
-
 
 ## Pricing
 
@@ -81,7 +84,7 @@ Nope! SQS can be also free or cheaper than Sidekiq:
 * First 1 million Amazon SQS Requests per month are free
 * $0.50 per 1 million Amazon SQS Requests  per month thereafter ($0.00000050 per SQS Request)
 
-## Sidekiq
+### Sidekiq
 
 [Sidekiq pricing](http://sidekiq.org):
 
@@ -94,3 +97,15 @@ Nope! SQS can be also free or cheaper than Sidekiq:
 [Redis To Go pricing](https://addons.heroku.com/redistogo):
 
 * Starts at $0 for a very limited option. But keep in mind that Redis To Go isn't an [HA solution](https://en.wikipedia.org/wiki/High_availability), they don't offer a Redis cluster, so it's a [SPOF](https://en.wikipedia.org/wiki/Single_point_of_failure). For an HA solution they recommend [ObjectRocket](https://objectrocket.com/pricing), which starts at $59/month
+
+## From Sidekiq from Shoryuken
+
+Did I convince you?
+
+Have a look at the migration steps from [Sidekiq to Shoryuken](https://github.com/phstc/shoryuken/wiki/From-Sidekiq-to-Shoryuken).
+
+## Conclusion
+
+There's no silver bullet solution. If your workers aren't thread safe workers, maybe you should stick with Resque. If the performance difference between Shoryuken and Sidekiq matters to you, go with Sidekiq.
+
+The point I'm trying to make is that in general for background jobs in Ruby, IMO Shoryuken/SQS is the new main option to go. It's fast, durable, distributed, auto scalable, cheap (or even free) and you don't need to care about the infrastructure, AWS will handle that for you.
