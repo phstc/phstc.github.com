@@ -16,7 +16,7 @@ With Sidekiq:
 
 * If you are not using the [Pro version](http://sidekiq.org/pro/) (which costs $750/year) and your process crashes while consuming jobs, you will lose your jobs
 * If your Redis master crashes before having replicated your jobs to the slaves, you will lose your jobs
-* If your jobs load increases, you will need to have a more powerful Redis. More jobs, more Redis, more Money
+* If your jobs load increases, you will need a more powerful Redis. More jobs, more Redis, more Money
 * If you don't have a Redis cluster, eventually you will lose everything
 * No Dead Letter Queues support
 * No Fanout support
