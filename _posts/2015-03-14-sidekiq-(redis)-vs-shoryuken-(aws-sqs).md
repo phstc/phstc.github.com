@@ -1,9 +1,7 @@
 ---
 layout: post
-title: Sidekiq vs Shoryuken (AWS SQS)
+title: Sidekiq (Redis) vs Shoryuken (AWS SQS)
 ---
-
-**WIP**
 
 Disclaimer: This post is not intended to compare [Sidekiq](http://sidekiq.org/) and [Shoryuken](https://github.com/phstc/shoryuken) implementations. Both are very similar, actually Shoryuken started as a [shameless copy of Sidekiq](https://github.com/phstc/shoryuken#credits) <3 open source. The idea of this post is to compare Sidekiq as a Redis based queue system with Shoryuken as a [SQS](https://aws.amazon.com/sqs/) client.
 
@@ -30,7 +28,7 @@ With Shoryuken:
 * If your process crashes, your jobs will return to the queue after its [visibility timeout](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html) expiration, nothing will be lost
 * If a SQS node crashes, you don't care, nothing will be lost
 * If your jobs load increases from 1 to 1 million, you don't care, SQS handles that for you
-* [Dead Letter Queues support](/blog/2014/11/29/sqs-to-the-rescue/#dead-letter-queues) - move messages after a configurable number of failures to a specific queue 
+* [Dead Letter Queues support](/blog/2014/11/29/sqs-to-the-rescue/#dead-letter-queues) - move messages after a configurable number of failures to a specific queue
 * [Fanout support via SNS](/blog/2014/11/29/sqs-to-the-rescue/#sns-to-sqs) - send a message once and distribute across multiple queues
 * [Hosted console](https://console.aws.amazon.com/sqs/home?region=us-east-1)
 * You can [monitor your queues with CloudWatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MonitorSQSwithCloudWatch.html#SQS_metricscollected) and send [alarm emails](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/AlarmThatSendsEmail.html) (SMS messages, HTTP calls) when a threshold is breached
