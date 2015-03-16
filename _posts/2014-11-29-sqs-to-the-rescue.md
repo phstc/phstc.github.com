@@ -55,7 +55,7 @@ This behaviour will also cover in case your process or server crashes. Basically
 
 ## Dead Letter Queues
 
-Let's retry stuff, but not forever, right? Sometimes no matter how many times we re-attempt a message, it will continue failing. To do not lose or retry forever these messages addicted to failure, we can let them rest in peace using a [Dead Letter Queue
+Let's retry stuff, but not forever, right? Sometimes no matter how many times we re-attempt a message, it will continue failing. To do not discard or retry forever these messages addicted to failure, we can let them rest in peace using a [Dead Letter Queue
 ](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html).
 
 The code below creates `myqueue_failures` and associates it with `myqueue` as a dead letter queue:
@@ -121,27 +121,23 @@ Although these requests can be executed in batches up to 10 messages, you will n
 
 ## SNS to SQS
 
-Sending the same message to more than one queue using SQS:
+[SNS](https://aws.amazon.com/sns/) distributes messages across multiple SQS queues [and more](http://docs.aws.amazon.com/sns/latest/dg/SNS_Scenarios.html).
+
+Sending the same `msg` to `my_queue1` and `my_queue2` using SQS:
 
 ```ruby
-msg = order.json
-
-# to send an email to the customer
-sqs.queues.named('order_email_queue').send_message msg
-# to integrate with an ERP
-sqs.queues.named('order_erp_queue').send_message msg
+sqs.queues.named('my_queue1').send_message(msg)
+sqs.queues.named('my_queue2').send_message(msg)
 ```
 
 Using [SNS to SQS](http://docs.aws.amazon.com/sns/latest/dg/SendMessageToSQS.html):
 
 ```ruby
-msg = order.json
-
 topic.publish(msg)
-# sends to order_email_queue and order_erp_queue
+# sends to my_queue1 and my_queue2
 ```
 
-[SNS will fanout the message to both queues](http://docs.aws.amazon.com/sns/latest/dg/SNS_Scenarios.html) - consequently you will [pay](https://aws.amazon.com/sns/pricing/) (SNS to SQS is free) and wait for only one request to SNS, instead of two to SQS.
+SNS will fanout the message to both queues, consequently you will pay ([SNS to SQS is free](https://aws.amazon.com/sns/pricing/)) and wait for only one request to SNS, instead of two to SQS.
 
 ## Trouble in paradise
 

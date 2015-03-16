@@ -30,8 +30,8 @@ With Shoryuken:
 * If your process crashes, your jobs will return to the queue after its [visibility timeout](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html) expiration, nothing will be lost
 * If a SQS node crashes, you don't care, nothing will be lost
 * If your jobs load increases from 1 to 1 million, you don't care, SQS handles that for you
-* [Dead Letter Queues support](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html)
-* [Fanout support via SNS](http://www.pablocantero.com/blog/2014/11/29/sqs-to-the-rescue/#sns-to-sqs)
+* [Dead Letter Queues support](/blog/2014/11/29/sqs-to-the-rescue/#dead-letter-queues) - move messages after a configurable number of failures to a specific queue 
+* [Fanout support via SNS](/blog/2014/11/29/sqs-to-the-rescue/#sns-to-sqs) - send a message once and distribute across multiple queues
 * [Hosted console](https://console.aws.amazon.com/sqs/home?region=us-east-1)
 * You can [monitor your queues with CloudWatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MonitorSQSwithCloudWatch.html#SQS_metricscollected) and send [alarm emails](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/AlarmThatSendsEmail.html) (SMS messages, HTTP calls) when a threshold is breached
 
@@ -69,6 +69,8 @@ Although the jobs consumption result was pretty close, sending jobs with Sidekiq
 Yeah, Redis write performance is amazing. But is 55.63ms much?
 
 *Every time you run these tests you will get a different result, but in most cases Sidekiq is slightly faster to consume and clearly faster to send jobs than Shoryuken.*
+
+*More than once while trying bigger batches with Sidekiq, I got less requests than the batch size on PutsReq. Shoryuken was consistent, the number of jobs sent was the number of requests shown on PutsReq.*
 
 ## Pricing
 
