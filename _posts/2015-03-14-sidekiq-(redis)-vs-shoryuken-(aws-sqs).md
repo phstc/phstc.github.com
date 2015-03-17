@@ -18,7 +18,7 @@ With Sidekiq:
 * If your Redis master crashes before having replicated your jobs to the slaves, you will lose your jobs
 * If your jobs load increases, you will need a more powerful Redis. More jobs, more Redis, more Money
 * If you don't have a Redis cluster, eventually you will lose everything
-* No Dead Letter Queues support
+* <del>No Dead Letter Queues support</del> [Dead Job Queue support](https://github.com/mperham/sidekiq/wiki/Error-Handling#dead-job-queue)
 * No Fanout support
 * You need to host its dashboard (console)
 * You can use [sidekiq-statsd](https://github.com/phstc/sidekiq-statsd) or [Sidekiq pro/Metrics](https://github.com/mperham/sidekiq/wiki/Metrics) to send metrics to Statsd for distribution to Graphite, Librato Metrics, etc, but you will need these services running somewhere
