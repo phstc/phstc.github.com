@@ -7,7 +7,7 @@ It's a kind of cliché in the Rails community to associate ActiveRecord callback
 
 Given that every time I start typing `after_` or `before_`, I hear a voice in my head: "Are you sure?". This voice usually attempts me to fight the evil (poor design choices) with more evil.
 
-Callbacks are a sugar syntax to violate the [Single Responsibility Principle (SRP)](https://en.wikipedia.org/wiki/Single_responsibility_principle) and they can slow down your tests. That's why I believe they can suck, but it doesn't happen all the time. So before attempting an improvement to remove or avoiding to write a callback, pause a think if the responsibility you want to add belongs to the save context.
+Callbacks are a sugar syntax to violate the [Single Responsibility Principle (SRP)](https://en.wikipedia.org/wiki/Single_responsibility_principle) and they can slow down your tests. That's why I believe they can suck, but it doesn't happen all the time. So before attempting an improvement to remove or avoiding to write a callback, pause and think if the responsibility you want to add belongs to the save context or not.
 
 ## Violating the Single Responsibility Principle (SRP)
 
@@ -16,7 +16,7 @@ If you follow SRP by the book, you might end up with hundreds of single-public-m
 If you need to send a confirmation email every time you create a new user, you have two responsibilities: one to create a user and another to send an email and they need specific classes and methods. If you do it all in the same place class/method, it can result in unexpected processing **depending on your context** or become hard to maintain, because to update one code you need to change the other consequently.
 
 ```ruby
-class User < ActiveRecord:Model
+class User < ActiveRecord::Model
   after_create :send_confirmation_email
 
   def send_confirmation_email
@@ -48,9 +48,9 @@ I believe the problem above is one of the simplest problem with callbacks, but f
 
 Violating SRP hurts when it makes things unexpected, hard to understand (hard to debug).
 
-Imagine every time you create an order, besides persisting it you need also to synchronise it with an ERP (API/HTTP call), send a message to a queue (to send an email) and update products. And now, imagine if all this stuff (or even more) is done by an `after_save`, called after an unpretentious `Order#save`. Would you expect that?
+Imagine every time you create an order, besides persisting it you need also to synchronise it with an ERP (API/HTTP call), send a message to a queue (to send an email) and update respective inventories. And now, imagine if all this stuff (or even more) is done by an `after_save`, called after an unpretentious `Order#save`. Would you expect that?
 
-A new developer joins the project, starts a task to update all orders `origin` attribute based on other order attributes.
+A new developer joins the project, starts a task to update all orders `origin` attribute.
 
 ```ruby
 Order.all.find_each do |order|
@@ -63,7 +63,7 @@ end
 
 That's what is going to happen. That's is one of the reasons that callbacks can suck, having more responsibilities than the expected.
 
-What's expected and unexpected is very relative, I know. But I suggest to consider much more your context, than just framework based classes or method names.
+What's expected and unexpected is relative, I know. But I suggest to consider much more your context, than just framework based classes or method names.
 
 
 # Slow down your tests
