@@ -26,8 +26,8 @@ paginate:         999
 # Custom vars
 version:          2.1.0
 
-github:
-  url:           https://github.com/phstc
+# github:
+  # url:           https://github.com/phstc
 
 twitter:
   url:           https://twitter.com/pablocantero
