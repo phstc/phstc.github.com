@@ -48,9 +48,9 @@ I believe the problem above is one of the simplest problem with callbacks, but f
 
 Violating SRP hurts when it makes things unexpected, hard to understand (hard to debug).
 
-Imagine every time you create an order, besides persisting it you need also to synchronise it with an ERP (API/HTTP call), send a message to a queue (to send an email) and update respective inventories. And now, imagine if all this stuff (or even more) is done by an `after_save`, called after an unpretentious `Order#save`. Would you expect that?
+Imagine every time you create an order, besides persisting it you need also to synchronise with a third party app, send an email and update inventories. And now, imagine if all this stuff (or even more) is done by an `after_save`, called after an unpretentious `Order#save`. Would you expect that?
 
-A new developer joins the project, starts a task to update all orders `origin` attribute.
+A new developer joins the project, and starts a task to update all orders `origin` attribute.
 
 ```ruby
 Order.all.find_each do |order|
