@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Sidekiq (Redis) vs Shoryuken (AWS SQS)
+redirect_from:
+  - /blog/2015/03/14/sidekiq-(redis)-vs-shoryuken-(aws-sqs)/
 ---
 
 Disclaimer: This post is not intended to compare [Sidekiq](http://sidekiq.org/) and [Shoryuken](https://github.com/phstc/shoryuken) implementations. Both are very similar, actually Shoryuken started as a [shameless copy of Sidekiq](https://github.com/phstc/shoryuken#credits) <3 open source. The idea of this post is to compare Sidekiq as a Redis based queue system with Shoryuken as a [SQS](https://aws.amazon.com/sqs/) client.
