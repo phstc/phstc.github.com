@@ -31,7 +31,7 @@ With Shoryuken:
 * [Dead Letter Queues support](/blog/2014/11/29/sqs-to-the-rescue/#dead-letter-queues) - move messages after a configurable number of failures to a specific queue
 * [Fanout support via SNS](/blog/2014/11/29/sqs-to-the-rescue/#sns-to-sqs) - send a message once and distribute across multiple queues
 * [Hosted console](https://console.aws.amazon.com/sqs/home?region=us-east-1)
-* You can [monitor your queues with CloudWatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MonitorSQSwithCloudWatch.html#SQS_metricscollected) and send [alarm emails](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/AlarmThatSendsEmail.html) (SMS messages, HTTP calls) when a threshold is breached
+* You can [monitor your queues with CloudWatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MonitorSQSwithCloudWatch.html#SQS_metricscollected) and send [alarms](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/AlarmThatSendsEmail.html) (Email, SMS, HTTP calls etc) when a threshold is breached
 
 ## Perfomance
 
