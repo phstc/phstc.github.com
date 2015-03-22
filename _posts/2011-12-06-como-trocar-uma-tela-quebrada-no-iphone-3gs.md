@@ -3,21 +3,19 @@ layout: post
 title: "Como trocar uma tela quebrada no iPhone 3GS"
 ---
 
-Quebrou a tela do seu iPhone? E aí..., como consertar? Busquei várias [assistências técnica](http://www.google.com.br/search?gcx=w&ix=c2&sourceid=chrome&ie=UTF-8&q=assis%C3%AAncias+t%C3%A9cnica+iphone#hl=pt-BR&sa=X&ei=zwOVTsHkA8e5tgeZksTyBg&ved=0CCoQBSgA&q=assist%C3%AAncias+t%C3%A9cnica+iphone&spell=1&bav=on.2,or.r_gc.r_pw.,cf.osb&fp=17c3f9c38adae7f1&biw=1280&bih=633) para o conserto, os orçamentos foram à partir de 400 reais para trocar o LCD e tela (digitizer/touch screen). Hein?!
+Quebrou a tela do seu iPhone? Ihhh…, como consertar? Busquei várias [assistências técnicas](https://www.google.com.br/search?q=assist%C3%AAncia+t%C3%A9cnica+iphone) para o conserto, porém os orçamentos foram à partir de 400 reais para trocar o LCD e tela (digitizer/touch screen). Hein?!
 
-<!--more-->
+## Como tudo começou
 
-##Como tudo começou
+Na verdade inicialmente eu não tinha quebrado a tela do meu iPhone, a minha tela tinha apenas um micro risco interno, um defeito de fabricação. Eu por algum motivo ([TOC???](http://pt.wikipedia.org/wiki/Transtorno_obsessivo-compulsivo)), resolvi trocá-la. Meu amigo [Glauber Rodger](http://rodger.com.br/) tinha me comentado que era bem difícil, trabalhoso etc. Porém eu que sou muito inteligente (leia-se burro), fui influenciado por [vários vídeos no youtube](http://www.youtube.com/results?search_query=replace+digitizer+iphone+3gs&aq=f) e pensei: "Que isso Glauber, é bico". Resumindo, comprei uma tela (digitizer/touch screen) no [eBay](http://www.ebay.com/sch/i.html?_nkw=iphone+3gs+digitizer) e ao tentar tirá-la , quebrei o LCD e frame. É muito difícil, os vídeos fazem parecer muito fácil, mas não é. Não se iluda.
 
-Na verdade inicialmente eu não tinha quebrado a tela do meu iPhone, a minha tela tinha apenas um micro risco interno, um defeito de fabricação. Eu por algum motivo (leia-se [TOC](http://pt.wikipedia.org/wiki/Transtorno_obsessivo-compulsivo)), resolvi troca-la (leia-se jumento). Meu amigo [Glauber Rodger](http://rodger.com.br/) tinha me comentado que era bem difícil, trabalhoso etc. Porém eu que sou muito inteligente, fui influenciado por [vários vídeos no youtube](http://www.youtube.com/results?search_query=replace+digitizer+iphone+3gs&aq=f) e pensei: "Que isso Glauber, é bico". Resumindo, comprei uma tela (digitizer/touch screen) no [Ebay](http://www.ebay.com/sch/i.html?_trkparms=65%253A15%257C66%253A2%257C39%253A1&rt=nc&_nkw=iphone+3gs+digitizer&_sc=1&_sticky=1&_stpos=&_trksid=p3286.c0.m14&gbr=1&_sop=12&_sc=1) e ao tentar tira-la , quebrei o LCD e frame... O negócio é muito difícil, os vídeos fazem parecer muito fácil, mas não é. Não se iluda.
+## Como faz então?
 
-##Como faz então?
+Por sorte os chinas vendem o [kit completo](http://www.ebay.com/sch/i.html?_nkw=iphone+3gs+frame+lcd+touch) Tela + LCD + Frame, necessitando apenas plugar 3 conectadores.
 
-Por sorte os chinas vendem o [kit completo](http://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l2736&_nkw=iphone+3gs+frame+lcd+touch) Tela + LCD + Frame, necessitando apenas plugar 3 conectadores.
+Mesmo que vc tenha quebrado apenas a Tela ou LCD ou Frame, recomendo o kit completo. Se tentar trocar apenas uma parte você corre o risco de quebrar outras. A diferença de valor entre o kit completo e as partes separadas não justifica a possível emoção.
 
-Mesmo que vc tenha quebrado apenas a Tela ou LCD ou Frame, recomendo o kit completo, tentar trocar apenas uma parte, vc assim como eu, corre o risco de quebrar outras partes. A diferença de valor do kit para as partes separadas não justifica a possível emoção.
-
-A maioria dos kits no ebay já acompanham kit de ferramentas para abrir o iPhone e trocar as partes necessárias. Preste atenção na hora da compra. [Kit que eu comprei](http://www.ebay.com/itm/170658644696).
+A maioria dos kits no eBay já acompanham as ferramentas para abrir o iPhone e trocar as partes necessárias. Preste atenção na hora da compra!
 
 Com o kit em mãos a troca é bastante simples:
 
@@ -28,15 +26,17 @@ Com o kit em mãos a troca é bastante simples:
 5. Fechar a tela
 6. Parafusar a tela nova
 
-O conector número 1 exige bastante atenção para encaixa-lo, pois não é só plugar, tem que encaixar em um "furo", tome cuidado, dedique sua total atenção para isso (desligue tv, pare com conversas etc). Já os outros dois conectores basta pluga-los.
+O conector número 1 exige bastante atenção para encaixá-lo, pois não é só plugar, tem que encaixar em um "furo" bem difícil. Já os outros dois conectores basta plugá-los.
 
-##Assistência Técnica
+Dedique total atenção para essa troca (nada de tv ligada, celular, papagaio etc).
+
+## Assistência Técnica
 
 Eu super recomendo assistência técnica, se você estiver disposto a pagar mais de 400 reais, não perca o seu tempo, mande para uma assistência. No meu caso eu preferi fazer, pois não achava que a relação custo x benefício no meu iPhone valeria a pena.
 
-##Qual kit?
+## Qual kit?
 
-No geral os kits são todos iguais, porém tome cuidado, pois quando eu comprei [somente a tela](http://www.ebay.com/itm/350476987492) (não o kit), veio uma tela bem ruim, bem diferente da original. [Busque sempre pelas qualificações do item e vendedor](http://toolhaus.org/).
+No geral os kits são todos iguais, porém tome cuidado, pois quando eu comprei [somente a tela](http://www.ebay.com/itm/350476987492) (não o kit completo), veio uma tela bem ruim, bem diferente da original. [Busque sempre pelas qualificações do item e vendedor](http://toolhaus.org/).
 
 [Kit que eu comprei](http://www.ebay.com/itm/170658644696).
 
