@@ -70,7 +70,7 @@ Yeah, Redis write performance is amazing. But is 55.63ms much?
 
 *Every time you run these tests you will get a different result, but in most cases Sidekiq is slightly faster to consume and clearly faster to send jobs than Shoryuken.*
 
-*More than once while trying bigger batches with Sidekiq, I got less requests than the batch size on PutsReq. Shoryuken was consistent, the number of jobs sent was the number of requests shown on PutsReq.*
+*More than once while trying bigger batches with Sidekiq, I got less requests on PutsReq than the jobs sent. Shoryuken was consistent, the number of jobs sent was the number of requests shown on PutsReq.*
 
 ## Pricing
 
