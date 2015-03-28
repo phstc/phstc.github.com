@@ -12,19 +12,15 @@ To open a Rails console with Capistrano add the snippet below in your `config/de
 namespace :rails do
   desc 'Open a rails console `cap [staging] rails:console [server_index default: 0]`'
   task :console do
-    on roles(:app) do |server|
-      server_index = ARGV[2].to_i
+    server = roles(:app)[ARGV[2].to_i]
 
-      return if server != roles(:app)[server_index]
+    puts "Opening a console on: #{server.hostname}…."
 
-      puts "Opening a console on: #{host}...."
+    cmd = "ssh #{server.user}@#{server.hostname} -t 'cd #{fetch(:deploy_to)}/current && RAILS_ENV=#{fetch(:rails_env)} bundle exec rails console'"
 
-      cmd = "ssh #{server.user}@#{host} -t 'cd #{fetch(:deploy_to)}/current && RAILS_ENV=#{fetch(:rails_env)} bundle exec rails console'"
+    puts cmd
 
-      puts cmd
-
-      exec cmd
-    end
+    exec cmd
   end
 end
 ```
@@ -44,19 +40,15 @@ cap [staging] rails:console 1
 ```ruby
 desc 'Open ssh `cap [staging] ssh [server_index default: 0]`'
 task :ssh do
- on roles(:app) do |server|
-   server_index = ARGV[2].to_i
+  server = roles(:app)[ARGV[2].to_i]
 
-   return if server != roles(:app)[server_index]
+  puts "Opening a console on: #{server.hostname}…."
 
-   puts "Opening a console on: #{host}...."
+  cmd = "ssh #{server.user}@#{server.hostname}"
 
-   cmd = "ssh #{server.user}@#{host}"
+  puts cmd
 
-   puts cmd
-
-   exec cmd
- end
+  exec cmd
 end
 ```
 
@@ -77,9 +69,8 @@ Make sure you have [csshx](https://code.google.com/p/csshx/) installed. On OS X:
 ```ruby
 desc 'Open csshx `cap [staging] csshx`'
 task :csshx do
-  servers = []
-  on roles(:app) do |server|
-    servers << "#{server.user}@#{host}"
+  servers = roles(:app).map do |server|
+    "#{server.user}@#{server.hostname}"
   end
 
   cmd = "csshx #{servers.join(' ')}"
