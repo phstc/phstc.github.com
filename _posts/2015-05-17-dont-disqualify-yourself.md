@@ -1,6 +1,6 @@
 ---
 layout: post
-title: WIP Don't disqualify yourself
+title: "Don't disqualify yourself"
 ---
 
 Companies are looking for good developers!
@@ -15,25 +15,27 @@ I'm a developer, I'm not a recruiter or HR person. Therefore, the content of thi
 
 ## Make a good first impression
 
-The README is the first content people see when they access a repository. A well written README, can tell how good you are at sharing knowledge and explaining problems. You can be an incredible coder, but if you can't communicate well, how are you going to transmit it?
+Try to make the README of your projects as clear and objective as possible, it's the first content that people see when they access a repository.
 
-Usually good writing skills don't happen naturally, you have to practice it. Review your READMEs, Wiki pages and blog posts, make them clear and objective for people that sometimes reach them out without a context.
+A well written README, can tell how good you are at sharing knowledge and explaining problems, like a good team player should be.
 
-## Convert "exotic" code into opportunities
+Usually good writing skills don't happen naturally, you have to practice them. You can use READMEs, Wiki pages and blog posts to exercise these skills.
 
-Everybody can get better over the years. So I'm normally very tolerant with old code. And also, because I don't think it's fair to judge code without knowing the context in which it was written.
+## Not so proud of some of your code? 
 
-But be prepared if an interviewer asks you: "Is there something that would you like to have done differently in this project?". Answering this question acknowledging the project (code) weakness and explaining how you could have done it better, gives you a good opportunity to make a huge positive impression.
+So you have some code that you aren't super proud of? Don't worry, everyone has.
+
+But if an interviewer asks you something like: "Is there something that would you like to have done differently in this code?". Take this as an opportunity to impress him by acknowledging the code weaknesses and explaining how you could have done it better, it can cause a huge good impression.
 
 As a good practice, I suggest you to review your projects from time to time. Do you know that boring Sunday, in which you don't have anything to do? Well, why not spend some time practicing code refactor in old projects?
 
-## Make a song from your profile
+## Make a song of your profile
 
 [Does your profile plays a song](https://song-of-github.herokuapp.com)? 
 
 If you don't have any public project or activity (or a GitHub profile). You will probably lose some points compared with candidates that have.
 
-P-L-E-A-S-E, don't say that you don't have public projects or activities, because the company that you work for doesn't encourage it. IMO open source is much more an individual initiative than a company one. If your company uses for example Rails, it encourages open source, but it doesn't mean that your boss will tell you to spend working hours in open source, just to make you a better GitHub profile. If you do something good in your spare time, that gives value to an internal project, I'm sure that your boss will sponsor it by giving you time to work on that. Don't expect the other way around: "Hey, feel free spend working hours on what you want. If it results in something valuable we can add it to our internal project".
+P-l-e-a-s-e, don't say that you don't have public projects or activities, because the company that you work for doesn't encourage it. IMO open source is much more an individual initiative than a company one. If your company uses Rails or any other OSS, it encourages open source, but it doesn't mean that your boss will tell you to spend working hours in open source, just to make you a better GitHub profile. If you do something good by yourself, that gives value to an internal project, I'm sure that your boss will sponsor it by giving you time to work on that. 
 
 ## Engage users
 
@@ -50,6 +52,19 @@ If you aren't contributing to a project, you don't need to fork it. If you only 
 A profile full of forks without contributions to them, can pollute your real activity, hiding your own code. And at least for me, it commonly raises a question: "Why is this person doing some many forks? Does he know how it works?".
 
 # Linkedin 
+
+## Be brief
+
+Detail your mission and achievements for each one of your experiences, as very other article will suggest. But there's no need to write a letter for each one of them, be brief on the details. If an interviewer gets interested on a specific experience, he will ask you during the interview. And I also recommend to use something like "Main technologies":
+
+```
+Full stack developer lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Main technologies: 
+Ruby, Rails, MongoDB, EC2 and SQS.
+```
+
+It helps for a quick matching between candidates and position requirements.
 
 ## Relevant links
 
@@ -79,24 +94,11 @@ Could you have a look at these two candidates:
 
 Which one makes a better first impression, John Something or 123456?
 
-## Be brief
-
-Detail your experiences and achievements for each of your experience entries, as very other article will suggest. But there's no need to write a letter for each one of your experiences, be brief on the details. If the interviewer gets interested on a specific experience, he will ask you during the interview. And I also recommend to use something like "Main technologies":
-
-```
-Full stack developer lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-Main technologies: 
-Ruby, Rails, MongoDB, EC2 and SQS.
-```
-
-It helps for a quick matching between candidates and position requirements.
-
 ## Don't be a default avatar person
 
-You need to show your face out. Interviewers want to know you, we don't want to work with a default avatar face. It's hard to sympathize when there's no picture.
+You need to show your face out, interviewers want to see you. It's hard to sympathize when there's no face.
 
-The same applies for video interviews, remember to turn on your camera.
+The same applies for video interviews, remember to turn your camera on.
 
 ## View profile as
 
@@ -114,7 +116,7 @@ A (brief) cover letter (our a LinkedIn summary) is also a good place to expose t
 
 Make some notes on what you would like to bring during the interview, whether telling about you or asking about the company.
 
-You don't need to use your notes as a teleprompter. But you can create some clues for "traditional" questions, such as:
+You don't need to use your notes as a teleprompter. But you can create some clues for frequently asked questions, such as:
 
 * Tell me a little bit about yourself 
 * Why did you leave (or want to leave) your last (current) job?
@@ -130,7 +132,7 @@ If they have a public list of values, try to match with yours and expose it duri
 
 ## Research your interviewers
 
-Interviewers research and talk about you to work colleagues, they spend a reasonable amount of time preparing themselves for an interview.
+Interviewers research and talk about you to work colleagues. They spend a reasonable amount of time preparing themselves for an interview.
 
 I strongly recommend to all candidates to give it back by also researching on them before the interview.
 
@@ -140,7 +142,7 @@ It's also nice to say something to your interviewer like: "I saw your blog and I
 
 # During the interview
 
-## Remote interviews (video/voice)
+## Remote interviews
 
 Close IMs and everything else not related to the interview that might distracts you. Give all your attention to your interviewer. It's terrible to interview someone and see or hear that he's typing to someone else.
 
@@ -150,13 +152,13 @@ On making notes, if your interviewer likes to talk, let him talk, but make notes
 
 # Rejection notice
 
-No one likes to be rejected. But I would say that in most cases being rejected, does not mean that you aren't qualified enough. A selection process is complex, it involves people (subjective perceptions), steps etc, you can get rejected for a vast number of reasons.
+No one likes to be rejected. But I would say that in most cases being rejected, does not mean that you aren't qualified enough. A selection process is complex, involving people and subjective perceptions, you can get rejected for a vast number of reasons.
 
 ## What can I do better?
 
 Feel free to ask for feedbacks to do better next time. But don't be sad if the company can't give you one.
 
-Although some feedbacks can be constructive, most of people aren't prepared for, and some rejections can be because of details: "He seems to be an experienced developer, but he was typing to someone else during the interview. The next candidate I interviewed has an equivalent experience and gave me his total attention".
+Although some feedbacks can be constructive, most of people aren't prepared for, and some rejections can be because of details: "He seems to be an experienced developer, but he was typing to someone else during the interview. The next candidate I interviewed is equivalent experienced and gave me his total attention".
 
 It's hard to give feedbacks on subjective perceptions. 
 
