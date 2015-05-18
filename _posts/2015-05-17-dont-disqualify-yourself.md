@@ -45,11 +45,11 @@ People can't use, what they don't know. If you developed something that can be u
 
 On a side note, remember to star (like) the projects that you use and like on GitHub, it motivates the project owners and also gives credibility to the projects.
 
-## Why some many forks?
+## Why so many forks?
 
 If you aren't contributing to a project, you don't need to fork it. If you only want to play with it locally, you can clone it from the original repository.
 
-A profile full of forks without contributions to them, can pollute your real activity, hiding your own code. And at least for me, it commonly raises a question: "Why is this person doing some many forks? Does he know how it works?".
+A profile full of forks without contributions to them, can pollute your real activity, hiding your own code. And at least for me, it commonly raises a question: "Why is this person doing so many forks? Does he know how it works?".
 
 # Linkedin 
 
