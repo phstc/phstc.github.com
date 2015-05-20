@@ -33,7 +33,7 @@ As a good practice, I suggest you to review your projects from time to time. Do 
 
 [Does your profile play a song](https://song-of-github.herokuapp.com)? 
 
-If you don't have any public project or activity (or a GitHub profile). You will probably lose some points compared with candidates that have.
+If you don't have any public project or activity (or a GitHub profile). You will probably lose some points compared with candidates who have.
 
 P-l-e-a-s-e, don't say that you don't have public projects or activities, because the company that you work for doesn't encourage it. IMO open source is much more an individual initiative than a company one. If your company uses Rails or any other OSS, it encourages open source, but it doesn't mean that your boss will tell you to spend working hours in open source, just to make you a better GitHub profile. If you do something good by yourself, that gives value to an internal project, I'm sure that your boss will sponsor it by giving you time to work on that. 
 
