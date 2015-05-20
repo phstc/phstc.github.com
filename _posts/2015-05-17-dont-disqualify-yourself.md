@@ -31,7 +31,7 @@ As a good practice, I suggest you to review your projects from time to time. Do 
 
 ## Make a song of your profile
 
-[Does your profile plays a song](https://song-of-github.herokuapp.com)? 
+[Does your profile play a song](https://song-of-github.herokuapp.com)? 
 
 If you don't have any public project or activity (or a GitHub profile). You will probably lose some points compared with candidates that have.
 
