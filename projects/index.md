@@ -21,6 +21,12 @@ Feature on:
 
 * [Double Shot 1405](http://afreshcup.com/home/2014/8/29/double-shot-1405.html)
 
+## PutsBox
+
+PutsBox makes email integration tests easy.
+
+[putsbox.com](http://www.putsbox.com)
+
 ## shoryuken
 
 Super efficient [AWS SQS](https://aws.amazon.com/sqs) message processor for [Ruby](https://www.ruby-lang.org).
