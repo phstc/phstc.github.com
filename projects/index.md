@@ -17,7 +17,7 @@ PutsReq lets you record HTTP requests and simulate responses like no other tool 
 
 [putsreq.com](http://www.putsreq.com)
 
-Feature on:
+Featured on:
 
 * [Double Shot 1405](http://afreshcup.com/home/2014/8/29/double-shot-1405.html)
 
