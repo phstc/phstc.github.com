@@ -66,6 +66,8 @@ Although the jobs consumption result was pretty close, sending jobs with Sidekiq
 * Sidekiq took 2278.37ms to send 1k jobs (2.28ms per send)
 * Shoryuken took 55629.93ms to send 1k jobs (55.63ms per send)
 
+*The jobs where enqueued using Heroku (Amazon EC2 us-east-1) via `heroku run rake populate` - which is available on the linked projects above.*
+
 Yeah, Redis write performance is amazing. But is 55.63ms much?
 
 *Every time you run these tests you will get a different result, but in most cases Sidekiq is slightly faster to consume and clearly faster to send jobs than Shoryuken.*
