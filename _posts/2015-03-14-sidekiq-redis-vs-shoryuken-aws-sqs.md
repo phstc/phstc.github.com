@@ -66,7 +66,7 @@ Although the jobs consumption result was pretty close, sending jobs with Sidekiq
 * Sidekiq took 2278.37ms to send 1k jobs (2.28ms per send)
 * Shoryuken took 55629.93ms to send 1k jobs (55.63ms per send)
 
-*The jobs where enqueued using Heroku (Amazon EC2 us-east-1) via `heroku run rake populate` - which is available on the linked projects above.*
+*The jobs where enqueued using Heroku (Amazon EC2, us-east-1) via `heroku run rake populate` - this Rake task is available on the linked projects above.*
 
 Yeah, Redis write performance is amazing. But is 55.63ms much?
 
@@ -90,7 +90,7 @@ Nope! SQS can be also free or cheaper than Sidekiq:
 [SQS pricing](https://aws.amazon.com/sqs/pricing/):
 
 * First 1 million Amazon SQS Requests per month are free
-* $0.50 per 1 million Amazon SQS Requests  per month thereafter ($0.00000050 per SQS Request)
+* $0.50 per 1 million Amazon SQS Requests per month thereafter ($0.00000050 per SQS Request)
 
 ### Sidekiq
 
