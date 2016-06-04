@@ -6,7 +6,7 @@ redcarpet:
 
 # Permalinks
 # permalink:        pretty
-permalink: /blog/:year/:month/:day/:title
+permalink: /blog/:year/:month/:day/:title/
 
 # Setup
 title:            'Pablo Cantero'
