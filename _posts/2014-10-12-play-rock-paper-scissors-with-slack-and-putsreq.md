@@ -15,6 +15,8 @@ First, let’s fork the Rock-paper-scissors webhook on PutsReq.
 * Open [PutsReq Rock-paper-scissors](https://putsreq.herokuapp.com/hfep98jThPU0ffRlmWBx/inspect)
 * Click on Fork
 
+_UPDATE: The link above is no longer available, PutsReq auto expires buckets without recent activity. Note to self: Use a gist next time._
+
 ![PutsReq Fork](/assets/images/posts/slack-putsreq/putsreq-fork.png)
 
 * Copy your PutsReq URL, it will be used as your webhook URL in the next step
