@@ -28,7 +28,7 @@ Assim como os session beans, seu propósito é para realizar operações de neg�
 
 Os MDBs são invocados  através de mensagens enviadas ao servidor de mensagens como IBM WebSphere MQ, SonicMQ, Oracle Advanced Queueing e TIBCO.
 
-Um exemplo de sua utilização seria para enviar uma solicitação para reabastecer o estoque de uma loja, pois é uma solicitação que não necessita de resposta automática.
+Um exemplo comum de sua utilização é para operações que podem ser lentas e que não necessitem de resposta automática. Desde de um simples envio de email a integrações entre sistemas.
 
 Os MDBs necessitam de um EJB container para serem executados.
 
