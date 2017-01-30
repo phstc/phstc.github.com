@@ -53,9 +53,9 @@ I'm using [PutsBox](http://putsbox.com) to test emails for real. It's a mix of d
 
 In the video above I'm testing the Reset Password feature from PutsBox itself. The test tries to reset password using a @putsbox.com email, **opens the email for real, clicks on the reset link**, resets the password and finishes the test. The **highlighted** part is how PutsBox can be used for email testing.
 
-Try it now! Send an email to what-you-want@putsbox.com, wait for a few seconds to give time to the email arrival, then check http://putsbox.com/what-you-want/inspect or http://putsbox.com/what-you-want/p/last. No sign up required, it's free and [open source](https://github.com/phstc/putsbox).
+Try it now! Send an email to what-you-want@putsbox.com, wait for a few seconds to give time to the email arrival, then check http://putsbox.com/what-you-want/inspect. No sign up required, it's free and [open source](https://github.com/phstc/putsbox).
 
-Getting back to the test recorded above… As the [Ghost Inspector script](https://gist.github.com/phstc/403ccf7b34a8c99c31f1) used to record the video is a little verbose, let's check an equivalent Capybara version:
+Getting back to the test recorded above… As the [Ghost Inspector test used to record the video is a little verbose](https://gist.github.com/phstc/403ccf7b34a8c99c31f1), let's check an equivalent Capybara version:
 
 
 ```ruby
@@ -77,7 +77,7 @@ visit 'http://preview.putsbox.com/p/test-reset-password/last'
 # clicks on the reset link
 click_on 'body > p:nth-child(3) > a'
 
-# resets the password 
+# resets the password
 fill_in '#user_password', with: 'password'
 
 fill_in '#user_password_confirmation', with: 'password'
