@@ -8,23 +8,23 @@ Pesquisei bastante na internet, até achar uma [thread](http://www.ruby-forum.co
 Geralmente meus selects são populados com arrays do [ActiveRecord](http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M001780).
 
     @users = User.all
-    <% form_for @user, :html => {:method => :post} do |f| %>
-     <%= f.select :user_id, @users} %>
+    <% form_for @user, :html => { :method => :post } do |f| %>
+     <%= f.select :user_id, @users %>
 
-O select imprimirá com o [to_s](http://ruby-doc.org/core/classes/Object.html#M000359) de cada objeto do array, para exibir o key (id) e value (descrição), basta utilizar o método [collect](http://ruby-doc.org/core/classes/Array.html#M002187), que é uma maneira fácil e rápida para esse propósito.
+Desta forma o select imprimirá com o [to_s](http://ruby-doc.org/core/classes/Object.html#M000359) de cada objeto do array, para exibir o key (id) e value (descrição), basta utilizar o método [collect](http://ruby-doc.org/core/classes/Array.html#M002187), que é uma maneira fácil e rápida para esse propósito.
 
-    <% form_for @user, :html => {:method => :post} do |f| %>
-     <%= f.select :user_id, @users.collect {|user| [ user.name, user.id ] } %>
+    <% form_for @user, :html => { :method => :post } do |f| %>
+     <%= f.select :user_id, @users.collect { |user| [user.name, user.id] } %>
 
 ## Outras maneiras para para usar form select
 
-Com um array simples.
+Com um array simples:
 
-    <%= f.select :estados, ['SP', 'PA', 'RJ'] } %>
+    <%= f.select :estados, ['SP', 'PA', 'RJ'] %>
 
-Com um array com arrays.
+Com um array com arrays:
 
-    <%= f.select :estados, [['São Paulo', 'SP'], ['Pará', 'PA'], ['Rio de Janeiro', 'RJ']] } %>
+    <%= f.select :estados, [['São Paulo', 'SP'], ['Pará', 'PA'], ['Rio de Janeiro', 'RJ']] %>
 
 ## Principais referências
 
