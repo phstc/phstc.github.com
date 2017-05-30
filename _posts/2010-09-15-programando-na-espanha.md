@@ -53,14 +53,14 @@ No supermercado tem opções pré prontas muito boas como molhos, massas... Doce
 
 Eu tenho dupla cidadania, portanto foi super tranquilo conseguir trabalho, mas para quem não tem visto, acho que é bem complicado para conseguir trabalho "qualificado".
 
-## CLT/Pessoa Jurídica
+## Formas de contratação
 
-Na Espanha quase 100% das ofertas de trabalho são "CLT", ou seja, registrado! Poucas pessoas trabalham como Pessoa Jurídica.
+Na Espanha quase 100% das ofertas de trabalho são "CLT", ou seja, registrado. Poucas pessoas trabalham como "Pessoa Jurídica".
 
 ## Salário
 
-Nos sites Tecnoempleo e InfoJobs alguns anunciantes colocam o salário nas vagas, com alguma busca básica dá para ter noção dos valores atualizados. Os valores são informados por ano, ex.: ##.###,## euros/Ano. Sendo que esse valor pode ser dividido em 12, 13 e até 14 pagamentos por ano.
+Nos sites de vagas, alguns anunciantes colocam as faixas de salário, com alguma busca básica dá para ter noção dos valores atualizados. O valor informado geralmente é o total anual bruto, sendo que esse valor pode ser dividido em 12, 13 e até 14 vezes, dependendo da empresa.
 
-Não é altamente rentável trabalhar na Espanha, na minha opinião São Paulo "paga bem", proporcionalmente mesmo fazendo a conversão de [Euro para Real](http://www.google.com.br/search?q=1+EUR+to+BRL), no Brasil facilmente dá para ganhar mais do que na Espanha.
+Proporcionalmente mesmo fazendo a conversão de [Euro para Real](http://www.google.com.br/search?q=1+EUR+to+BRL), os salários no Brasil são melhores, porém essa conta não é tão exata quando se compara a qualidade e custo de vida.
 
-Naturalmente o primeiro trabalho na Espanha corre o risco de não ser a melhor opção financeira, temos que no situar no mercado, aprender a nos defendermos melhor no idioma etc. Tenha paciência!
+O primeiro trabalho na Espanha pode não ser a melhor opção salarial, dado que ainda temos que no situar no mercado, melhorar o idioma etc. Tenha paciência!
