@@ -3,13 +3,23 @@ layout: page
 title: Projects
 ---
 
+## CrossHero
+
+"La solución definitiva para boxes y apasionados del CrossFit"
+
+CrossHero is the ultimate solution for managing CrossFit boxes (gyms).
+
+Currently with +170 boxes and +22k athletes registered.
+
+[crosshero.com](https://crosshero.com)
+
 ## PutsMail
 
 Test your HTML emails before sending them.
 
 [putsmail.com](https://putsmail.com)
 
-***PutsMail became the most popular tool to test HTML emails, and was acquired by [Litmus](https://putsmail.com/about) in 2014.***
+***PutsMail became the most popular free tool for testing HTML emails, and was acquired by [Litmus](https://putsmail.com/about) in 2014.***
 
 ## PutsReq
 
@@ -40,7 +50,6 @@ Featured on:
 * [Ruby Weekly 239](http://rubyweekly.com/issues/238)
 * [Double Shot 1430](http://afreshcup.com/home/2014/11/7/double-shot-1430.html)
 
-
 ## influxdb-cli
 
 Ruby CLI for [InfluxDB](http://influxdb.com/).
@@ -64,7 +73,6 @@ Query params based searching for [MongoDB](http://www.mongodb.com/).
 [jQuery](https://jquery.com/) Plugin to format Date outputs using JavaScript.
 
 [github.com/phstc/jquery-dateFormat](https://github.com/phstc/jquery-dateFormat)
-
 
 ## sidekiq-statsd
 
