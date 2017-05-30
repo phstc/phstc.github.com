@@ -3,39 +3,43 @@ layout: post
 title: "Programando na Espanha"
 ---
 
-As vagas para programadores na Espanha são bem parecidas com as vagas no Brasil, São Paulo está para Madrid e Rio de Janeiro está para Barcelona, claro que existem vagas em outras cidades como Valência, Bilbau etc, mas são cidades que possuem menor quantidade de ofertas, assim como salários geralmente inferiores.
+Pensando em ir para trabalhar na Espanha como programador? Nesse post conto um pouco da minha experiência como programador Java na Espanha.
 
-Esse post é sobre a minha experiência, portanto estou falando da minha experiência como Programador Java na Espanha.
+## Onde procurar emprego
 
-##Onde procurar emprego
+Em comparação com o Brasil, eu diria que Madrid está para São Paulo e Barcelona para o Rio de Janeiro, em quantidade de ofertas e salário. Claro, há vagas em outras cidades, como Valência, Bilbau etc, porém geralmente a relação oferta e salário é inferior.
 
-Na Espanha tem dois sites parecidos com o [apinfo](http://www.apinfo.com), focados vagas para profissionais de TI.
+Para buscar vagas, usei principalmente dois sites: [Tecnoemploe](http://www.tecnoempleo.com) e [InfoJobs](http://www.infojobs.net), que são parecidos com o [APinfo](http://www.apinfo.com).
 
-O site que eu mais gostei e onde eu achei meus dois empregos foi o [Tecnoemploe](http://www.tecnoempleo.com), tem também o [InfoJobs](http://www.infojobs.net), que é muito bom, tem muitas ofertas, porém não totalmente focado para TI.
+O Tecnoempleo foi o site que eu mais gostei e onde encontrei meu primeiro e segundo emprego.
 
-##Ofertas de empresa x Crise
+## Crise?
 
-Na Espanha por mais que a mídia fale bastante da crise, o mercado está aquecido, principalmente nas grandes capitais. Meu primeiro emprego eu consegui duas semanas após a minha chegada na Espanha.
+Por mais que a mídia fale bastante da crise, o mercado está aquecido, principalmente nas grandes capitais. Eu consegui meu primeiro emprego duas semanas após a minha chegada na Espanha.
 
-##Idioma
+## Idioma
 
-Em TI usamos muitos termos em inglês, muitos deles "abrasileirados" e alguns tentamos falar em inglês, geralmente os que são fáceis para falarmos. Na Espanha é muito comum falar da forma que se lê, portanto Oracle eles vão falar Oracle e não [ˈorəkl](http://www.thefreedictionary.com/oracle).
+Em tecnologia geralmente usamos muitos termos em inglês. No Brasil, tentamos falar em inglês, pelo menos os que são fáceis para falarmos. Já na Espanha é muito comum falar da forma que se lê, portanto Oracle eles vão falar O-r-a-c-l-e e não [ˈorəkl](http://www.thefreedictionary.com/oracle).
 
-Na minha primeira entrevista na Espanha, que foi meu primeiro emprego, quando eu falava parecia uma nuvem de tags, eu entendia perfeitamente o que o entrevistador, que inclusive se tornou meu amigo, um Argentino, mas quando eu falava acho que ele só entendia por tags JEE, TDD, Hudson, Integración Continua, Spring, jQuery etc.
+Na minha primeira entrevista na Espanha, meu Espanhol não era dos melhores, a entrevista pareceu uma nuvem de tags: JEE, TDD, Hudson, CI, Spring, jQuery etc, mas deu certo, consegui meu primeiro emprego.
 
-##Profissionais na Espanha
+Dê uma olhada nesse [post](http://www.pablocantero.com/blog/2015/05/17/dont-disqualify-yourself/), se você estiver se preparando para uma entrevista.
 
-Eu conheci bons profissionais na Espanha, mas na média acredito que os brasileiros são mais capacitados tecnicamente, lá valorizam muito qualidade de vida, um profissional não quer chegar em casa e ir estudar, quer ter ferias, viajar, sair para curtir etc. Aqui somos muito competitivos, sempre estamos buscando mais e mais. Lá eu ouvi coisas do tipo: um "programador java" perguntando seu eu tinha CD com o Eclipse, pois ele não queria ter que pagar para baixar em casa, ele NUNCA baixou o Eclipse, para saber que é gratuito, interesse ZERO?!
+## Profissionais na Espanha
+
+Eu conheci ótimos profissionais na Espanha, mas na média acredito que os brasileiros são mais capacitados tecnicamente. Na Espanha valorizam muito qualidade de vida, um profissional não quer chegar em casa e ir estudar, quer ter ferias, viajar, sair para curtir etc. No Brasil somos muito competitivos, sempre estamos buscando um pouco a mais.
+
+Na Espanha cheguei a ouvir um "programador Java" perguntando seu eu tinha CD com o Eclipse, pois ele não queria ter que pagar para baixar em casa, ele NUNCA baixou o Eclipse, para saber que é gratuito, interesse ZERO?!
 
 Outros que não tinham nem ideia de patterns "clássicos" como Busines Delegate, Facade, Abstract Factory, Factory Method, Service Locator, não acho que as pessoas precisem decorar, mas ao menos ter uma idéia do que é, ter lido sobre pelo menos uma vez na vida. Também conheci pessoas muito boas, excelentes. Estou falando sobre uma média da minha pouquíssima experiência na Espanha nas duas empresas que eu trabalhei, portanto é um média bastante limitada.
 
 Na Espanha e Europa no geral, as pessoas são mais "acomodadas" que no Brasil, lá se o sujeito decidir virar garçom ou qualquer outra mão de obra que não é muito valorizada aqui no Brasil, terá uma boa qualidade de vida, por isso é normal ver pessoas que se formaram e trabalham em "qualquer coisa".
 
-##Faculdade x Tempo de experiência
+## Faculdade x Tempo de experiência
 
 Lá comum começarem a trabalhar depois que se formam, também e comum não se formarem rápido, pois "aproveitam" a vida. Eu cheguei na Espanha com 27 anos, com 8 anos de experiência como programador, lá tem pessoas que com a mesma idade estão iniciando a carreira.
 
-##Qualidade vida
+## Qualidade vida
 
 Eu achei a qualidade vida muito boa, eu ficava muito contente em poder voltar para casa caminhando pela madrugada me guiando pelo GPS do celular, sem medo de ser abordado por um assaltante.
 
@@ -45,18 +49,18 @@ Serviços que demandam mão de obra, geralmente são mais caros. A moça que lim
 
 No supermercado tem opções pré prontas muito boas como molhos, massas... Doces... uh..., uma barra de Lindt por 1 ~ 1,50 euros. Aqui no Brasil como é mais barato ter uma empregada, produtos pré prontos são ruins ou extremamente caros.
 
-##Visto/Passaporte
+## Visto/Passaporte
 
 Eu tenho dupla cidadania, portanto foi super tranquilo conseguir trabalho, mas para quem não tem visto, acho que é bem complicado para conseguir trabalho "qualificado".
 
-##CLT/Pessoa Jurídica
+## CLT/Pessoa Jurídica
 
 Na Espanha quase 100% das ofertas de trabalho são "CLT", ou seja, registrado! Poucas pessoas trabalham como Pessoa Jurídica.
 
-##Salário
+## Salário
 
 Nos sites Tecnoempleo e InfoJobs alguns anunciantes colocam o salário nas vagas, com alguma busca básica dá para ter noção dos valores atualizados. Os valores são informados por ano, ex.: ##.###,## euros/Ano. Sendo que esse valor pode ser dividido em 12, 13 e até 14 pagamentos por ano.
 
-Não é altamente rentável trabalhar na Espanha, na minha opinião São Paulo "paga bem", proporcionalmente mesmo fazendo a conversão de [Euro para Real](http://www.google.com.br/search?q=1+euros+to+real&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t&amp;rls=org.mozilla:en-US:official&amp;client=firefox-a), no Brasil facilmente dá para ganhar mais do que na Espanha.
+Não é altamente rentável trabalhar na Espanha, na minha opinião São Paulo "paga bem", proporcionalmente mesmo fazendo a conversão de [Euro para Real](http://www.google.com.br/search?q=1+EUR+to+BRL), no Brasil facilmente dá para ganhar mais do que na Espanha.
 
 Naturalmente o primeiro trabalho na Espanha corre o risco de não ser a melhor opção financeira, temos que no situar no mercado, aprender a nos defendermos melhor no idioma etc. Tenha paciência!
