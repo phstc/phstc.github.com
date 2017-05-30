@@ -4,9 +4,9 @@ title: Play Rock-paper-scissors with Slack and PutsReq
 ---
 
 Inspired by [Say Hello World to Wombat using PutsReq
-](https://wombat.co/blog/say-hello-world-to-wombat-using-putsreq), this post will give you a step by step tutorial to create a dead simple [Slack Outgoing webhooks](https://my.slack.com/services/new/outgoing-webhook).
+](https://wombat.co/blog/say-hello-world-to-wombat-using-putsreq), this post will give you a step by step tutorial to create a dead simple [Slack Outgoing webhook](https://my.slack.com/services/new/outgoing-webhook).
 
-Outgoing webhooks allows you to get data in and out of Slack in real time when someone send a message in a specific channel or with a trigger word.
+Outgoing webhooks allows you to get data in and out of Slack in real time when someone sends a message to a specific channel or with a trigger word.
 
 ## Fork Rock-paper-scissors webhook
 

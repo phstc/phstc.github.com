@@ -35,7 +35,7 @@ Assim que o relógio chegou eu fiquei na dúvida "para que serve essa roda preta
 
 Essa roda serve para proteger o relógio e para marcação de tempo (contador de minutos) de uma forma bem simples e super inteligente. Projetada para mergulhadores controlarem o tempo que estão debaixo da água, por conta do tubo de oxigênio que tem limitação de tempo.
 
-##Usando o contador de minutos
+## Usando o contador de minutos
 
 Geralmente o contador de minutos tem um símbolo inicial como um triângulo, que na figura abaixo está acima da marcação de 12h, esse triângulo é o ponto zero do contador de minutos.
 

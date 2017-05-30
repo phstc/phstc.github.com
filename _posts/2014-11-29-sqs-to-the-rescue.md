@@ -3,11 +3,11 @@ layout: post
 title: SQS to the rescue
 ---
 
-**tl;dr** [Amazon SQS](https://aws.amazon.com/sqs/) is currently one of the best options for a queuing service. It's [inexpensive
+**tl;dr** [Amazon SQS](https://aws.amazon.com/sqs/) is currently one of the best options for a queue service. It's [inexpensive
 ](https://aws.amazon.com/sqs/pricing/) (first 1 million requests per month are free, thereafter $0.50 per 1 million requests), fast, reliable, scalable, fully managed message queuing service.  It just works.
 
 
-For the follow examples I'm using the [aws-sdk-ruby](https://github.com/aws/aws-sdk-ruby), which is a great SDK, because it's transparent to the [official API documentation](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/Welcome.html), no abstractions, no different method names etc, what you see on the documentation is what you get on the sdk.
+For the following examples I'm using the [aws-sdk-ruby](https://github.com/aws/aws-sdk-ruby), which is a great SDK because it's transparent to the [official API documentation](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/Welcome.html), no abstractions, no different method names etc, what you see in the documentation is what you get on the SDK.
 
 ## Getting your hands dirty
 
@@ -51,7 +51,7 @@ end
 
 In the code above if `do_something` raises an exception, the message will become available again as soon as its `visibility_timeout` expires, so other workers will be able to re-attempt the message.
 
-This behaviour will also cover in case your process or server crashes. Basically if you don't call `sqs_msg.delete`, the message will become available again no matter what :)
+This behavior will also cover in case your process or server crashes. Basically, if you don't call `sqs_msg.delete`, the message will become available again no matter what :)
 
 ## Dead Letter Queues
 
@@ -111,7 +111,7 @@ Be careful with this workaround, because it will increase the message receive co
 
 > [first 1 million requests per month are free, thereafter $0.50 per 1 million requests](https://aws.amazon.com/sqs/pricing/))
 
-1 million requests doesn't mean 1 million jobs consumed, as we need at least 3 requests to fully consume a message:
+1 million requests don't mean 1 million jobs consumed, as we need at least 3 requests to fully consume a message:
 
 1. `send_message`
 2. `receive_message`
@@ -137,9 +137,9 @@ topic.publish(msg)
 # sends to my_queue1 and my_queue2
 ```
 
-SNS will fanout the message to both queues, consequently you will pay ([SNS to SQS is free](https://aws.amazon.com/sns/pricing/)) and wait for only one request to SNS, instead of two to SQS.
+SNS will fanout the message to both queues, consequently, you will pay ([SNS to SQS is free](https://aws.amazon.com/sns/pricing/)) and wait for only one request to SNS, instead of two to SQS.
 
-## Trouble in paradise
+## Trouble in Paradise
 
 SQS is really good, the Ruby SDK is great, but… how to consume messages continuously?
 
@@ -154,11 +154,11 @@ Then:
 ruby myqueue_worker.rb
 ```
 
-Doesn't seem to be very reliable, right? No threads, consumes messages one by one, and if you need to consume from other queue you will need to start a new process `ruby myotherqueue_worker.rb`, which is waste of resources when one queue is empty and others have messages available.
+Doesn't seem to be very reliable, right? No threads, consumes messages one by one, and if you need to consume from another queue you will need to start a new process `ruby myotherqueue_worker.rb`, which is a waste of resources when one queue is empty and others have messages available.
 
 ### Introducing Shoryuken
 
-[Shoryuken](https://github.com/phstc/shoryuken) is a project based on [Sidekiq](https://github.com/mperham/sidekiq), that uses all the cool stuff Sidekiq did with processes, [Celluloid](https://github.com/celluloid/celluloid), cli etc, but for SQS.
+[Shoryuken](https://github.com/phstc/shoryuken) is a project based on [Sidekiq](https://github.com/mperham/sidekiq), that uses all the cool stuff Sidekiq did with processes, [Celluloid](https://github.com/celluloid/celluloid), CLI etc, but for SQS.
 
 No more `ruby myotherqueue_worker.rb`, [Shoryuken will handle that for you](https://github.com/phstc/shoryuken#start-shoryuken), including [signal handling](https://github.com/phstc/shoryuken/wiki/Signals).
 
@@ -174,4 +174,4 @@ Check more on the [project's README](https://github.com/phstc/shoryuken).
 
 SQS is cheap, you don't need to worry about managing your queue services, setup Redis etc. 
 
-Keep your focus on your workers/jobs (which should be the most important to you) and let Amazon to take care of the infrastructure, it works!
+Keep your focus on your workers/jobs (which should be the most important to you) and let Amazon take care of the infrastructure, it works!

@@ -37,6 +37,8 @@ PutsBox makes email integration tests easy.
 
 [putsbox.com](http://www.putsbox.com)
 
+See: [Test emails with automated testing tools](http://www.pablocantero.com/blog/2015/08/05/test-emails-with-automated-testing-tools/)
+
 ## shoryuken
 
 Super efficient [AWS SQS](https://aws.amazon.com/sqs) message processor for [Ruby](https://www.ruby-lang.org).

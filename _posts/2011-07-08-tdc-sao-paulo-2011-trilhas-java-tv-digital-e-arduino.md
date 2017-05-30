@@ -5,7 +5,7 @@ title: "TDC São Paulo 2011: Trilhas Java, TV Digital e Arduino"
 
 Esse ano fui ao [TDC São Paulo 2011](http://www.thedevelopersconference.com.br/tdc/2011/index.html#saopaulo), onde assisti às trilhas de [Java](http://www.thedevelopersconference.com.br/tdc/2011/saopaulo/trilha-java), [TV Digital](http://www.thedevelopersconference.com.br/tdc/2011/saopaulo/trilha-tvdigital) e [Arduino](http://www.thedevelopersconference.com.br/tdc/2011/saopaulo/trilha-arduino).
 
-Nesse post relato as minhas percepções sobre as trilhas e o evento.
+Nesse post relato as minhas percepções sobre as trilhas e evento.
 
 ## TDC São Paulo 2011
 
@@ -15,7 +15,7 @@ A organização do evento foi muito boa, atendeu bem as expectativas. O modelo d
 
 Na trilha Java teve o lançamento mundial do Java 7,  que foi apresentado simultaneamente na Califórnia, Londres e São Paulo. Sendo principalmente apresentado na Califórnia, com chamadas para Londres e São Paulo. Incluir o Brasil no lançamento foi um reconhecimento muito importante para a comunidade Java no Brasil. Sinceramente fiquei orgulhoso. Em Londres a sala era pequena, com poucas pessoas e sem animação. No Brasil era um auditório grande, cheio de pessoas e com muita animação.
 
-A Oracle está fortalecimento o marketing da JVM rodando outras  linguagens. Um dos grandes lançamentos foi o InvokeDynamic, que beneficiará muita outras linguagens sobre a JVM, principalmente em performance e diminuição de complexidade de código. Usaram como exemplo o JRuby, dizendo que poderiam apagar cerca de 2000 classes utilizando esse novo recurso, pois atualmente eles fazem malabarismos para simular métodos dinâmicos.
+A Oracle está fortalecendo o marketing da JVM rodando outras linguagens. Um dos grandes lançamentos foi o InvokeDynamic, que beneficiará muita outras linguagens sobre a JVM, principalmente em performance e diminuição de complexidade de código. Usaram como exemplo o JRuby, dizendo que poderiam apagar cerca de 2000 classes utilizando esse novo recurso, pois atualmente eles fazem malabarismos para simular métodos dinâmicos.
 
 Acho muito sábia essa campanha da JVM rodando outras   linguagens, pois assim a Oracle poderá continuar forte no mercado, mesmo que não seja com Java.
 
