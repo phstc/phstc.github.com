@@ -40,5 +40,6 @@ comments: true
 
 baseurl: '/'
 
-gems:
+plugins:
   - jekyll-redirect-from
+  - jekyll-paginate
