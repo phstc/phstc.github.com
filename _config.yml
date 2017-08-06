@@ -1,6 +1,5 @@
 url:             http://www.pablocantero.com/
 assets_base_url: http://www.pablocantero.com/assets/
-baseurl: ""
 
 # Dependencies
 highlighter: rouge
