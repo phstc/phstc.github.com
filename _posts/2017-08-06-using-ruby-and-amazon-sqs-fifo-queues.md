@@ -103,7 +103,7 @@ ActivatePendingMembershipsWorker.perform_async(date)
 RenewMembershipsWorker.perform_async(date)
 ```
 
-Shoryuken will receive `ExpireMembershipsWorker`, process, receive `ActivatePendingMembershipsWorker`, process, receive `RenewMembershipsWorker` and process, one by one.
+Shoryuken will receive the message for `ExpireMembershipsWorker`, process, receive the message for`ActivatePendingMembershipsWorker`, process, receive the message for `RenewMembershipsWorker` and process, one by one.
 
 ### How about multiple processes and other clients? 
 

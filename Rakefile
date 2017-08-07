@@ -1,5 +1,5 @@
+# -*- coding: utf-8 -*-
 require 'fileutils'
-
 
 namespace :draft do
   # Based on http://albertogrespan.com/blog/rake-tasks-and-jekyll-posts/
@@ -8,9 +8,9 @@ namespace :draft do
     puts "What's the name for your next post?"
 
     name = STDIN.gets.chomp
-    slug = "#{name}"
+    slug = name
     slug = slug.tr('ÁáÉéÍíÓóÚú', 'AaEeIiOoUu')
-    slug = slug.downcase.strip.gsub(' ', '-')
+    slug = slug.downcase.strip.tr(' ', '-')
 
     FileUtils.touch("_drafts/#{slug}.md")
 
@@ -22,18 +22,21 @@ namespace :draft do
     end
   end
 
-  desc "Copy draft to production post"
+  desc 'Copy draft to production post'
   task :ready do
     puts "What's the name for your next post?"
 
     puts 'Posts in _drafts:'
+
     files = Dir.foreach('_drafts').each_with_index.map do |file_name, i|
-      next if %w[. .. .keep].include? file_name
+      next if file_name.start_with?('.')
 
       puts "#{i} - #{file_name}"
 
       file_name
-    end
+    end.compact
+
+    next puts 'No drafts found' if files.empty?
 
     puts "What's the number of the draft to post?"
 
@@ -46,7 +49,6 @@ namespace :draft do
 
     puts 'Post copied and ready to deploy!'
   end
-
 end
 
 desc 'Start jekyll in development mode'
