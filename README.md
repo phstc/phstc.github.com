@@ -26,6 +26,16 @@ For creating new draft:
 rake draft:new
 What's the name for your next post?
 ```
+When the post is ready:
+
+```shell
+rake draft:ready
+What's the name for your next post?
+Posts in _drafts:
+1 - post name 1
+2 - post name 2
+What's the number of the draft to post?
+```
 
 ## All options
 
