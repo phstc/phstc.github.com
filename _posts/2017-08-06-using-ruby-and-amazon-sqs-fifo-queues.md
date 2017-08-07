@@ -88,14 +88,14 @@ HelloWorker.perform_async('Ken 3', message_group_id: 'hello')
 shoryuken -q queue -r ./hello_worker.rb
 ```
 
-That's it. Your Shoryuken will start processing your messages.
+That's it. Shoryuken will start processing your messages.
 
 
 ### Sequential processing per group
 
 By default, Shoryuken tries to receive as many messages as it can, limited to the number of the available threads (see [concurrency](https://github.com/phstc/shoryuken/wiki/Shoryuken-options#concurrency)) and the SQS limit of 10 messages per request. If there are 10 available threads, it may receive up to 10 messages for the same Message Group ID and process them all in parallel. 
 
-If you want to sequentially process one message at a time per group, set `max_number_of_messages: 1` (see [receive options](https://github.com/phstc/shoryuken/wiki/Receive-Message-options)), with that, if you send messages as follows:
+If you want to sequentially process one message at a time, set `max_number_of_messages: 1` (see [receive options](https://github.com/phstc/shoryuken/wiki/Receive-Message-options)), with that, if you send messages as follows:
 
 ```ruby
 ExpireMembershipsWorker.perform_async(date)
@@ -108,6 +108,31 @@ Shoryuken will receive the message for `ExpireMembershipsWorker`, process, recei
 ### How about multiple processes and other clients? 
 
 Every time Shoryuken (or any other SQS client) receives a message associated with a Message Group ID, SQS locks the group until the message gets deleted or its visibility timeout expires. Preventing Shoryuken or other SQS clients to receive messages for the group.
+
+### Using FIFO Queues for preventing rate limits
+
+Supposing you are doing something in background that calls an external API that limits the number of requests per second. You could use FIFO for that.
+
+```ruby
+Shoryuken.sqs_client_receive_message_opts = {
+  max_number_of_messages: 1
+}
+
+class SyncWithExternalAPIWorker
+  include Shoryuken::Worker
+
+  shoryuken_options queue: 'queue.fifo', auto_delete: true
+
+  def perform(sqs_msg, name)
+    # do something...
+
+    # sleep for 100ms, limiting the max number of calls per second to 10
+    sleep(0.1)
+  end
+end
+```
+
+I don't recommend long running workers, I would go with `sleep` only for short delays. If you need longer delays, you can try to take advantage of the [visibility timeout](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html) or  [send messages with a delay](https://github.com/phstc/shoryuken/wiki/Sending-a-message#delaying-a-message).
 
 ### Should I use FIFO Queues?
 
