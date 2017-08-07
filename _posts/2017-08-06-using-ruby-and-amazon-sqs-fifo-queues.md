@@ -19,7 +19,7 @@ There are two key attributes when working with FIFO Queues: Message Group ID and
 
 ### Message Group ID
 
-For the Message Group ID you can either use the same message group for all messages, or group them by some business logic, let's say `account_id`, or whatever that makes sense to you. The messages will be received in the order they were sent by group.
+For the Message Group ID you can either use the same message group for all messages, or group them by some business logic, let's say `account_id`, or whatever that makes sense to you. The messages will be received in the order they were sent to their group.
 
 Shoryuken automatically sets the Message Group ID to `ShoryukenMessage` if it is not provided.
 
@@ -95,7 +95,7 @@ That's it. Your Shoryuken will start processing your messages.
 
 By default, Shoryuken tries to receive as many messages as it can, limited to the number of the available threads (see [concurrency](https://github.com/phstc/shoryuken/wiki/Shoryuken-options#concurrency)) and the SQS limit of 10 messages per request. If there are 10 available threads, it may receive up to 10 messages for the same Message Group ID and process them all in parallel. 
 
-If you want to sequentially process one message at time per group, set `max_number_of_messages: 1` (see [receive options](https://github.com/phstc/shoryuken/wiki/Receive-Message-options)), with that, if you send messages as follows:
+If you want to sequentially process one message at a time per group, set `max_number_of_messages: 1` (see [receive options](https://github.com/phstc/shoryuken/wiki/Receive-Message-options)), with that, if you send messages as follows:
 
 ```ruby
 ExpireMembershipsWorker.perform_async(date)
@@ -121,7 +121,7 @@ Yes.
 
 ##### If you want to control the order, but you want to receive duplicates.
 
-Yes. Just set `message_deduplication_id` to something unique (`SecureRandom.uuid`) and SQS won't reject as duplicate.
+Yes. Just set `message_deduplication_id` to something unique (`SecureRandom.uuid`) and SQS won't reject as a duplicate.
 
 ##### If you don't care about the order and duplicates.
 
