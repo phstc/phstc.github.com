@@ -107,11 +107,11 @@ Shoryuken will receive the message for `ExpireMembershipsWorker`, process, recei
 
 ### How about multiple processes and other clients? 
 
-Every time Shoryuken (or any other SQS client) receives a message associated with a Message Group ID, SQS locks the group until the message gets deleted or its visibility timeout expires. Preventing Shoryuken or other SQS clients to receive messages for the group.
+Every time Shoryuken (or any other SQS client) receives a message associated with a Message Group ID, SQS locks the group until the message gets deleted or its visibility timeout expires. Preventing Shoryuken or other SQS clients to receive messages for the locked group.
 
 ### Using FIFO Queues for preventing rate limits
 
-Supposing you are doing something in background that calls an external API that limits the number of requests per second. You could use FIFO for that.
+Supposing you are doing something in background that calls an external API that limits the number of requests per second. You could use FIFO for controlling the number of requests per second.
 
 ```ruby
 Shoryuken.sqs_client_receive_message_opts = {
@@ -132,7 +132,7 @@ class SyncWithExternalAPIWorker
 end
 ```
 
-I don't recommend long running workers, I would go with `sleep` only for short delays. If you need longer delays, you can try to take advantage of the [visibility timeout](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html) or  [send messages with a delay](https://github.com/phstc/shoryuken/wiki/Sending-a-message#delaying-a-message).
+I don't recommend long running workers, I would go with `sleep` only for a short delay. For longer delays, you can try to take advantage of the [visibility timeout](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html) or  [delay queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-delay-queues.html).
 
 ### Should I use FIFO Queues?
 
@@ -146,8 +146,18 @@ Yes.
 
 ##### If you want to control the order, but you want to receive duplicates.
 
-Yes. Just set `message_deduplication_id` to something unique (`SecureRandom.uuid`) and SQS won't reject as a duplicate.
+Yes. Just set `message_deduplication_id` to something unique (`SecureRandom.uuid`) and SQS won't reject as a duplicate. 
+
+Same applies if you want to reject duplicates and don't want to control the order, just set the `message_group_id` to something unique.
 
 ##### If you don't care about the order and duplicates.
 
 No. Go with standard queues.
+
+##### If you plan to make more than 300 transactions per second.
+
+Maybe. FIFO Queues are limited to 300 transactions per second (TPS). If you can split the transactions across multiple queues avoiding the limit of 300 TPS per queue, you are good, otherwise, you better go with standard queues.
+
+##### If you want per-message delays
+
+No. FIFO queues don't support per-message delays, only per-queue delays.
