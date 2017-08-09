@@ -3,16 +3,6 @@ layout: page
 title: Projects
 ---
 
-## CrossHero
-
-"La solución definitiva para boxes y apasionados del CrossFit"
-
-CrossHero is the ultimate solution for managing CrossFit boxes (gyms).
-
-Currently with +170 boxes and +22k athletes registered.
-
-[crosshero.com](https://crosshero.com)
-
 ## PutsMail
 
 Test your HTML emails before sending them.
