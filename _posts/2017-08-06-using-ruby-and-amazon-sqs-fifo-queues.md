@@ -109,9 +109,9 @@ Shoryuken will receive the message for `ExpireMembershipsWorker`, process, recei
 
 Every time Shoryuken (or any other SQS client) receives a message associated with a Message Group ID, SQS locks the group until the message gets deleted or its visibility timeout expires. Preventing Shoryuken or other SQS clients to receive messages for the locked group.
 
-### Using FIFO Queues for preventing rate limits
+### Using FIFO Queues for rate limiting
 
-Supposing you are doing something in background that calls an external API that limits the number of requests per second. You could use FIFO for controlling the number of requests per second.
+Given that, you can sequentially process messages per group, you could easily use FIFO for controlling the number of requests per second.
 
 ```ruby
 Shoryuken.sqs_client_receive_message_opts = {
@@ -124,9 +124,9 @@ class SyncWithExternalAPIWorker
   shoryuken_options queue: 'queue.fifo', auto_delete: true
 
   def perform(sqs_msg, name)
-    # do something...
+    # call an external API that supports max 10 calls per second...
 
-    # sleep for 100ms, limiting the max number of calls per second to 10
+    # limit the max number processing per second to 10
     sleep(0.1)
   end
 end
