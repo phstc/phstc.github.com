@@ -28,24 +28,23 @@ Escrever o código para ler o Excel. Estou usando a action de upload do artigo [
 
 ```java
 @RequestMapping(value = "upload", method = RequestMethod.POST)
-	public String upload(HttpServletRequest request)
-throws BiffException, IOException {
-	MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-	MultipartFile multipartFile = multipartRequest.getFile("file");
-	Workbook workbook = Workbook
-		.getWorkbook(multipartFile.getInputStream());
+public String upload(HttpServletRequest request) throws BiffException, IOException {
+  MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+  MultipartFile multipartFile = multipartRequest.getFile("file");
+  Workbook workbook = Workbook
+  	.getWorkbook(multipartFile.getInputStream());
 
-	Sheet sheet = workbook.getSheet("Nome da planilha");
+  Sheet sheet = workbook.getSheet("Nome da planilha");
 
-	for (int i = 0; i < sheet.getRows(); i++) {
-		for(int j = 0; j < sheet.getColumns(); j++){
-			Cell celulaJ = sheet.getCell(j, i);
-			System.out
-				.println("Conteúdo da célula " + j + ": " + celularJ.getContents());
-		}
-	}
+  for (int i = 0; i < sheet.getRows(); i++) {
+  	for(int j = 0; j < sheet.getColumns(); j++){
+  		Cell celulaJ = sheet.getCell(j, i);
+  		System.out
+  			.println("Conteúdo da célula " + j + ": " + celularJ.getContents());
+  	}
+  }
 
-	return "redirect:upload-success";
+  return "redirect:upload-success";
 }
 ```
 
