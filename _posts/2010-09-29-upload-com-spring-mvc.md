@@ -63,8 +63,8 @@ Criar a action de upload.
 ```java
 @RequestMapping(value = "upload", method = RequestMethod.POST)
 public String upload(HttpServletRequest request) {
-	MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-	MultipartFile multipartFile = multipartRequest.getFile("file");
-	return "redirect:upload-success";
+  MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+  MultipartFile multipartFile = multipartRequest.getFile("file");
+  return "redirect:upload-success";
 }
 ```
