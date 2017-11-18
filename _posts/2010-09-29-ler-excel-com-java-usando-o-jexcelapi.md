@@ -11,39 +11,43 @@ Para ler Excel estou usando o [JExcelApi](http://jexcelapi.sourceforge.net/). Ou
 
 Adicionar a dependência JExcelApi no  `pom.xml`.
 
-    <properties>
-      <jexcelapi.version>2.6</jexcelapi.version>
-    </properties>
-    <dependency>
-      <groupId>net.sourceforge.jexcelapi</groupId>
-      <artifactId>jxl</artifactId>
-      <version>${jexcelapi.version}</version>
-    </dependency>
+```xml
+<properties>
+  <jexcelapi.version>2.6</jexcelapi.version>
+</properties>
+<dependency>
+  <groupId>net.sourceforge.jexcelapi</groupId>
+  <artifactId>jxl</artifactId>
+  <version>${jexcelapi.version}</version>
+</dependency>
+```
 
 ## Segundo passo
 
 Escrever o código para ler o Excel. Estou usando a action de upload do artigo [Upload com Spring MVC](http://pablocantero.com/blog/2010/09/29/upload-com-spring-mvc/).
 
-    @RequestMapping(value = "upload", method = RequestMethod.POST)
-     public String upload(HttpServletRequest request)
-     throws BiffException, IOException {
-     MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-     MultipartFile multipartFile = multipartRequest.getFile("file");
-     Workbook workbook = Workbook
-     .getWorkbook(multipartFile.getInputStream());
+```java
+@RequestMapping(value = "upload", method = RequestMethod.POST)
+	public String upload(HttpServletRequest request)
+throws BiffException, IOException {
+	MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+	MultipartFile multipartFile = multipartRequest.getFile("file");
+	Workbook workbook = Workbook
+		.getWorkbook(multipartFile.getInputStream());
 
-     Sheet sheet = workbook.getSheet("Nome da planilha");
+	Sheet sheet = workbook.getSheet("Nome da planilha");
 
-     for (int i = 0; i < sheet.getRows(); i++) {
-    for(int j = 0; j < sheet.getColumns(); j++){
-    Cell celulaJ = sheet.getCell(j, i);
-    System.out
-    .println("Conteúdo da célula " + j + ": " + celularJ.getContents());
-    }
-     }
+	for (int i = 0; i < sheet.getRows(); i++) {
+		for(int j = 0; j < sheet.getColumns(); j++){
+			Cell celulaJ = sheet.getCell(j, i);
+			System.out
+				.println("Conteúdo da célula " + j + ": " + celularJ.getContents());
+		}
+	}
 
-     return "redirect:upload-success";
-     }
+	return "redirect:upload-success";
+}
+```
 
 ## Principais referências
 
