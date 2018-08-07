@@ -9,13 +9,13 @@ Test your HTML emails before sending them.
 
 [putsmail.com](https://putsmail.com)
 
-***PutsMail became the most popular free tool for testing HTML emails, and was acquired by [Litmus](https://putsmail.com/about) in 2014.***
+**_PutsMail became the most popular free tool for testing HTML emails, [and got acquired by Litmus](https://litmus.com/blog/a-new-home-for-putsmail-at-litmus) in 2014._**
 
 ## PutsReq
 
 PutsReq lets you record HTTP requests and simulate responses like no other tool available.
 
-[putsreq.com](http://www.putsreq.com)
+[putsreq.com](http://putsreq.com)
 
 Featured on:
 
@@ -25,7 +25,7 @@ Featured on:
 
 PutsBox makes email integration tests easy.
 
-[putsbox.com](http://www.putsbox.com)
+[putsbox.com](http://putsbox.com)
 
 See: [Test emails with automated testing tools](http://www.pablocantero.com/blog/2015/08/05/test-emails-with-automated-testing-tools/)
 
@@ -50,7 +50,7 @@ Ruby CLI for [InfluxDB](http://influxdb.com/).
 
 ## mongo_profiler
 
-Mongo profiling tool which matches queries with code.
+Mongo profiling tool matches queries with code.
 
 [github.com/phstc/mongo_profiler](https://github.com/phstc/mongo_profiler)
 
@@ -62,13 +62,13 @@ Query params based searching for [MongoDB](http://www.mongodb.com/).
 
 ## jquery-dateFormat
 
-[jQuery](https://jquery.com/) Plugin to format Date outputs using JavaScript.
+[jQuery](https://jquery.com/) plugin to format Date outputs using JavaScript.
 
 [github.com/phstc/jquery-dateFormat](https://github.com/phstc/jquery-dateFormat)
 
 ## sidekiq-statsd
 
-Sidekiq StatsD is a Sidekiq server middleware to send Sidekiq worker metrics through statsd.
+Sidekiq StatsD is a Sidekiq server middleware to send Sidekiq metrics to statsd.
 
 [github.com/phstc/sidekiq-statsd](https://github.com/phstc/sidekiq-statsd)
 
