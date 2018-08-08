@@ -33,7 +33,7 @@ As a good practice, I suggest to review your projects from time to time. Do you 
 
 [Does your profile play a song](https://song-of-github.herokuapp.com)?
 
-If you don't have any public project or activity (or a GitHub profile). You will probably lose some points compared with candidates who have.
+If you don't have any public project or activity (or a GitHub profile). You may lose some points compared with candidates who have, but it's something you can overcome while telling about your experience.
 
 P-l-e-a-s-e, don't say that you don't have public projects or activity because the company that you work for doesn't support open source. IMO open source is much more an individual initiative than a company one. If your company uses open source, it supports open source, but it doesn't mean that your boss will tell you to spend working hours in open source, just to make you a better GitHub profile.
 
@@ -136,7 +136,7 @@ Interviewers research and talk about candidates to work colleagues. They spend a
 
 I strongly recommend to all candidates to give it back by also researching on them before the interview.
 
-Once when I was participating in an interview process as a candidate, and I found a presentation from my next interviewer, in which he was talking about why the code in Node.js often get rejected in coding challenge submissions. How lucky was I?! I had a chance to review my code challenging, which coincidently was written in Node.js, and also bring some topics during the interview that I knew he was interested in.
+Once when I was participating in an interview process as a candidate, and I found a presentation from my next interviewer, in which he was talking about why the code in Node.js often gets rejected in coding challenge submissions. How lucky was I?! I had a chance to review my code challenging, which coincidently was written in Node.js, and also bring some topics during the interview that I knew he was interested in.
 
 It's also nice to say something to your interviewer like: "I saw your blog and I found your post about X interesting" or a mention of a project that he's working on GitHub. You don't need to lie if you didn't like what you saw, feel free to keep that yourself or to consider if he's the type of professional you want to work with.
 
@@ -152,15 +152,15 @@ On making notes, if your interviewer likes to talk, let him talk, but make notes
 
 # Rejection notice
 
-No one likes to be rejected. But I would say that in most cases being rejected, does not mean that you aren't qualified enough. A selection process is complex, involves people and subjective perceptions, you can get rejected for various reasons.
+No one likes to be rejected. But I would say that in most cases being rejected, does not mean that you aren't qualified enough. Hiring is complex, it involves people and subjective perceptions, you can get rejected for various reasons.
 
 ## What can I do better?
 
-Feel free to ask for feedbacks to do better next time. But don't be sad if the company can't give you one.
+Feel free to ask for feedback to do better next time. But don't get disappointed if the company can't give you one.
 
-Although some feedbacks can be constructive, most of the people aren't prepared for, and some rejections can be because of details: "He seems to be an experienced developer, but he was typing to someone else during the interview. The next candidate I interviewed is equivalent experienced and gave me his total attention".
+Although some feedback can be constructive, most of the people aren't prepared for, and some rejections can be because of details: "He seems to be an experienced developer, but he was typing to someone else during the interview. The next candidate I interviewed is equivalent experienced and gave me his total attention".
 
-It's hard to give feedbacks on subjective perceptions.
+It's hard to give feedback on subjective perceptions.
 
 # Final thoughts
 
