@@ -3,25 +3,33 @@ layout: post
 title: Test emails with automated testing tools
 ---
 
-Usually, for automated tests that can send emails, because of a step in the test, we either stub or just don't check the emails being sent. We don't go to Gmail or any other email client for confirming (`assert`/`expect`) that.
+Usually, for automated tests that can send emails, because of a step in the test, we either stub or don't check the emails being sent. We don't go to Gmail or any other email client for confirming (`assert`/`expect`) that the email was delivered.
 
-Not testing emails, like for real, in most cases can be fine. For example, if you are using [Amazon SES](https://aws.amazon.com/ses/) or similar, you just trust them, and usually, the configuration you have in place for sending emails does not change often. If it worked once, it's most likely it will continue to work (famous last words).
+Not testing emails, like for real, in most cases can be okay. For example, if you are using [Amazon SES](https://aws.amazon.com/ses/) or similar, you just trust them, and usually, the configuration you have in place for sending emails does not change often. If it worked once, it's most likely it will continue to work (famous last words).
 
 But if the email delivery is a critical part of your application, and you do want to make sure it's working, this post is for you.
 
 ## Say Hello to PutsBox
 
-Let me introduce you [PutsBox](http://putsbox.com), it's a mix of disposable email tools and HTTP request recorders tools such as [PutsReq](http://putsreq.com).
+Let me introduce you [PutsBox](http://putsbox.com). It's a mix of disposable email tools and HTTP request recorders tools such as [PutsReq](http://putsreq.com).
 
-### How does this piece of joy work?
+## Getting started
 
-Send an email to `whatever-recipient-you-want-to@putsbox.com`, give it a few seconds (don't blame PutsBox, email delivery services may take a few seconds) then check `https://preview.putsbox.com/p/whatever-recipient-you-want-to/last`, voalá, it will respond with your email content. You can also append `.json` to that URL to get the JSON representation.
+Send an email to `whatever-recipient-you-want-to@putsbox.com`, give it a few seconds (don't blame PutsBox, email delivery services may take a few seconds to process) then check `https://preview.putsbox.com/p/whatever-recipient-you-want-to/last`, voalá, it will respond with your email content.
+
+### JSON representation
+
+You can also append `.json` to the `/inspect` or `/last` URLs to get a JSON representation.
+
+* https://putsbox.com/whatever-recipient-you-want-to/inspect.json
+* https://preview.putsbox.com/p/whatever-recipient-you-want-to/last.json
+
 
 No sign up required, PutsBox is free and [open source](https://github.com/phstc/putsbox).
 
-## Gimme an example!
+## Capybara example
 
-Sure thing! Here's an example with [Capybara](https://github.com/jnicklas/capybara).
+Here's an example with [Capybara](https://github.com/jnicklas/capybara).
 
 ```ruby
 visit '/'
