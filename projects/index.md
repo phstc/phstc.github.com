@@ -78,6 +78,6 @@ Check out my [GitHub profile](https://github.com/phstc/).
 
 ## Misc projects
 
-* [CrossHero](https://crosshero.com) - Complete solution for managing CrossFit gyms (2015 - present)
+* [CrossHero](https://crosshero.com) - Complete solution for managing CrossFit gyms (2015 - present). With over than 170 boxes (gyms) and 22k athletes using it on a daily basis.
 * [Super Experiências](http://www.superexperiencias.com.br/sao-paulo) - A marketplace for sharing/selling experiences (2012 - 2013)
 * [Deliveria](https://deliveria.net) - "Yellow pages" for restaurants (2011 - 2012)
