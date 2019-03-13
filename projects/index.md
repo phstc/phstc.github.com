@@ -76,8 +76,8 @@ Sidekiq StatsD is a Sidekiq server middleware to send Sidekiq metrics to statsd.
 
 Check out my [GitHub profile](https://github.com/phstc/).
 
-## Misc projects
+## Business projects
 
-* [CrossHero](https://crosshero.com) - Complete solution for managing CrossFit gyms (2015 - present). With over than 170 boxes (gyms) and 22k athletes using it on a daily basis.
+* [CrossHero](https://crosshero.com) - Complete solution for managing CrossFit gyms (2015 - present). With over than 170 boxes (gyms) and +30k active athletes (users).
 * [Super Experiências](http://www.superexperiencias.com.br/sao-paulo) - A marketplace for sharing/selling experiences (2012 - 2013)
 * [Deliveria](https://deliveria.net) - "Yellow pages" for restaurants (2011 - 2012)
