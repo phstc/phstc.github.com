@@ -25,7 +25,7 @@ Usually, good writing skills don't happen naturally. You have to practice them. 
 
 So you have some code that you aren't super proud of? Don't worry. Everyone has.
 
-But if an interviewer asks you something like: "Is there something that would you like to have done differently in this code?". Take this as an opportunity to impress him by acknowledging the code weaknesses and explaining how you could have done it differently with the knowledge you have now. It can cause a huge good impression.
+If an interviewer asks you something like: "Is there something that would you like to have done differently in this code?". Take this as an opportunity to impress him by acknowledging the code weaknesses and explaining how you could have done it differently with the knowledge you have now. It can cause a huge good impression.
 
 ## Make a song of your profile
 
