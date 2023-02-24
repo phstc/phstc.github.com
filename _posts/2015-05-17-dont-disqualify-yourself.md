@@ -5,72 +5,54 @@ title: "Don't disqualify yourself"
 
 Companies are looking for good developers!
 
-But sometimes due to the lack of experience in interviews or for never having been on the other side (as an interviewer), some good developers get disqualified.
+But sometimes, some good developers get disqualified due to their lack of experience in interviews or never having been on the other side (as an interviewer).
 
 The intent of this post is to give some tips to help developers to present themselves better.
 
-I'm a developer, I'm not a recruiter or HR person. Therefore, the content of this post is from a perspective of a developer interviewing and filtering developer candidates to work with.
+I'm a developer. I'm not a recruiter or HR person. Therefore, this post's content is from a developer's perspective interviewing and filtering developer candidates to work with.
 
 # GitHub
 
 ## Make a good first impression
 
-Try to make the README of your projects as clear and objective as possible, it's the first content that people see when they access a repository.
+Try to make the README of your projects as clear and objective as possible. It's the first content that people see when they access a repository.
 
 A well-written README can tell how good you are at sharing knowledge and explaining problems. Like a good team player should be.
 
-Usually, good writing skills don't happen naturally, you have to practice them. You can use READMEs, Wiki pages, and blog posts to exercise these skills.
+Usually, good writing skills don't happen naturally. You have to practice them. You can use READMEs, forums, and blog posts to exercise these skills.
 
 ## Not so proud of some of your code?
 
-So you have some code that you aren't super proud of? Don't worry, everyone has.
+So you have some code that you aren't super proud of? Don't worry. Everyone has.
 
-But if an interviewer asks you something like: "Is there something that would you like to have done differently in this code?". Take this as an opportunity to impress him by acknowledging the code weaknesses and explaining how you could have done it differently with the knowledge you have now, it can cause a huge good impression.
-
-As a good practice, I suggest to review your projects from time to time. Do you know that boring Sunday, in which you don't have anything to do? Well, why not spend some time practicing code refactor in old projects?
+But if an interviewer asks you something like: "Is there something that would you like to have done differently in this code?". Take this as an opportunity to impress him by acknowledging the code weaknesses and explaining how you could have done it differently with the knowledge you have now. It can cause a huge good impression.
 
 ## Make a song of your profile
 
-[Does your profile play a song](https://song-of-github.herokuapp.com)?
+[Does your GitHub profile play a song](https://song-of-github.herokuapp.com)?
 
-If you don't have any public project or activity (or a GitHub profile). You may lose some points compared with candidates who have, but it's something you can overcome while telling about your experience.
-
-P-l-e-a-s-e, don't say that you don't have public projects or activity because the company that you work for doesn't support open source. IMO open source is much more an individual initiative than a company one. If your company uses open source, it supports open source, but it doesn't mean that your boss will tell you to spend working hours in open source, just to make you a better GitHub profile.
-
-## Engage users
-
-It's very positive when a candidate has projects with stars on GitHub, it shows that he's doing projects with impact in the open source community.
-
-People can't use, what they don't know. If you developed something that can be useful for other people, share it. A blog post, Reddit, Stack Overflow and Twitter can help you with that.
-
-On a side note, remember to star (like) the projects that you use and like on GitHub, it motivates the project owners and also gives credibility to the projects.
-
-## Why so many forks?
-
-If you aren't contributing to a project, you don't need to fork it. If you only want to play with it locally, you can clone it from the original repository.
-
-A profile full of forks without contributions to them can pollute your real activity, hiding your own code. And at least for me, it commonly raises a question: "Why is this person doing so many forks? Does he know how it works?".
+Public activity can give you additional points. But it's not a requirement. Your experience and skills are more important for most positions.
 
 # Linkedin
 
 ## Be brief
 
-Detail your mission and achievements for each one of your experiences, as very other article will suggest. But there's no need to write a letter for each one of them, be brief on the details. If an interviewer gets interested on a specific experience, he will ask you during the interview. And I also recommend to use something like "Main technologies":
+Detail your accomplishments for each one of your experiences, as every other article will suggest. But there's no need to write a letter for each one of them, be brief. If an interviewer gets interested in a specific experience, he will ask you during the interview. And I also recommend using something like "Main technologies":
 
 ```
 Full stack developer lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 Main technologies:
-Ruby, Rails, MongoDB, EC2 and SQS.
+Ruby, Rails, MongoDB, EC2, and SQS.
 ```
 
-It helps for a quick matching between candidates and position requirements.
+Keywords help quick matching candidates and positions.
 
 ## Relevant links
 
-Add your GitHub, Blog and other relevant links in your profile, facilitate your interviewers' life. Don't make them to Google you to find your GitHub.
+Add your LinkedIn, GitHub, blog, and any other relevant links in your profile, facilitating your interviewers' triage. Unlikely, recruiters and hiring managers will put the time to search about you on the web.
 
-LinkedIn has a specific section in which you can add links, but as a profile viewer, you need to click on Contact Info to access them. Did you know it? Maybe some interviewers don't. My suggestion is to besides adding those to the Websites section, there's no harm to also add them to your Summary.
+LinkedIn has a specific section in which you can add links, but as a profile viewer, you need to click on Contact Info to access them. I suggest that besides adding those to the Websites section, there's no harm to also adding them to your Summary.
 
 ```
 My summary lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -80,7 +62,7 @@ My summary lorem ipsum dolor sit amet, consectetur adipiscing elit.
 * Blog https://your-name
 ```
 
-Try to get a website.com/**your-name** when possible, that helps when googling you and sharing your links:
+Try to get a website.com/**your-name** when possible. That helps when googling you and sharing your links:
 
 ```
 Hey Pablo,
@@ -96,13 +78,15 @@ Which one makes a better first impression, John Something or 123456?
 
 ## Don't be a default avatar person
 
-You need to show your face out, interviewers want to see you. It's hard to sympathize when there's no face.
+It's easier to sympathize and create connections when we see each other. 
 
-The same applies for video interviews, remember to turn your camera on.
+If you are comfortable adding your photo to your profile, do it.
+
+The same applies to video interviews, turn your camera on if possible.
 
 ## View profile as
 
-After changing your profile, try to access it as a profile viewer instead of profile owner. LinkedIn has a "View profile as" button for that.
+After changing your profile, try to access it as a profile viewer instead of a profile owner. LinkedIn has a "View profile as" button for that.
 
 # Before the interview
 
