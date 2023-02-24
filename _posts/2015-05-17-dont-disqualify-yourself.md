@@ -130,22 +130,22 @@ It's also nice to say something to your interviewer like: "I saw your blog and I
 
 Close IMs and everything else not related to the interview that might distract you. Give all your attention to your interviewer. It's terrible to interview someone and see or hear that he's typing to someone else.
 
-If you like to make notes during the interview, use a psychical notepad, and handwrite, otherwise he may think you are typing to someone else.
+If you like to make notes during the interview, use a psychical notepad, and handwrite. Otherwise he may think you are typing to someone else.
 
 On making notes, if your interviewer likes to talk, let him talk, but make notes on the topics he's talking about. So when it's your time to talk, you can return to all relevant topics he mentioned during his "speech". Showing that you are a good listener and organized.
 
 # Rejection notice
 
-No one likes to be rejected. But I would say that in most cases being rejected, does not mean that you aren't qualified enough. Hiring is complex, it involves people and subjective perceptions, you can get rejected for various reasons.
+No one likes to be rejected. But being rejected does not mean you aren't qualified. Hiring is complex. It involves people and subjective perceptions. You can get rejected for various reasons.
 
 ## What can I do better?
 
 Feel free to ask for feedback to do better next time. But don't get disappointed if the company can't give you one.
 
-Although some feedback can be constructive, most of the people aren't prepared for, and some rejections can be because of details: "He seems to be an experienced developer, but he was typing to someone else during the interview. The next candidate I interviewed is equivalent experienced and gave me his total attention".
+Although some feedback can be constructive, most people aren't prepared for it, and some rejections can be because of details: "He seems to be an experienced developer, but he was typing to someone else during the interview. The next candidate I interviewed is equivalently experienced and gave me his total attention".
 
 It's hard to give feedback on subjective perceptions.
 
 # Final thoughts
 
-As a friend of mine used to say: "Doing well at interviews, only proves that you do well at interviews", you need to practice it, the more you do, the more you get good at. There are a ton of people that do much better at interviews than at work. If you are a good professional, don't let them disqualify you.
+As a friend of mine used to say: "Doing well at interviews only proves that you do well at interviews", you need to practice it. The more you do, the more you get good at it. There are a ton of people that do much better at interviews than at work. If you are a good professional, don't let them disqualify you.
