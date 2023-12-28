@@ -50,7 +50,7 @@ Eu uso o Jekyll com Git, portanto tenho o versionamento das minhas alterações.
 
 git log
 commit fe6d22281b53129b554a26b4645c8bbd340df6fe
-Author: Pablo Cantero <pablo@pablocantero.com>
+Author: Pablo Cantero
 Date:   Wed Mar 14 10:09:13 2012 -0300
 
    Quebra de linha por css
